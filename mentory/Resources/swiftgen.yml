@@ -1,0 +1,24 @@
+strings:
+  inputs: ./ru.lproj/Localizable.strings
+  outputs:
+    templateName: structured-swift4
+    output: ./Source/Texts.swift
+    params:
+      publicAccess: true
+      enumName: Text
+xcassets:
+  - inputs: ./Assets.xcassets
+    outputs:
+      - templateName: swift4
+        output: ./Source/Assets.swift
+        params:
+          enumName: Assets
+          publicAccess: true
+fonts:
+  inputs: ./Fonts
+  outputs:
+    templatePath: fonts.stencil
+    output: ./Source/Fonts.swift
+    params:
+      enumName: Fonts
+      publicAccess: true

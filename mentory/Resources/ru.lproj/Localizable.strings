@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  mentory
+
+  Created by Михаил Андреичев on 07.02.2020.
+  Copyright © 2020 Михаил Андреичев. All rights reserved.
+*/
+
+Alert.Unreal = "Невозможно";
+Alert.Cancel = "Отмена";
+Alert.Error = "Ошибка";
+Alert.Yes = "Да";
+Alert.No = "Нет";
+
+Common.Loading = "Загрузка";
+Common.Back = "Назад";
+Common.Hide = "Скрыть";
+Common.Return = "Далее";
+Common.Done = "Готово";
+Common.Cancel = "Отмена";
+
+Errors.TryAgain = "Повторить";
+Errors.UnknownError = "Неизвестная ошибка";
+Errors.NetworkError = "Ошибка сети";
+Errors.RemoteError = "Ошибка сервера";
+Errors.RequestError = "Ошибка запроса";
+

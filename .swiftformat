@@ -1,0 +1,22 @@
+--exclude "Pods","MDAppTemplate/Resources"
+--disable fileHeader, unusedArguments
+--self init-only
+--selfrequired
+
+# format options
+
+--allman false
+--commas always
+--comments indent
+--elseposition same-line
+--empty void
+--ifdef indent
+--indent 4
+--linebreaks lf
+--ranges spaced
+--semicolons inline
+--trimwhitespace always
+--wraparguments before-first
+--wrapcollections before-first
+--enable isEmpty
+--swiftversion 5
