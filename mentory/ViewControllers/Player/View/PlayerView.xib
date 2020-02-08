@@ -35,7 +35,7 @@
                     <color key="textColor" name="WinterGreen"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kiV-JH-a4y">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kiV-JH-a4y">
                     <rect key="frame" x="14" y="557" width="386" height="31"/>
                     <color key="minimumTrackTintColor" name="WinterGreen"/>
                     <color key="maximumTrackTintColor" name="WarmGrey"/>

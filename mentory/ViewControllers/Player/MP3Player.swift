@@ -45,12 +45,24 @@ final class MP3Player: NSObject {
         }
     }
 
+    func isLoading() -> Bool {
+        return (player?.currentItem?.isPlaybackLikelyToKeepUp == false)
+    }
+
+    func setProgress(_ progress: Float) {
+        guard let cmDuration: CMTime = player?.currentItem?.asset.duration
+        else { return }
+        let duration = CMTimeGetSeconds(cmDuration)
+        let newTime: CMTime = CMTimeMake(value: Int64(duration * Double(progress)), timescale: 1)
+        player?.seek(to: newTime)
+    }
+
     func getProgress() -> Float {
         guard let cmDuration: CMTime = player?.currentItem?.asset.duration,
             let cmCurrentTime: CMTime = player?.currentTime()
         else { return 0 }
-        let theCurrentTime = CMTimeGetSeconds(cmCurrentTime)
-        let theCurrentDuration = CMTimeGetSeconds(cmDuration)
-        return Float(theCurrentTime / theCurrentDuration)
+        let time = CMTimeGetSeconds(cmCurrentTime)
+        let duration = CMTimeGetSeconds(cmDuration)
+        return Float(time / duration)
     }
 }

@@ -13,6 +13,7 @@
 		6B032CF423ED767700662BF5 /* MainPageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B032CF323ED767700662BF5 /* MainPageDataSource.swift */; };
 		6B032CF823ED770400662BF5 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B032CF623ED770400662BF5 /* LessonCell.swift */; };
 		6B032CF923ED770400662BF5 /* LessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B032CF723ED770400662BF5 /* LessonCell.xib */; };
+		6B5B8ED523EE96620001A6C3 /* UIView+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B8ED323EE96620001A6C3 /* UIView+LoadingView.swift */; };
 		6B65851323ED5391004016BA /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65851223ED5391004016BA /* Lesson.swift */; };
 		6B65851723ED53B3004016BA /* MentoryServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65851423ED53B2004016BA /* MentoryServiceFactory.swift */; };
 		6B65851823ED53B3004016BA /* MainPageServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65851523ED53B2004016BA /* MainPageServiceMock.swift */; };
@@ -59,6 +60,7 @@
 		6B032CF323ED767700662BF5 /* MainPageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageDataSource.swift; sourceTree = "<group>"; };
 		6B032CF623ED770400662BF5 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		6B032CF723ED770400662BF5 /* LessonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonCell.xib; sourceTree = "<group>"; };
+		6B5B8ED323EE96620001A6C3 /* UIView+LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LoadingView.swift"; sourceTree = "<group>"; };
 		6B65851223ED5391004016BA /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		6B65851423ED53B2004016BA /* MentoryServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoryServiceFactory.swift; sourceTree = "<group>"; };
 		6B65851523ED53B2004016BA /* MainPageServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageServiceMock.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		6B032CE723ED6D7800662BF5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6B5B8ED023EE96620001A6C3 /* UIView+LoadingView */,
 				6B032CE823ED6D8A00662BF5 /* ExtensionUINavigationBar.swift */,
 			);
 			path = Extensions;
@@ -146,6 +149,14 @@
 				6BE5A90E23ED87EC005D65CC /* LessonCell */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		6B5B8ED023EE96620001A6C3 /* UIView+LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				6B5B8ED323EE96620001A6C3 /* UIView+LoadingView.swift */,
+			);
+			path = "UIView+LoadingView";
 			sourceTree = "<group>";
 		};
 		6B65850623ED52C1004016BA /* MainFiles */ = {
@@ -560,6 +571,7 @@
 				6B7A518723EE3BCE009D3047 /* PlayerView.swift in Sources */,
 				6BC24FB723EDA5E70054C8B9 /* LessonView.swift in Sources */,
 				6BF2C3CC23EE48850023425E /* MP3Player.swift in Sources */,
+				6B5B8ED523EE96620001A6C3 /* UIView+LoadingView.swift in Sources */,
 				6BC24FAC23ED945B0054C8B9 /* TryPremiumCell.swift in Sources */,
 				6BC24FB523EDA5E70054C8B9 /* LessonController.swift in Sources */,
 				6B032CF823ED770400662BF5 /* LessonCell.swift in Sources */,

@@ -74,11 +74,25 @@ public class PlayerController: UIViewController {
             action: #selector(dismissController),
             for: .touchUpInside
         )
+        customView?.progressSlider.addTarget(
+            self,
+            action: #selector(sliderValueChanged),
+            for: .valueChanged
+        )
     }
 
     @objc func updateProgress() {
         let progress = player?.getProgress() ?? 0.0
+        if player?.isLoading() ?? true {
+            customView?.playButton.startShowingActivityIndicator()
+        } else {
+            customView?.playButton.stopShowingActivityIndicator()
+        }
         customView?.showProgress(progress)
+    }
+
+    @objc func sliderValueChanged() {
+        player?.setProgress(customView?.progressSlider.value ?? 0)
     }
 
     @objc func playButtonTapped(_ sender: UIButton) {
