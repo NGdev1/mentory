@@ -6,3 +6,26 @@
   Copyright © 2020 Михаил Андреичев. All rights reserved.
 */
 
+Alert.Unreal = "Unreal";
+Alert.Cancel = "Cancel";
+Alert.Error = "Error";
+Alert.Yes = "Yes";
+Alert.No = "No";
+
+Common.Loading = "Loading";
+Common.Back = "Back";
+Common.Hide = "Hide";
+Common.Return = "Return";
+Common.Done = "Done";
+Common.Cancel = "Cancel";
+
+MainPage.Programs = "Programs";
+MainPage.ProgramsDescription = "Thirteen unique lessons. Listen one at a time. And you will be surprised how your life will change.";
+MainPage.TryPremium = "Try PREMIUM for free!";
+MainPage.PressForInfo = "Click for details";
+
+Errors.TryAgain = "Try again";
+Errors.UnknownError = "Unknown error";
+Errors.NetworkError = "Network error";
+Errors.RemoteError = "Remote Server error";
+Errors.RequestError = "Request error";

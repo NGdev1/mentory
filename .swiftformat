@@ -1,4 +1,4 @@
---exclude "Pods","MDAppTemplate/Resources"
+--exclude "Pods","mentory/Resources"
 --disable fileHeader, unusedArguments
 --self init-only
 --selfrequired

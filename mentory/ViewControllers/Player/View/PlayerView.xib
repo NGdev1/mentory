@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerController" customModule="Mentory" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="RGJ-Xq-IRP" id="tv8-ff-ENl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RGJ-Xq-IRP" customClass="PlayerView" customModule="Mentory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp1" translatesAutoresizingMaskIntoConstraints="NO" id="8MK-4g-ENx">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <visualEffectView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6J-gn-X3e">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sso-bQ-eUR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJn-w0-H0F">
+                    <rect key="frame" x="16" y="305" width="382" height="12"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                    <color key="textColor" name="WinterGreen"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kiV-JH-a4y">
+                    <rect key="frame" x="14" y="557" width="386" height="31"/>
+                    <color key="minimumTrackTintColor" name="WinterGreen"/>
+                    <color key="maximumTrackTintColor" name="WarmGrey"/>
+                    <color key="thumbTintColor" name="WinterGreen"/>
+                </slider>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0q-dg-uzJ">
+                    <rect key="frame" x="138" y="379" width="138" height="138"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="138" id="VPo-oO-7Rh"/>
+                        <constraint firstAttribute="width" constant="138" id="bcn-ij-rQc"/>
+                    </constraints>
+                    <state key="normal" image="Play"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="69"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wn9-sz-JPW">
+                    <rect key="frame" x="16" y="325" width="382" height="29"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                    <color key="textColor" name="Title"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" name="Black"/>
+            <constraints>
+                <constraint firstItem="kiV-JH-a4y" firstAttribute="top" secondItem="U0q-dg-uzJ" secondAttribute="bottom" constant="40" id="4u7-eT-66e"/>
+                <constraint firstItem="8MK-4g-ENx" firstAttribute="top" secondItem="RGJ-Xq-IRP" secondAttribute="top" id="6Pz-wS-9Qg"/>
+                <constraint firstAttribute="trailing" secondItem="8MK-4g-ENx" secondAttribute="trailing" id="7UF-M2-YgU"/>
+                <constraint firstAttribute="trailing" secondItem="Wn9-sz-JPW" secondAttribute="trailing" constant="16" id="7bc-ey-P5A"/>
+                <constraint firstItem="k6J-gn-X3e" firstAttribute="trailing" secondItem="8MK-4g-ENx" secondAttribute="trailing" id="FgK-lf-jab"/>
+                <constraint firstItem="Wn9-sz-JPW" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" constant="16" id="Ico-id-k9v"/>
+                <constraint firstItem="IJn-w0-H0F" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" constant="16" id="LHe-lU-Cxl"/>
+                <constraint firstAttribute="trailing" secondItem="kiV-JH-a4y" secondAttribute="trailing" constant="16" id="Lul-eo-4Dp"/>
+                <constraint firstItem="8MK-4g-ENx" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" id="NmR-uS-0oP"/>
+                <constraint firstItem="U0q-dg-uzJ" firstAttribute="centerY" secondItem="RGJ-Xq-IRP" secondAttribute="centerY" id="PaP-sk-Atd"/>
+                <constraint firstAttribute="bottom" secondItem="8MK-4g-ENx" secondAttribute="bottom" id="R3z-RK-rDA"/>
+                <constraint firstItem="k6J-gn-X3e" firstAttribute="leading" secondItem="8MK-4g-ENx" secondAttribute="leading" id="RyS-Jv-B5q"/>
+                <constraint firstItem="k6J-gn-X3e" firstAttribute="top" secondItem="8MK-4g-ENx" secondAttribute="top" id="Xhg-FX-4e0"/>
+                <constraint firstItem="Wn9-sz-JPW" firstAttribute="centerX" secondItem="U0q-dg-uzJ" secondAttribute="centerX" id="eO6-VH-a8L"/>
+                <constraint firstItem="kiV-JH-a4y" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" constant="16" id="fLl-Fy-X22"/>
+                <constraint firstItem="k6J-gn-X3e" firstAttribute="bottom" secondItem="8MK-4g-ENx" secondAttribute="bottom" id="mrB-OT-4Vb"/>
+                <constraint firstAttribute="trailing" secondItem="IJn-w0-H0F" secondAttribute="trailing" constant="16" id="nmp-wj-5Ms"/>
+                <constraint firstItem="U0q-dg-uzJ" firstAttribute="top" secondItem="Wn9-sz-JPW" secondAttribute="bottom" constant="25" id="sNB-ZS-2du"/>
+                <constraint firstItem="Wn9-sz-JPW" firstAttribute="top" secondItem="IJn-w0-H0F" secondAttribute="bottom" constant="8" id="t3P-mI-Jmp"/>
+                <constraint firstItem="U0q-dg-uzJ" firstAttribute="centerX" secondItem="RGJ-Xq-IRP" secondAttribute="centerX" id="uZx-fd-wLO"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundImageView" destination="8MK-4g-ENx" id="8Yj-hs-qfG"/>
+                <outlet property="playButton" destination="U0q-dg-uzJ" id="M8H-oK-4Mi"/>
+                <outlet property="progressSlider" destination="kiV-JH-a4y" id="cLl-zq-okQ"/>
+                <outlet property="subtitleLabel" destination="IJn-w0-H0F" id="Lcc-jC-NmC"/>
+                <outlet property="titleLabel" destination="Wn9-sz-JPW" id="XPg-D0-eq3"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Play" width="107" height="107"/>
+        <image name="temp1" width="854" height="966"/>
+        <namedColor name="Black">
+            <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Title">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WarmGrey">
+            <color red="0.62352941176470589" green="0.62352941176470589" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WinterGreen">
+            <color red="0.090000003576278687" green="1" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

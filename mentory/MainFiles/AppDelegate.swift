@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        let nextController = MainPageController()
+        let navigationController = UINavigationController(rootViewController: nextController)
+        navigationController.view.backgroundColor = Assets.black.color
+        navigationController.navigationBar.setBaseAppearance()
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 }

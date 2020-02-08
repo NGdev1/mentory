@@ -19,6 +19,11 @@ Common.Return = "Далее";
 Common.Done = "Готово";
 Common.Cancel = "Отмена";
 
+MainPage.Programs = "Программы";
+MainPage.ProgramsDescription = "Тринадцать уникальных уроков. Слушайте по одному в день. И вы удивитесь как изменится ваша жизнь. ";
+MainPage.TryPremium = "Попробуй PREMIUM бесплатно!";
+MainPage.PressForInfo = "Нажми для подробностей";
+
 Errors.TryAgain = "Повторить";
 Errors.UnknownError = "Неизвестная ошибка";
 Errors.NetworkError = "Ошибка сети";
