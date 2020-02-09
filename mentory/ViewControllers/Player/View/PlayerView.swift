@@ -47,6 +47,14 @@ final class PlayerView: UIView {
 
     // MARK: - Internal methods
 
+    func showMusicIsLoading() {
+        playButton.startShowingActivityIndicator()
+    }
+
+    func musicLoadingFinished() {
+        playButton.stopShowingActivityIndicator()
+    }
+
     func showProgress(_ pregress: Float) {
         progressSlider.value = pregress
     }

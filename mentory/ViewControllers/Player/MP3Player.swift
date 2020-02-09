@@ -7,6 +7,7 @@
 //
 
 import AVFoundation
+import MediaPlayer
 
 final class MP3Player: NSObject {
     // MARK: - Properties
@@ -18,6 +19,37 @@ final class MP3Player: NSObject {
     init(url: URL) {
         self.player = AVPlayer(url: url)
         super.init()
+        setupAVAudioSession()
+    }
+
+    private func setupAVAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            debugPrint("AVAudioSession is Active and Category Playback is set")
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+            setupCommandCenter()
+        } catch {
+            debugPrint("Error: \(error)")
+        }
+    }
+
+    private func setupCommandCenter() {
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: "Mentory"]
+
+        let commandCenter = MPRemoteCommandCenter.shared()
+        commandCenter.playCommand.isEnabled = true
+        commandCenter.pauseCommand.isEnabled = true
+        commandCenter.seekForwardCommand.isEnabled = true
+        commandCenter.seekBackwardCommand.isEnabled = true
+        commandCenter.playCommand.addTarget { [weak self] _ in
+            self?.player?.play()
+            return .success
+        }
+        commandCenter.pauseCommand.addTarget { [weak self] _ in
+            self?.player?.pause()
+            return .success
+        }
     }
 
     // MARK: - Internal methods

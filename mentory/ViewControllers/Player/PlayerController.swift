@@ -19,6 +19,8 @@ public class PlayerController: UIViewController {
     lazy var customView: PlayerView? = view as? PlayerView
     var lesson: Lesson
 
+    var userChangingProgress: Bool = false
+
     // MARK: - Init
 
     public init(lesson: Lesson) {
@@ -76,23 +78,32 @@ public class PlayerController: UIViewController {
         )
         customView?.progressSlider.addTarget(
             self,
-            action: #selector(sliderValueChanged),
+            action: #selector(sliderValueChanged(slider:event:)),
             for: .valueChanged
         )
     }
 
     @objc func updateProgress() {
+        guard userChangingProgress == false else {
+            return
+        }
         let progress = player?.getProgress() ?? 0.0
         if player?.isLoading() ?? true {
-            customView?.playButton.startShowingActivityIndicator()
+            customView?.showMusicIsLoading()
         } else {
-            customView?.playButton.stopShowingActivityIndicator()
+            customView?.musicLoadingFinished()
         }
         customView?.showProgress(progress)
     }
 
-    @objc func sliderValueChanged() {
-        player?.setProgress(customView?.progressSlider.value ?? 0)
+    @objc func sliderValueChanged(slider: UISlider, event: UIEvent) {
+        guard let touchEvent = event.allTouches?.first else { return }
+        if touchEvent.phase == .ended {
+            userChangingProgress = false
+            player?.setProgress(customView?.progressSlider.value ?? 0)
+        } else {
+            userChangingProgress = true
+        }
     }
 
     @objc func playButtonTapped(_ sender: UIButton) {
