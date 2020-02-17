@@ -9,12 +9,12 @@
 import Foundation
 
 struct MainPageResponse: Decodable {
-    var introductoryLessons: [Lesson]?
+    var introLessons: [Lesson]?
     var lessons: [Lesson]?
     var premiumLessons: [Lesson]?
 
     enum CodingKeys: String, CodingKey {
-        case introductoryLessons
+        case introLessons
         case lessons
         case premiumLessons
     }

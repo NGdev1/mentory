@@ -21,6 +21,8 @@ class MainPageController: UIViewController, MainPageControllerLogic {
     lazy var customView = MainPageView()
     var interactor: MainPageInteractor?
     var presenter: MainPagePresenter?
+    private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+    private let notificationsFeedbackGenerator = UINotificationFeedbackGenerator()
     private var growingAnimatableView: ViewImageBasedAnimatable?
     private var transitionManager = ImageBasedTransitionManager()
 
@@ -46,14 +48,6 @@ class MainPageController: UIViewController, MainPageControllerLogic {
     }
 
     private func setupAppearance() {
-        let imageView = UIImageView(image: Assets.titleImage.image)
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: 30),
-            imageView.widthAnchor.constraint(equalToConstant: 140),
-        ])
-        navigationItem.titleView = imageView
         customView.initDataSource()
         customView.dataSource?.delegate = self
     }
@@ -101,6 +95,7 @@ extension MainPageController: MainPageDataSourceDelegate {
         cellView: LessonCell?
     ) {
         guard lessonIsLocked == false else {
+            notificationsFeedbackGenerator.notificationOccurred(.error)
             cellView?.playImageView.shake()
             return
         }
@@ -117,6 +112,7 @@ extension MainPageController: MainPageDataSourceDelegate {
         navigationController.navigationBar.setTransparentAppearance()
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.transitioningDelegate = transitionManager
+        selectionFeedbackGenerator.selectionChanged()
         DispatchQueue.main.async { [weak self] in
             self?.present(navigationController, animated: true)
         }

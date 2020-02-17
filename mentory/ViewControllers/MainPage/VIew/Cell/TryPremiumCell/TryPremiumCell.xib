@@ -58,6 +58,7 @@
                     <constraint firstAttribute="bottom" secondItem="M1N-Ta-0qU" secondAttribute="bottom" constant="8" id="UaO-Q2-kBU"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" name="Black"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="subtitleLabel" destination="1Pk-Mb-Zmn" id="BHM-Wi-MkO"/>

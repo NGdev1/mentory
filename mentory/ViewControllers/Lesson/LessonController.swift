@@ -16,6 +16,9 @@ final class LessonController: UIViewController {
     var viewModel: LessonViewModel
     weak var delegate: MainPageControllerLogic?
 
+    private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+    private let notificationsFeedbackGenerator = UINotificationFeedbackGenerator()
+
     // MARK: - Init
 
     init(viewModel: LessonViewModel, delegate: MainPageControllerLogic) {
@@ -55,6 +58,7 @@ final class LessonController: UIViewController {
         let tapRecognizer = UITapGestureRecognizer(
             target: self, action: #selector(nextLesson)
         )
+        customView?.scrollView.delegate = self
         customView?.nextLessonCell?.contentView.addGestureRecognizer(tapRecognizer)
     }
 
@@ -70,17 +74,30 @@ final class LessonController: UIViewController {
     @objc func nextLesson() {
         guard let nextLesson = viewModel.nextLesson else { return }
         guard viewModel.nextLessonLocked == false else {
+            notificationsFeedbackGenerator.notificationOccurred(.error)
             customView?.nextLessonCell?.playImageView.shake()
             return
         }
-        customView?.scrollView.setContentOffset(.zero, animated: true)
+
         let result = delegate?.retrieveNextLesson(afrer: nextLesson)
         viewModel = LessonViewModel(
             lesson: nextLesson,
             nextLesson: result?.lesson,
             nextLessonLocked: result?.isLocked
         )
-        customView?.displayLesson(viewModel)
+        customView?.scrollView.setContentOffset(
+            CGPoint(x: 0, y: -LessonView.Appearance.headerHeight),
+            animated: false
+        )
+        selectionFeedbackGenerator.selectionChanged()
+        UIView.transition(
+            with: customView ?? UIView(),
+            duration: 0.4, options: .transitionCurlUp,
+            animations: { [weak self] in
+                guard let self = self else { return }
+                self.customView?.displayLesson(self.viewModel)
+            }, completion: nil
+        )
     }
 }
 
@@ -90,5 +107,16 @@ extension LessonController: ViewControllerImageBasedAnimatable {
     public var actingView: ViewImageBasedAnimatable? {
         // swiftlint:disable unused_setter_value
         get { return customView } set {}
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension LessonController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        customView?.updateHeaderWithScroll(
+            offset: scrollView.contentOffset,
+            navBarHeight: navigationController?.navigationBar.height ?? 0
+        )
     }
 }

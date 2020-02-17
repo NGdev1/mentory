@@ -42,6 +42,7 @@ public class PlayerController: UIViewController {
     private func setupPlayer() {
         guard let url = URL(
             string: "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+            // string: "https://www.myinstants.com/media/sounds/cade-o-respeito.mp3"
         ) else {
             return
         }
@@ -59,7 +60,7 @@ public class PlayerController: UIViewController {
     }
 
     private func setupAppearance() {
-        navigationItem.backBarButtonItem = customView?.barButtonItem
+        navigationItem.leftBarButtonItem = customView?.barButtonItem
         customView?.displayLesson(lesson)
     }
 
@@ -109,8 +110,10 @@ public class PlayerController: UIViewController {
     @objc func playButtonTapped(_ sender: UIButton) {
         if player?.isPlaying() == false {
             player?.play()
+            customView?.playButton.setBackgroundImage(Assets.pauseBig.image, for: .normal)
         } else {
             player?.pause()
+            customView?.playButton.setBackgroundImage(Assets.playBig.image, for: .normal)
         }
     }
 

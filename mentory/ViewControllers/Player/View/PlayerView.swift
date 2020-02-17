@@ -6,6 +6,7 @@
 //  Copyright © 2020 Михаил Андреичев. All rights reserved.
 //
 
+import Kingfisher
 import MDFoundation
 import UIKit
 
@@ -22,9 +23,9 @@ final class PlayerView: UIView {
         let button = UIButton()
         button.setBackgroundImage(Assets.backButton.image, for: .normal)
         button.snp.makeConstraints { make in
-            make.size.equalTo(32)
+            make.size.equalTo(28)
         }
-        button.cornerRadius = 16
+        button.cornerRadius = 14
         return button
     }()
 
@@ -43,7 +44,9 @@ final class PlayerView: UIView {
         setupStyle()
     }
 
-    private func setupStyle() {}
+    private func setupStyle() {
+        backgroundImageView.kf.indicatorType = .activity
+    }
 
     // MARK: - Internal methods
 
@@ -60,7 +63,9 @@ final class PlayerView: UIView {
     }
 
     func displayLesson(_ lesson: Lesson) {
-        backgroundImageView.image = lesson.backgroundImage
+        if let imageUrl = URL(string: lesson.backgroundImageUrl) {
+            backgroundImageView.kf.setImage(with: imageUrl)
+        }
         titleLabel.text = lesson.title
         subtitleLabel.text = lesson.subtitle
     }

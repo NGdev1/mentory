@@ -24,11 +24,11 @@ public enum Assets {
   public static let winterGreen = ColorAsset(name: "WinterGreen")
   public static let backButton = ImageAsset(name: "BackButton")
   public static let locked = ImageAsset(name: "Locked")
+  public static let pauseBig = ImageAsset(name: "PauseBig")
   public static let play = ImageAsset(name: "Play")
+  public static let playBig = ImageAsset(name: "PlayBig")
   public static let titleImage = ImageAsset(name: "TitleImage")
   public static let gradient = ImageAsset(name: "gradient")
-  public static let temp1 = ImageAsset(name: "temp1")
-  public static let temp2 = ImageAsset(name: "temp2")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

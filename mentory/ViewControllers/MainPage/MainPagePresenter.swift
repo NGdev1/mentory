@@ -19,7 +19,7 @@ class MainPagePresenter: MainPagePresentationLogic {
 
     func presentLessons(_ response: MainPageResponse) {
         var viewModels: [MainPageCellViewModel] = []
-        for lesson in response.introductoryLessons ?? [] {
+        for lesson in response.introLessons ?? [] {
             viewModels.append(
                 MainPageCellViewModel(
                     type: .lesson,

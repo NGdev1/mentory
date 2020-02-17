@@ -64,13 +64,6 @@ final class MP3Player: NSObject {
         }
     }
 
-    func stop() {
-        if isPlaying() == true {
-            // player?.stop()
-            // player?.currentTime = 0
-        }
-    }
-
     func pause() {
         if isPlaying() == true {
             player?.pause()

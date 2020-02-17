@@ -1,21 +1,21 @@
 PODS:
+  - Kingfisher (5.7.0)
   - MDFoundation (1.0.4):
     - MDFoundation/Source (= 1.0.4)
     - SnapKit (~> 5.0.0)
   - MDFoundation/Source (1.0.4):
     - SnapKit (~> 5.0.0)
   - SnapKit (5.0.1)
-  - SPAlert (2.1.1)
 
 DEPENDENCIES:
+  - Kingfisher (= 5.7.0)
   - MDFoundation (from `https://github.com/NGdev1/MDFoundation.git`, tag `1.0.4`)
   - SnapKit (~> 5.0.0)
-  - SPAlert (= 2.1.1)
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - SnapKit
-    - SPAlert
 
 EXTERNAL SOURCES:
   MDFoundation:
@@ -28,10 +28,10 @@ CHECKOUT OPTIONS:
     :tag: 1.0.4
 
 SPEC CHECKSUMS:
+  Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
   MDFoundation: e67f4e7aee0b6b238d35f463bfb1b5dc40b379b5
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SPAlert: 4ea95d93f3bc6b2df533559e7ff96ce378d2507e
 
-PODFILE CHECKSUM: 16cff0997a4a11c5c5c4b0de75715a7e574851b5
+PODFILE CHECKSUM: f50a8f7d8e45aecf24933448d7ebe49f22243bb1
 
 COCOAPODS: 1.8.3

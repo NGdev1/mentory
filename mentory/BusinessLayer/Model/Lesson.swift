@@ -14,30 +14,31 @@ public struct Lesson: Decodable {
         id: String,
         title: String,
         subtitle: String,
-        duration: Int,
-        backgroundImage: UIImage?,
-        backgroundImageUrl: String?
+        description: String,
+        backgroundImageUrl: String,
+        tracks: [Track]
     ) {
         self.id = id
         self.title = title
         self.subtitle = subtitle
-        self.duration = duration
-        self.backgroundImage = backgroundImage
+        self.description = description
         self.backgroundImageUrl = backgroundImageUrl
+        self.tracks = tracks
     }
 
-    var id: String
+    let id: String
     let title: String
     let subtitle: String
-    let duration: Int
-    var backgroundImage: UIImage?
-    var backgroundImageUrl: String?
+    let description: String
+    let backgroundImageUrl: String
+    let tracks: [Track]
 
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case subtitle
-        case duration
-        case backgroundImageUrl = "image"
+        case description
+        case backgroundImageUrl
+        case tracks
     }
 }

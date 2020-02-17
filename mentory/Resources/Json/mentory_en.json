@@ -1,0 +1,122 @@
+{
+    "introLessons": [
+        {
+            "id": "1",
+            "title": "Intro",
+            "subtitle": "INTRODUCTION LESSON",
+            "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
+            "backgroundImageUrl": "http://italia-ru.com/files/david1.jpg",
+            "tracks": [
+                {
+                    "id": "1",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                },
+                {
+                    "id": "2",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                },
+                {
+                    "id": "3",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                }
+            ]
+        }
+    ],
+    "lessons": [
+        {
+            "id": "2",
+            "title": "Creativity",
+            "subtitle": "LESSON 1",
+            "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
+            "backgroundImageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
+            "tracks": [
+                {
+                    "id": "1",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "ADalksdaksd",
+            "subtitle": "LESSON 2",
+            "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
+            "backgroundImageUrl": "http://italia-ru.com/files/david1.jpg",
+            "tracks": [
+                {
+                    "id": "1",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                }
+            ]
+        }
+    ],
+    "premiumLessons": [
+        {
+            "id": "4",
+            "title": "Premium lesson",
+            "subtitle": "LESSON 3",
+            "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
+            "backgroundImageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
+            "tracks": [
+                {
+                    "id": "1",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "title": "Premium other lesson",
+            "subtitle": "LESSON 4",
+            "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
+            "backgroundImageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
+            "tracks": [
+                {
+                    "id": "1",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "title": "More lessons",
+            "subtitle": "LESSON 5",
+            "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
+            "backgroundImageUrl": "http://italia-ru.com/files/david1.jpg",
+            "tracks": [
+                {
+                    "id": "1",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                },
+                {
+                    "id": "2",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                },
+                {
+                    "id": "3",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "link to mp3"
+                }
+            ]
+        }
+    ]
+}

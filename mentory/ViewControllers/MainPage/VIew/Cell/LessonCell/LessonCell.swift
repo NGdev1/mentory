@@ -6,6 +6,7 @@
 //  Copyright © 2020 Михаил Андреичев. All rights reserved.
 //
 
+import Kingfisher
 import UIKit
 
 class LessonCell: UITableViewCell {
@@ -25,6 +26,7 @@ class LessonCell: UITableViewCell {
 
     private func setupStyle() {
         separatorInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width, bottom: 0, right: 0)
+        backgroundImageView.kf.indicatorType = .activity
         selectionStyle = .none
     }
 
@@ -32,8 +34,16 @@ class LessonCell: UITableViewCell {
 
     func configure(with lesson: Lesson, isLocked: Bool) {
         titleLabel.text = lesson.title
-        subtitleLabel.text = lesson.subtitle
-        backgroundImageView.image = lesson.backgroundImage
+        if lesson.tracks.count == 1 {
+            subtitleLabel.text = Text.Lesson.subtitleOneTrack(lesson.subtitle)
+        } else if lesson.tracks.count < 5 {
+            subtitleLabel.text = Text.Lesson.subtitle2to4Tracks(lesson.subtitle, lesson.tracks.count)
+        } else {
+            subtitleLabel.text = Text.Lesson.subtitleFrom5Tracks(lesson.subtitle, lesson.tracks.count)
+        }
+        if let imageUrl = URL(string: lesson.backgroundImageUrl) {
+            backgroundImageView.kf.setImage(with: imageUrl)
+        }
         if isLocked {
             playImageView.image = Assets.locked.image
         } else {

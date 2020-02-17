@@ -128,14 +128,14 @@ extension MainPageDataSource: UITableViewDataSource {
 extension MainPageDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let item = data?[indexPath.row] else {
-            return 155
+            return 165
         }
 
         switch item.type {
         case .title, .buyFull:
             return UITableView.automaticDimension
         case .lesson:
-            return 155
+            return 165
         }
     }
 

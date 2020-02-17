@@ -30,3 +30,9 @@ Errors.NetworkError = "Ошибка сети";
 Errors.RemoteError = "Ошибка сервера";
 Errors.RequestError = "Ошибка запроса";
 
+Lesson.NextLesson = "Следующий урок";
+Lesson.Listen = "Слушать";
+Lesson.SubtitleOneTrack = "%@ ∙ Аудиозапись";
+Lesson.Subtitle2to4Tracks = "%@ ∙ %d аудиозаписи";
+Lesson.SubtitleFrom5Tracks = "%@ ∙ %d аудиозаписей";
+
