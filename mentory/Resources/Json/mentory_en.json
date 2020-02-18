@@ -11,19 +11,19 @@
                     "id": "1",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 },
                 {
                     "id": "2",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 },
                 {
                     "id": "3",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 }
             ]
         }
@@ -40,7 +40,7 @@
                     "id": "1",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 }
             ]
         },
@@ -55,7 +55,7 @@
                     "id": "1",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 }
             ]
         }
@@ -72,7 +72,7 @@
                     "id": "1",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 }
             ]
         },
@@ -87,7 +87,7 @@
                     "id": "1",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 }
             ]
         },
@@ -102,19 +102,19 @@
                     "id": "1",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 },
                 {
                     "id": "2",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 },
                 {
                     "id": "3",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "link to mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 }
             ]
         }

@@ -6,88 +6,83 @@
 //  Copyright © 2020 Михаил Андреичев. All rights reserved.
 //
 
-import AVFoundation
-import MediaPlayer
+import Foundation
+import SwiftAudio
+
+protocol MP3PlayerDelegate: AnyObject {
+    func progressUpdated(_ value: Float)
+}
 
 final class MP3Player: NSObject {
     // MARK: - Properties
 
-    var player: AVPlayer?
+    var player: QueuedAudioPlayer
+    let controller = RemoteCommandController()
+    weak var delegate: MP3PlayerDelegate?
 
     // MARK: - Init
 
-    init(url: URL) {
-        self.player = AVPlayer(url: url)
+    init(tracks: [Track], current: Int) {
+        self.player = QueuedAudioPlayer(remoteCommandController: controller)
         super.init()
         setupAVAudioSession()
+        var items: [DefaultAudioItem] = []
+        for track in tracks {
+            let audioItem = DefaultAudioItem(audioUrl: track.url, sourceType: .stream)
+            items.append(audioItem)
+        }
+        player.automaticallyWaitsToMinimizeStalling = true
+        try? player.add(items: items, playWhenReady: false)
+        try? player.jumpToItem(atIndex: current, playWhenReady: false)
+        player.remoteCommands = [
+            .play,
+            .pause,
+            .skipForward(preferredIntervals: [3]),
+            .skipBackward(preferredIntervals: [3]),
+        ]
+        player.bufferDuration = 1
+        player.event.secondElapse.addListener(self, handleAudioPlayerSecondElapsed)
     }
 
     private func setupAVAudioSession() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            try AVAudioSession.sharedInstance().setActive(true)
-            debugPrint("AVAudioSession is Active and Category Playback is set")
-            UIApplication.shared.beginReceivingRemoteControlEvents()
-            setupCommandCenter()
+            try AudioSessionController.shared.set(category: .playback)
+            try AudioSessionController.shared.activateSession()
         } catch {
             debugPrint("Error: \(error)")
-        }
-    }
-
-    private func setupCommandCenter() {
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: "Mentory"]
-
-        let commandCenter = MPRemoteCommandCenter.shared()
-        commandCenter.playCommand.isEnabled = true
-        commandCenter.pauseCommand.isEnabled = true
-        commandCenter.seekForwardCommand.isEnabled = true
-        commandCenter.seekBackwardCommand.isEnabled = true
-        commandCenter.playCommand.addTarget { [weak self] _ in
-            self?.player?.play()
-            return .success
-        }
-        commandCenter.pauseCommand.addTarget { [weak self] _ in
-            self?.player?.pause()
-            return .success
         }
     }
 
     // MARK: - Internal methods
 
     func isPlaying() -> Bool {
-        return (player?.rate != 0)
+        return player.playerState == .playing
     }
 
     func play() {
         if isPlaying() == false {
-            player?.play()
+            player.play()
         }
     }
 
     func pause() {
         if isPlaying() == true {
-            player?.pause()
+            player.pause()
         }
     }
 
-    func isLoading() -> Bool {
-        return (player?.currentItem?.isPlaybackLikelyToKeepUp == false)
+    func handleAudioPlayerSecondElapsed(data: AudioPlayer.SecondElapseEventData) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.delegate?.progressUpdated(self.getProgress())
+        }
     }
 
     func setProgress(_ progress: Float) {
-        guard let cmDuration: CMTime = player?.currentItem?.asset.duration
-        else { return }
-        let duration = CMTimeGetSeconds(cmDuration)
-        let newTime: CMTime = CMTimeMake(value: Int64(duration * Double(progress)), timescale: 1)
-        player?.seek(to: newTime)
+        player.seek(to: player.duration * Double(progress))
     }
 
     func getProgress() -> Float {
-        guard let cmDuration: CMTime = player?.currentItem?.asset.duration,
-            let cmCurrentTime: CMTime = player?.currentTime()
-        else { return 0 }
-        let time = CMTimeGetSeconds(cmCurrentTime)
-        let duration = CMTimeGetSeconds(cmDuration)
-        return Float(time / duration)
+        return Float(player.currentTime / player.duration)
     }
 }

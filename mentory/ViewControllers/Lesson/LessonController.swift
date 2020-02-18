@@ -40,6 +40,12 @@ final class LessonController: UIViewController {
         extendedLayoutIncludesOpaqueBars = true
         customView?.displayLesson(viewModel)
         navigationItem.leftBarButtonItem = customView?.barButtonItem
+        customView?.initDataSource(
+            with: viewModel.lesson,
+            nextLesson: viewModel.nextLesson,
+            nextLessonIsLocked: viewModel.nextLessonLocked == true
+        )
+        customView?.dataSource?.delegate = self
     }
 
     // MARK: - Action handlers
@@ -55,11 +61,6 @@ final class LessonController: UIViewController {
             action: #selector(play),
             for: .touchUpInside
         )
-        let tapRecognizer = UITapGestureRecognizer(
-            target: self, action: #selector(nextLesson)
-        )
-        customView?.scrollView.delegate = self
-        customView?.nextLessonCell?.contentView.addGestureRecognizer(tapRecognizer)
     }
 
     @objc func dismissController() {
@@ -67,37 +68,9 @@ final class LessonController: UIViewController {
     }
 
     @objc func play() {
-        let nextController = PlayerController(lesson: viewModel.lesson)
+        guard viewModel.lesson.tracks.isEmpty == false else { return }
+        let nextController = PlayerController(lesson: viewModel.lesson, startIndex: 0)
         navigationController?.pushViewController(nextController)
-    }
-
-    @objc func nextLesson() {
-        guard let nextLesson = viewModel.nextLesson else { return }
-        guard viewModel.nextLessonLocked == false else {
-            notificationsFeedbackGenerator.notificationOccurred(.error)
-            customView?.nextLessonCell?.playImageView.shake()
-            return
-        }
-
-        let result = delegate?.retrieveNextLesson(afrer: nextLesson)
-        viewModel = LessonViewModel(
-            lesson: nextLesson,
-            nextLesson: result?.lesson,
-            nextLessonLocked: result?.isLocked
-        )
-        customView?.scrollView.setContentOffset(
-            CGPoint(x: 0, y: -LessonView.Appearance.headerHeight),
-            animated: false
-        )
-        selectionFeedbackGenerator.selectionChanged()
-        UIView.transition(
-            with: customView ?? UIView(),
-            duration: 0.4, options: .transitionCurlUp,
-            animations: { [weak self] in
-                guard let self = self else { return }
-                self.customView?.displayLesson(self.viewModel)
-            }, completion: nil
-        )
     }
 }
 
@@ -112,11 +85,39 @@ extension LessonController: ViewControllerImageBasedAnimatable {
 
 // MARK: - UIScrollViewDelegate
 
-extension LessonController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+extension LessonController: LessonViewDataSourceDelegate {
+    func didScroll(offset: CGFloat) {
         customView?.updateHeaderWithScroll(
-            offset: scrollView.contentOffset,
+            offset: offset,
             navBarHeight: navigationController?.navigationBar.height ?? 0
+        )
+    }
+
+    func playTrack(with index: Int) {
+        let nextController = PlayerController(lesson: viewModel.lesson, startIndex: index)
+        navigationController?.pushViewController(nextController)
+    }
+
+    func nextLesson() {
+        guard let nextLesson = viewModel.nextLesson else { return }
+        let result = delegate?.retrieveNextLesson(afrer: nextLesson)
+        viewModel = LessonViewModel(
+            lesson: nextLesson,
+            nextLesson: result?.lesson,
+            nextLessonLocked: result?.isLocked
+        )
+        customView?.tableView.setContentOffset(
+            CGPoint(x: 0, y: -LessonView.Appearance.headerHeight),
+            animated: false
+        )
+        selectionFeedbackGenerator.selectionChanged()
+        UIView.transition(
+            with: customView ?? UIView(),
+            duration: 0.4, options: .transitionCurlUp,
+            animations: { [weak self] in
+                guard let self = self else { return }
+                self.customView?.displayLesson(self.viewModel)
+            }, completion: nil
         )
     }
 }

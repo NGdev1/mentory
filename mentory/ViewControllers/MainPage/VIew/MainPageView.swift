@@ -18,7 +18,7 @@ final class MainPageView: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: frame, style: .plain)
         tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = 50
+        tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableView.automaticDimension
         tableView.keyboardDismissMode = .interactive
         tableView.showsVerticalScrollIndicator = false

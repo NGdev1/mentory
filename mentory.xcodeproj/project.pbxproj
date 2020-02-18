@@ -27,10 +27,17 @@
 		6B7A518523EE3BCE009D3047 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A518023EE3BCE009D3047 /* PlayerController.swift */; };
 		6B7A518723EE3BCE009D3047 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A518223EE3BCE009D3047 /* PlayerView.swift */; };
 		6B7A518823EE3BCE009D3047 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7A518323EE3BCE009D3047 /* PlayerView.xib */; };
+		6B7D9D6823FAE521003F7B45 /* NextLessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D9D6623FAE521003F7B45 /* NextLessonCell.swift */; };
+		6B7D9D6923FAE521003F7B45 /* NextLessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7D9D6723FAE521003F7B45 /* NextLessonCell.xib */; };
+		6B7D9D6B23FAE92F003F7B45 /* LessonViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D9D6A23FAE92F003F7B45 /* LessonViewDataSource.swift */; };
 		6BA09A7823FA90FC00C95B08 /* mentory_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BA09A7723FA90FC00C95B08 /* mentory_ru.json */; };
 		6BA09A7B23FA95A700C95B08 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA09A7A23FA95A700C95B08 /* DataManager.swift */; };
 		6BA09A7D23FAA10C00C95B08 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA09A7C23FAA10C00C95B08 /* Track.swift */; };
 		6BA848F823FAB2AC00C6DDEB /* MDHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA848F723FAB2AC00C6DDEB /* MDHeaderView.swift */; };
+		6BA848FC23FAE26D00C6DDEB /* LessonHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA848FA23FAE26D00C6DDEB /* LessonHeaderCell.swift */; };
+		6BA848FD23FAE26D00C6DDEB /* LessonHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA848FB23FAE26D00C6DDEB /* LessonHeaderCell.xib */; };
+		6BA8490323FAE2D000C6DDEB /* AudioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8490123FAE2D000C6DDEB /* AudioCell.swift */; };
+		6BA8490423FAE2D000C6DDEB /* AudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BA8490223FAE2D000C6DDEB /* AudioCell.xib */; };
 		6BAB96F823EDA9B400354E39 /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB96EF23EDA9B400354E39 /* SwipeInteractionController.swift */; };
 		6BAB96F923EDA9B400354E39 /* ViewImageBasedAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB96F223EDA9B400354E39 /* ViewImageBasedAnimatable.swift */; };
 		6BAB96FA23EDA9B400354E39 /* ImagePopAnimatedTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB96F423EDA9B400354E39 /* ImagePopAnimatedTransition.swift */; };
@@ -80,11 +87,18 @@
 		6B7A518023EE3BCE009D3047 /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 		6B7A518223EE3BCE009D3047 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		6B7A518323EE3BCE009D3047 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		6B7D9D6623FAE521003F7B45 /* NextLessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextLessonCell.swift; sourceTree = "<group>"; };
+		6B7D9D6723FAE521003F7B45 /* NextLessonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextLessonCell.xib; sourceTree = "<group>"; };
+		6B7D9D6A23FAE92F003F7B45 /* LessonViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewDataSource.swift; sourceTree = "<group>"; };
 		6B95CCA523F3497300BE1A17 /* Mentory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mentory.entitlements; sourceTree = "<group>"; };
 		6BA09A7723FA90FC00C95B08 /* mentory_ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mentory_ru.json; sourceTree = "<group>"; };
 		6BA09A7A23FA95A700C95B08 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		6BA09A7C23FAA10C00C95B08 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		6BA848F723FAB2AC00C6DDEB /* MDHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDHeaderView.swift; sourceTree = "<group>"; };
+		6BA848FA23FAE26D00C6DDEB /* LessonHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonHeaderCell.swift; sourceTree = "<group>"; };
+		6BA848FB23FAE26D00C6DDEB /* LessonHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonHeaderCell.xib; sourceTree = "<group>"; };
+		6BA8490123FAE2D000C6DDEB /* AudioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCell.swift; sourceTree = "<group>"; };
+		6BA8490223FAE2D000C6DDEB /* AudioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioCell.xib; sourceTree = "<group>"; };
 		6BAB96EF23EDA9B400354E39 /* SwipeInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
 		6BAB96F223EDA9B400354E39 /* ViewImageBasedAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewImageBasedAnimatable.swift; sourceTree = "<group>"; };
 		6BAB96F423EDA9B400354E39 /* ImagePopAnimatedTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePopAnimatedTransition.swift; sourceTree = "<group>"; };
@@ -276,6 +290,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6B7D9D6523FAE50C003F7B45 /* NextLessonCell */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D9D6623FAE521003F7B45 /* NextLessonCell.swift */,
+				6B7D9D6723FAE521003F7B45 /* NextLessonCell.xib */,
+			);
+			path = NextLessonCell;
+			sourceTree = "<group>";
+		};
 		6B81D5B423ED67A000EC2F89 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +342,34 @@
 				6BA848F723FAB2AC00C6DDEB /* MDHeaderView.swift */,
 			);
 			path = MDHeaderView;
+			sourceTree = "<group>";
+		};
+		6BA848F923FAE24900C6DDEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D9D6523FAE50C003F7B45 /* NextLessonCell */,
+				6BA8490023FAE29C00C6DDEB /* AudioCell */,
+				6BA848FF23FAE27A00C6DDEB /* LessonHeaderCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6BA848FF23FAE27A00C6DDEB /* LessonHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				6BA848FA23FAE26D00C6DDEB /* LessonHeaderCell.swift */,
+				6BA848FB23FAE26D00C6DDEB /* LessonHeaderCell.xib */,
+			);
+			path = LessonHeaderCell;
+			sourceTree = "<group>";
+		};
+		6BA8490023FAE29C00C6DDEB /* AudioCell */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8490123FAE2D000C6DDEB /* AudioCell.swift */,
+				6BA8490223FAE2D000C6DDEB /* AudioCell.xib */,
+			);
+			path = AudioCell;
 			sourceTree = "<group>";
 		};
 		6BAB96EE23EDA96A00354E39 /* Transitions */ = {
@@ -381,7 +432,9 @@
 			isa = PBXGroup;
 			children = (
 				6BC24FB223EDA5E70054C8B9 /* LessonView.swift */,
+				6B7D9D6A23FAE92F003F7B45 /* LessonViewDataSource.swift */,
 				6BC24FB323EDA5E70054C8B9 /* LessonView.xib */,
+				6BA848F923FAE24900C6DDEB /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -519,13 +572,16 @@
 			files = (
 				6BC24FAD23ED945B0054C8B9 /* TryPremiumCell.xib in Resources */,
 				6BA09A7823FA90FC00C95B08 /* mentory_ru.json in Resources */,
+				6BA848FD23FAE26D00C6DDEB /* LessonHeaderCell.xib in Resources */,
 				6B65852423ED54AC004016BA /* LaunchScreen.storyboard in Resources */,
 				6B7A518823EE3BCE009D3047 /* PlayerView.xib in Resources */,
 				6B032CF923ED770400662BF5 /* LessonCell.xib in Resources */,
 				6BE5A91323ED8B66005D65CC /* TitleCell.xib in Resources */,
 				6B65851F23ED5494004016BA /* Localizable.strings in Resources */,
+				6B7D9D6923FAE521003F7B45 /* NextLessonCell.xib in Resources */,
 				6B65852923ED5560004016BA /* README.md in Resources */,
 				6BC24FB823EDA5E70054C8B9 /* LessonView.xib in Resources */,
+				6BA8490423FAE2D000C6DDEB /* AudioCell.xib in Resources */,
 				6BC8872923EB63340046E598 /* Assets.xcassets in Resources */,
 				6BE1B5E023FAAC730052A860 /* mentory_en.json in Resources */,
 			);
@@ -646,11 +702,15 @@
 				6BE5A91223ED8B66005D65CC /* TitleCell.swift in Sources */,
 				6BE5A91523ED8F00005D65CC /* MainPageModels.swift in Sources */,
 				6B65851823ED53B3004016BA /* MainPageServiceMock.swift in Sources */,
+				6B7D9D6B23FAE92F003F7B45 /* LessonViewDataSource.swift in Sources */,
+				6B7D9D6823FAE521003F7B45 /* NextLessonCell.swift in Sources */,
 				6BA09A7D23FAA10C00C95B08 /* Track.swift in Sources */,
 				6BAB96F923EDA9B400354E39 /* ViewImageBasedAnimatable.swift in Sources */,
 				6BAB96F823EDA9B400354E39 /* SwipeInteractionController.swift in Sources */,
 				6B7A518523EE3BCE009D3047 /* PlayerController.swift in Sources */,
+				6BA848FC23FAE26D00C6DDEB /* LessonHeaderCell.swift in Sources */,
 				6B032CE923ED6D8A00662BF5 /* ExtensionUINavigationBar.swift in Sources */,
+				6BA8490323FAE2D000C6DDEB /* AudioCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,20 +851,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = NXAGVF2MTG;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = HY59K9S4C6;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.md.mentory;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
 				PRODUCT_NAME = Mentory;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Distribution)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -816,20 +876,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = NXAGVF2MTG;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = HY59K9S4C6;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.md.mentory;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
 				PRODUCT_NAME = Mentory;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Distribution)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

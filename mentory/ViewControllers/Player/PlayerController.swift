@@ -13,25 +13,22 @@ import UIKit
 public class PlayerController: UIViewController {
     // MARK: - Properties
 
-    var player: MP3Player?
-    var timer: Timer?
+    lazy var player: MP3Player = MP3Player(tracks: lesson.tracks, current: currentIndex)
 
     lazy var customView: PlayerView? = view as? PlayerView
     var lesson: Lesson
-
-    var userChangingProgress: Bool = false
+    var currentIndex: Int
 
     // MARK: - Init
 
-    public init(lesson: Lesson) {
+    public init(lesson: Lesson, startIndex: Int) {
         self.lesson = lesson
+        self.currentIndex = startIndex
         super.init(
             nibName: Utils.getClassName(PlayerView.self),
             bundle: Bundle(for: PlayerView.self)
         )
         setupAppearance()
-        setupPlayer()
-        setupTimer()
         addActionHandlers()
     }
 
@@ -39,29 +36,9 @@ public class PlayerController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupPlayer() {
-        guard let url = URL(
-            string: "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
-            // string: "https://www.myinstants.com/media/sounds/cade-o-respeito.mp3"
-        ) else {
-            return
-        }
-        player = MP3Player(url: url)
-    }
-
-    private func setupTimer() {
-        timer = Timer.scheduledTimer(
-            timeInterval: 1,
-            target: self,
-            selector: #selector(updateProgress),
-            userInfo: nil,
-            repeats: true
-        )
-    }
-
     private func setupAppearance() {
         navigationItem.leftBarButtonItem = customView?.barButtonItem
-        customView?.displayLesson(lesson)
+        customView?.displayTrack(lesson: lesson, track: lesson.tracks[currentIndex])
     }
 
     // MARK: - Action handlers
@@ -82,37 +59,22 @@ public class PlayerController: UIViewController {
             action: #selector(sliderValueChanged(slider:event:)),
             for: .valueChanged
         )
-    }
-
-    @objc func updateProgress() {
-        guard userChangingProgress == false else {
-            return
-        }
-        let progress = player?.getProgress() ?? 0.0
-        if player?.isLoading() ?? true {
-            customView?.showMusicIsLoading()
-        } else {
-            customView?.musicLoadingFinished()
-        }
-        customView?.showProgress(progress)
+        player.delegate = customView
     }
 
     @objc func sliderValueChanged(slider: UISlider, event: UIEvent) {
         guard let touchEvent = event.allTouches?.first else { return }
         if touchEvent.phase == .ended {
-            userChangingProgress = false
-            player?.setProgress(customView?.progressSlider.value ?? 0)
-        } else {
-            userChangingProgress = true
+            player.setProgress(customView?.progressSlider.value ?? 0)
         }
     }
 
     @objc func playButtonTapped(_ sender: UIButton) {
-        if player?.isPlaying() == false {
-            player?.play()
+        if player.isPlaying() == false {
+            player.play()
             customView?.playButton.setBackgroundImage(Assets.pauseBig.image, for: .normal)
         } else {
-            player?.pause()
+            player.pause()
             customView?.playButton.setBackgroundImage(Assets.playBig.image, for: .normal)
         }
     }

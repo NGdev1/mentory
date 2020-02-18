@@ -35,4 +35,3 @@ Lesson.Listen = "Слушать";
 Lesson.SubtitleOneTrack = "%@ ∙ Аудиозапись";
 Lesson.Subtitle2to4Tracks = "%@ ∙ %d аудиозаписи";
 Lesson.SubtitleFrom5Tracks = "%@ ∙ %d аудиозаписей";
-

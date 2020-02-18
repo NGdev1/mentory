@@ -62,11 +62,21 @@ final class PlayerView: UIView {
         progressSlider.value = pregress
     }
 
-    func displayLesson(_ lesson: Lesson) {
+    func displayTrack(lesson: Lesson, track: Track) {
         if let imageUrl = URL(string: lesson.backgroundImageUrl) {
             backgroundImageView.kf.setImage(with: imageUrl)
         }
-        titleLabel.text = lesson.title
-        subtitleLabel.text = lesson.subtitle
+        titleLabel.text = track.title
+        subtitleLabel.text = track.subtitle
+    }
+}
+
+// MARK: - MP3PlayerDelegate
+
+extension PlayerView: MP3PlayerDelegate {
+    func progressUpdated(_ value: Float) {
+        if progressSlider.isTracking == false {
+            showProgress(value)
+        }
     }
 }
