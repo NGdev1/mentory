@@ -31,7 +31,7 @@ Errors.RemoteError = "Ошибка сервера";
 Errors.RequestError = "Ошибка запроса";
 
 Lesson.NextLesson = "Следующий урок";
-Lesson.Listen = "Слушать";
+Lesson.Listen = "Начать слушать";
 Lesson.SubtitleOneTrack = "%@ ∙ АУДИОЗАПИСЬ";
 Lesson.Subtitle2to4Tracks = "%@ ∙ %d АУДИОЗАПИСИ";
 Lesson.SubtitleFrom5Tracks = "%@ ∙ %d АУДИОЗАПИСЕЙ";

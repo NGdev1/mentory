@@ -13,11 +13,17 @@ import UIKit
 final class PlayerView: UIView {
     // MARK: - Properties
 
+    @IBOutlet var trackNameLabel: UILabel!
+    @IBOutlet var trackSubtitleLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var playButton: UIButton!
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var progressSlider: UISlider!
+
+    @IBOutlet var backwardButton: UIButton!
+    @IBOutlet var playSmallButton: UIButton!
+    @IBOutlet var forwardButton: UIButton!
 
     lazy var backButton: UIButton = {
         let button = UIButton()
@@ -66,8 +72,32 @@ final class PlayerView: UIView {
         if let imageUrl = URL(string: lesson.backgroundImageUrl) {
             backgroundImageView.kf.setImage(with: imageUrl)
         }
-        titleLabel.text = track.title
-        subtitleLabel.text = track.subtitle
+        titleLabel.text = lesson.title
+        subtitleLabel.text = lesson.subtitle
+        trackNameLabel.text = track.title
+        trackSubtitleLabel.text = track.subtitle
+    }
+
+    func updateAppearance(backwardActive: Bool, isPlaying: Bool, forwardActive: Bool) {
+        if backwardActive {
+            backwardButton.setBackgroundImage(Assets.iconBackward.image, for: .normal)
+        } else {
+            backwardButton.setBackgroundImage(Assets.iconBackwardUnactive.image, for: .normal)
+        }
+
+        if forwardActive {
+            forwardButton.setBackgroundImage(Assets.iconForward.image, for: .normal)
+        } else {
+            forwardButton.setBackgroundImage(Assets.iconForwardUnactive.image, for: .normal)
+        }
+
+        if isPlaying {
+            playButton.setBackgroundImage(Assets.pauseBig.image, for: .normal)
+            playSmallButton.setBackgroundImage(Assets.iconPause.image, for: .normal)
+        } else {
+            playButton.setBackgroundImage(Assets.playBig.image, for: .normal)
+            playSmallButton.setBackgroundImage(Assets.iconPlay.image, for: .normal)
+        }
     }
 }
 

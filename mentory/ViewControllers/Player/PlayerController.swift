@@ -38,7 +38,7 @@ public class PlayerController: UIViewController {
 
     private func setupAppearance() {
         navigationItem.leftBarButtonItem = customView?.barButtonItem
-        customView?.displayTrack(lesson: lesson, track: lesson.tracks[currentIndex])
+        updatePlayerAppearance(isPlaying: true)
     }
 
     // MARK: - Action handlers
@@ -47,6 +47,21 @@ public class PlayerController: UIViewController {
         customView?.playButton.addTarget(
             self,
             action: #selector(playButtonTapped(_:)),
+            for: .touchUpInside
+        )
+        customView?.playSmallButton.addTarget(
+            self,
+            action: #selector(playButtonTapped(_:)),
+            for: .touchUpInside
+        )
+        customView?.forwardButton.addTarget(
+            self,
+            action: #selector(nextTrackTapped(_:)),
+            for: .touchUpInside
+        )
+        customView?.backwardButton.addTarget(
+            self,
+            action: #selector(previousTrackTapped(_:)),
             for: .touchUpInside
         )
         customView?.backButton.addTarget(
@@ -69,17 +84,41 @@ public class PlayerController: UIViewController {
         }
     }
 
+    @objc func previousTrackTapped(_ sender: UIButton) {
+        guard currentIndex != 0 else { return }
+        currentIndex -= 1
+        player.previousTrack()
+        updatePlayerAppearance(isPlaying: true)
+    }
+
+    @objc func nextTrackTapped(_ sender: UIButton) {
+        guard currentIndex != lesson.tracks.count - 1 else { return }
+        currentIndex += 1
+        player.nextTrack()
+        updatePlayerAppearance(isPlaying: true)
+    }
+
     @objc func playButtonTapped(_ sender: UIButton) {
         if player.isPlaying() == false {
             player.play()
-            customView?.playButton.setBackgroundImage(Assets.pauseBig.image, for: .normal)
+            updatePlayerAppearance(isPlaying: true)
         } else {
             player.pause()
-            customView?.playButton.setBackgroundImage(Assets.playBig.image, for: .normal)
+            updatePlayerAppearance(isPlaying: false)
         }
     }
 
+    private func updatePlayerAppearance(isPlaying: Bool) {
+        customView?.displayTrack(lesson: lesson, track: lesson.tracks[currentIndex])
+        customView?.updateAppearance(
+            backwardActive: currentIndex != 0,
+            isPlaying: isPlaying,
+            forwardActive: currentIndex != lesson.tracks.count - 1
+        )
+    }
+
     @objc func dismissController() {
+        player.stop()
         navigationController?.popViewController()
     }
 }

@@ -59,6 +59,7 @@ final class LessonView: UIView {
         Appearance.headerHeight += safeAreaInsets.top
         frame = UIScreen.main.bounds
         playButton.setTitle(Text.Lesson.listen, for: .normal)
+        playButton.addShadow(ofColor: .black, radius: 20, opacity: 0.5)
         headerHeight.constant = Appearance.headerHeight
         headerView.addShadow(ofColor: .black)
     }

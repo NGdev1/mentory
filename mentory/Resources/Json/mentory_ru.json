@@ -11,7 +11,7 @@
                     "id": "1",
                     "title": "Название аудио",
                     "subtitle": "ПОДПИСЬ",
-                    "url": "https://p.scdn.co/mp3-preview/67b51d90ffddd6bb3f095059997021b589845f81?cid=d8a5ed958d274c2e8ee717e6a4b0971d"
+                    "url": "http://keepfreemusic.com/60s.m3u"
                 },
                 {
                     "id": "2",
@@ -21,9 +21,9 @@
                 },
                 {
                     "id": "3",
-                    "title": "Цой",
-                    "subtitle": "ПОДПИСЬ",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "title": "Музыка какая то",
+                    "subtitle": "ПОДПИСЬ 1231 123 SADASDASD",
+                    "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false"
                 }
             ]
         }
@@ -72,7 +72,7 @@
                     "id": "1",
                     "title": "Название аудио",
                     "subtitle": "ПОДПИСЬ",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false"
                 }
             ]
         },
@@ -87,7 +87,7 @@
                     "id": "1",
                     "title": "Название аудио",
                     "subtitle": "ПОДПИСЬ",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "http://keepfreemusic.com/60s.m3u"
                 }
             ]
         },
@@ -102,7 +102,7 @@
                     "id": "1",
                     "title": "Название аудио",
                     "subtitle": "ПОДПИСЬ",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false"
                 },
                 {
                     "id": "2",
@@ -114,7 +114,7 @@
                     "id": "3",
                     "title": "Название аудио",
                     "subtitle": "ПОДПИСЬ",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false"
                 }
             ]
         }

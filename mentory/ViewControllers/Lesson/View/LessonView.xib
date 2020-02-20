@@ -23,14 +23,15 @@
                     <rect key="frame" x="0.0" y="0.0" width="289" height="769"/>
                     <color key="backgroundColor" name="Black"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkq-Wm-z4e">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkq-Wm-z4e">
                     <rect key="frame" x="16" y="701" width="257" height="48"/>
                     <color key="backgroundColor" name="WinterGreen"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="gPp-I0-fG9"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                    <state key="normal" title="Listen">
+                    <color key="tintColor" name="Black"/>
+                    <state key="normal" title=" Listen" image="PlayButtonIcon">
                         <color key="titleColor" name="Black"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -71,6 +72,7 @@
         </view>
     </objects>
     <resources>
+        <image name="PlayButtonIcon" width="25" height="22"/>
         <namedColor name="Black">
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

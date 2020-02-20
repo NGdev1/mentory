@@ -54,19 +54,19 @@ public enum Text {
   }
 
   public enum Lesson {
-    /// Слушать
+    ///    Начать слушать
     public static let listen = Text.tr("Localizable", "Lesson.Listen")
     /// Следующий урок
     public static let nextLesson = Text.tr("Localizable", "Lesson.NextLesson")
-    /// %@ ∙ %d аудиозаписи
+    /// %@ ∙ %d АУДИОЗАПИСИ
     public static func subtitle2to4Tracks(_ p1: String, _ p2: Int) -> String {
       return Text.tr("Localizable", "Lesson.Subtitle2to4Tracks", p1, p2)
     }
-    /// %@ ∙ %d аудиозаписей
+    /// %@ ∙ %d АУДИОЗАПИСЕЙ
     public static func subtitleFrom5Tracks(_ p1: String, _ p2: Int) -> String {
       return Text.tr("Localizable", "Lesson.SubtitleFrom5Tracks", p1, p2)
     }
-    /// %@ ∙ Аудиозапись
+    /// %@ ∙ АУДИОЗАПИСЬ
     public static func subtitleOneTrack(_ p1: String) -> String {
       return Text.tr("Localizable", "Lesson.SubtitleOneTrack", p1)
     }

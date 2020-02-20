@@ -32,8 +32,8 @@ final class MP3Player: NSObject {
             items.append(audioItem)
         }
         player.automaticallyWaitsToMinimizeStalling = true
-        try? player.add(items: items, playWhenReady: false)
-        try? player.jumpToItem(atIndex: current, playWhenReady: false)
+        try? player.add(items: items)
+        try? player.jumpToItem(atIndex: current)
         player.remoteCommands = [
             .play,
             .pause,
@@ -59,10 +59,22 @@ final class MP3Player: NSObject {
         return player.playerState == .playing
     }
 
+    func nextTrack() {
+        try? player.next()
+    }
+
+    func previousTrack() {
+        try? player.previous()
+    }
+
     func play() {
         if isPlaying() == false {
             player.play()
         }
+    }
+
+    func stop() {
+        player.stop()
     }
 
     func pause() {

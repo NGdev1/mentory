@@ -20,6 +20,7 @@
 public enum Assets {
   public static let black = ColorAsset(name: "Black")
   public static let title = ColorAsset(name: "Title")
+  public static let unactive = ColorAsset(name: "Unactive")
   public static let warmGrey = ColorAsset(name: "WarmGrey")
   public static let winterGreen = ColorAsset(name: "WinterGreen")
   public static let backButton = ImageAsset(name: "BackButton")
@@ -29,6 +30,12 @@ public enum Assets {
   public static let playBig = ImageAsset(name: "PlayBig")
   public static let titleImage = ImageAsset(name: "TitleImage")
   public static let gradient = ImageAsset(name: "gradient")
+  public static let iconBackward = ImageAsset(name: "iconBackward")
+  public static let iconBackwardUnactive = ImageAsset(name: "iconBackwardUnactive")
+  public static let iconForward = ImageAsset(name: "iconForward")
+  public static let iconForwardUnactive = ImageAsset(name: "iconForwardUnactive")
+  public static let iconPause = ImageAsset(name: "iconPause")
+  public static let iconPlay = ImageAsset(name: "iconPlay")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
