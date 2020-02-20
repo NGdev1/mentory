@@ -77,6 +77,8 @@ public struct ImageBasedContextTransitioning {
     /// В случае шага назад (pop) - скрин fromView.imageView.
     let actingImageView: UIView
 
+    let actingImageViewGradient: UIView
+
     /// Эффект blur, используется только при переходе назад - при свайпе с левой части экрана.
     var blurView: UIVisualEffectView?
 
@@ -94,6 +96,7 @@ public struct ImageBasedContextTransitioning {
         self.fromController = fromViewController
         self.containerView = containerView
 
+        self.actingImageViewGradient = UIImageView(image: Assets.gradient.image)
         if isPushing {
             self.biggerView = originEndView
             self.smallestView = originStartView
@@ -119,11 +122,13 @@ public struct ImageBasedContextTransitioning {
         if biggerView?.isImageDisappeared ?? false {
             actingImageView.frame = actingImageView.frame.with(height: 0)
         }
+        actingImageViewGradient.frame = actingImageView.frame
     }
 
     public func initPushFrames() {
         actingControllerSnapshot.frame = smallestView?.imageView.globalFrame ?? .centerOfScreen
         actingImageView.frame = smallestView?.imageView.globalFrame ?? .zero
+        actingImageViewGradient.frame = actingImageView.frame
     }
 
     public mutating func initBlurEffect() {
@@ -139,5 +144,6 @@ public struct ImageBasedContextTransitioning {
         }
         containerView.addSubview(actingControllerSnapshot)
         containerView.addSubview(actingImageView)
+        containerView.addSubview(actingImageViewGradient)
     }
 }

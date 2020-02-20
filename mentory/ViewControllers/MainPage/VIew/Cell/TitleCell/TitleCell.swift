@@ -32,5 +32,6 @@ class TitleCell: UITableViewCell {
         let viewModel = model.data as? MainPageTitleCellViewModel
         titleLabel.text = viewModel?.title
         subtitleLabel.text = viewModel?.subtitle
+        layoutIfNeeded()
     }
 }

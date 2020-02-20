@@ -12,6 +12,7 @@ import UIKit
 class LessonCell: UITableViewCell {
     // MARK: - Properties
 
+    @IBOutlet var viewWithInsets: UIView!
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
@@ -60,8 +61,8 @@ class LessonCell: UITableViewCell {
 // MARK: - ViewImageBasedAnimatable
 
 extension LessonCell: ViewImageBasedAnimatable {
-    public var mainView: UIView {
-        return contentView
+    var mainView: UIView {
+        return viewWithInsets
     }
 
     public override var imageView: UIImageView {

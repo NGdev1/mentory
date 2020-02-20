@@ -56,6 +56,7 @@ public final class ImagePushAnimatedTransition: NSObject {
         animating.actingImageView.contentMode = .scaleAspectFill
         animating.actingImageView.layer.masksToBounds = true
         animating.actingImageView.layer.cornerRadius = smallerViewBorderRadius
+        animating.actingImageViewGradient.contentMode = .scaleToFill
         animating.actingControllerSnapshot.contentMode = .scaleAspectFill
         animating.actingControllerSnapshot.layer.masksToBounds = true
         animating.actingControllerSnapshot.layer.cornerRadius = smallerViewBorderRadius
@@ -80,6 +81,8 @@ public final class ImagePushAnimatedTransition: NSObject {
             animations: { [weak self] in
                 guard let self = self else { return }
                 animating.actingImageView.frame = animating.biggerView?.imageView.frame ?? .zero
+                animating.actingImageViewGradient.frame = animating.biggerView?.imageView.frame ?? .zero
+                animating.actingImageViewGradient.alpha = 0
                 animating.actingImageView.layer.cornerRadius = 0
                 animating.actingControllerSnapshot.frame = finalFrame
                 animating.actingControllerSnapshot.layer.cornerRadius = 0
@@ -92,6 +95,7 @@ public final class ImagePushAnimatedTransition: NSObject {
                 animating.fromView.transform = .identity
                 animating.toView.frame = finalFrame
                 animating.actingImageView.removeFromSuperview()
+                animating.actingImageViewGradient.removeFromSuperview()
                 animating.actingControllerSnapshot.removeFromSuperview()
                 transitionContext.completeTransition(transitionContext.transitionWasCancelled == false)
             }

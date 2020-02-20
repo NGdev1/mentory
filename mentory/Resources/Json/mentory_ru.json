@@ -15,13 +15,13 @@
                 },
                 {
                     "id": "2",
-                    "title": "Название аудио",
+                    "title": "Еще аудио",
                     "subtitle": "ПОДПИСЬ",
                     "url": "https://www.myinstants.com/media/sounds/cade-o-respeito.mp3"
                 },
                 {
                     "id": "3",
-                    "title": "Название аудио",
+                    "title": "Цой",
                     "subtitle": "ПОДПИСЬ",
                     "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 }
@@ -38,7 +38,7 @@
             "tracks": [
                 {
                     "id": "1",
-                    "title": "Название аудио",
+                    "title": "Индусы",
                     "subtitle": "ПОДПИСЬ",
                     "url": "https://cdn.fastlearner.media/bensound-rumble.mp3"
                 }

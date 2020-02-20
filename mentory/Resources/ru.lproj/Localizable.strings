@@ -32,6 +32,6 @@ Errors.RequestError = "Ошибка запроса";
 
 Lesson.NextLesson = "Следующий урок";
 Lesson.Listen = "Слушать";
-Lesson.SubtitleOneTrack = "%@ ∙ Аудиозапись";
-Lesson.Subtitle2to4Tracks = "%@ ∙ %d аудиозаписи";
-Lesson.SubtitleFrom5Tracks = "%@ ∙ %d аудиозаписей";
+Lesson.SubtitleOneTrack = "%@ ∙ АУДИОЗАПИСЬ";
+Lesson.Subtitle2to4Tracks = "%@ ∙ %d АУДИОЗАПИСИ";
+Lesson.SubtitleFrom5Tracks = "%@ ∙ %d АУДИОЗАПИСЕЙ";

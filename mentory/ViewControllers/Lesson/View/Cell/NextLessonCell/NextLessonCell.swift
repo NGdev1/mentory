@@ -29,6 +29,7 @@ class NextLessonCell: UITableViewCell {
         nextLessonCell = XibInitializer.loadFromXib(type: LessonCell.self)
         if let view = nextLessonCell?.contentView {
             nextLessonCellView.addSubview(view)
+            view.makeEdgesEqualToSuperview()
         }
     }
 

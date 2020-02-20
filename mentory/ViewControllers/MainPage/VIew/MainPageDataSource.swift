@@ -35,9 +35,15 @@ final class MainPageDataSource: NSObject {
         self.tableView = tableView
         self.data = data
         super.init()
-        tableView.register(LessonCell.nib, forCellReuseIdentifier: LessonCell.identifier)
-        tableView.register(TryPremiumCell.nib, forCellReuseIdentifier: TryPremiumCell.identifier)
-        tableView.register(TitleCell.nib, forCellReuseIdentifier: TitleCell.identifier)
+        tableView.register(
+            LessonCell.nib, forCellReuseIdentifier: LessonCell.identifier
+        )
+        tableView.register(
+            TryPremiumCell.nib, forCellReuseIdentifier: TryPremiumCell.identifier
+        )
+        tableView.register(
+            TitleCell.nib, forCellReuseIdentifier: TitleCell.identifier
+        )
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -82,43 +88,32 @@ extension MainPageDataSource: UITableViewDataSource {
         return data?.count ?? 0
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let item = data?[indexPath.row] else {
-            return
-        }
-        switch item.type {
-        case .title:
-            let cell = cell as? TitleCell
-            cell?.configure(with: item)
-        case .buyFull:
-            let cell = cell as? TryPremiumCell
-            cell?.configure(with: item)
-        case .lesson:
-            let cell = cell as? LessonCell
-            cell?.configure(with: item)
-        }
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = data?[indexPath.row] else {
             return UITableViewCell()
         }
         switch item.type {
         case .title:
-            return tableView.dequeueReusableCell(
+            let cell = tableView.dequeueReusableCell(
                 withIdentifier: TitleCell.identifier,
                 for: indexPath
-            )
+            ) as? TitleCell
+            cell?.configure(with: item)
+            return cell ?? UITableViewCell()
         case .buyFull:
-            return tableView.dequeueReusableCell(
+            let cell = tableView.dequeueReusableCell(
                 withIdentifier: TryPremiumCell.identifier,
                 for: indexPath
-            )
+            ) as? TryPremiumCell
+            cell?.configure(with: item)
+            return cell ?? UITableViewCell()
         case .lesson:
-            return tableView.dequeueReusableCell(
+            let cell = tableView.dequeueReusableCell(
                 withIdentifier: LessonCell.identifier,
                 for: indexPath
-            )
+            ) as? LessonCell
+            cell?.configure(with: item)
+            return cell ?? UITableViewCell()
         }
     }
 }

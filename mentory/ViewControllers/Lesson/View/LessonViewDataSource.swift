@@ -40,9 +40,15 @@ final class LessonViewDataSource: NSObject {
         self.nextLessonIsLocked = nextLessonIsLocked
         self.nextLesson = nextLesson
         super.init()
-        tableView.register(LessonHeaderCell.nib, forCellReuseIdentifier: LessonHeaderCell.identifier)
-        tableView.register(AudioCell.nib, forCellReuseIdentifier: AudioCell.identifier)
-        tableView.register(NextLessonCell.nib, forCellReuseIdentifier: NextLessonCell.identifier)
+        tableView.register(
+            LessonHeaderCell.nib, forCellReuseIdentifier: LessonHeaderCell.identifier
+        )
+        tableView.register(
+            AudioCell.nib, forCellReuseIdentifier: AudioCell.identifier
+        )
+        tableView.register(
+            NextLessonCell.nib, forCellReuseIdentifier: NextLessonCell.identifier
+        )
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -78,36 +84,29 @@ extension LessonViewDataSource: UITableViewDataSource {
         }
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let cell = cell as? LessonHeaderCell
-            cell?.configure(with: lesson)
-        } else if indexPath.row == lesson.tracks.count + 1 {
-            let cell = cell as? NextLessonCell
-            cell?.configure(with: nextLesson, isLocked: nextLessonIsLocked)
-        } else {
-            let cell = cell as? AudioCell
-            let item = lesson.tracks[indexPath.row - 1]
-            cell?.configure(with: item)
-        }
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            return tableView.dequeueReusableCell(
+            let cell = tableView.dequeueReusableCell(
                 withIdentifier: LessonHeaderCell.identifier,
                 for: indexPath
-            )
+            ) as? LessonHeaderCell
+            cell?.configure(with: lesson)
+            return cell ?? UITableViewCell()
         } else if indexPath.row == lesson.tracks.count + 1 {
-            return tableView.dequeueReusableCell(
+            let cell = tableView.dequeueReusableCell(
                 withIdentifier: NextLessonCell.identifier,
                 for: indexPath
-            )
+            ) as? NextLessonCell
+            cell?.configure(with: nextLesson, isLocked: nextLessonIsLocked)
+            return cell ?? UITableViewCell()
         } else {
-            return tableView.dequeueReusableCell(
+            let cell = tableView.dequeueReusableCell(
                 withIdentifier: AudioCell.identifier,
                 for: indexPath
-            )
+            ) as? AudioCell
+            let item = lesson.tracks[indexPath.row - 1]
+            cell?.configure(with: item)
+            return cell ?? UITableViewCell()
         }
     }
 }

@@ -32,6 +32,6 @@ Errors.RequestError = "Request error";
 
 Lesson.NextLesson = "Next lesson";
 Lesson.Listen = "Listen";
-Lesson.SubtitleOneTrack = "%@ ∙ Audio";
-Lesson.Subtitle2to4Tracks = "%@ ∙ %d audio";
-Lesson.SubtitleFrom5Tracks = "%@ ∙ %d audio";
+Lesson.SubtitleOneTrack = "%@ ∙ AUDIO";
+Lesson.Subtitle2to4Tracks = "%@ ∙ %d AUDIOS";
+Lesson.SubtitleFrom5Tracks = "%@ ∙ %d AUDIOS";

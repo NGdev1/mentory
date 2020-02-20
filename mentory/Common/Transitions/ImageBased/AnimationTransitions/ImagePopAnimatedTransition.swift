@@ -57,6 +57,8 @@ public final class ImagePopAnimatedTransition: NSObject {
         animating.containerView.backgroundColor = Assets.black.color
         animating.actingControllerSnapshot.contentMode = .scaleAspectFill
         animating.actingControllerSnapshot.layer.masksToBounds = true
+        animating.actingImageViewGradient.contentMode = .scaleToFill
+        animating.actingImageViewGradient.alpha = 0
         animating.actingImageView.contentMode = .scaleAspectFill
         animating.actingImageView.layer.masksToBounds = true
     }
@@ -97,6 +99,8 @@ public final class ImagePopAnimatedTransition: NSObject {
                 animating.actingImageView.frame = finalFrame
                 animating.actingImageView.layer.cornerRadius = self.smallerViewBorderRadius
                 animating.actingControllerSnapshot.frame = finalFrame
+                animating.actingImageViewGradient.frame = finalFrame
+                animating.actingImageViewGradient.alpha = 1
                 animating.actingControllerSnapshot.layer.cornerRadius = self.smallerViewBorderRadius
                 animating.toView.transform = .identity
                 animating.blurView?.effect = nil
@@ -106,6 +110,7 @@ public final class ImagePopAnimatedTransition: NSObject {
                 self.showReplacableBySnapshotsViews(using: animating)
                 animating.actingControllerSnapshot.removeFromSuperview()
                 animating.actingImageView.removeFromSuperview()
+                animating.actingImageViewGradient.removeFromSuperview()
                 animating.blurView?.removeFromSuperview()
                 if transitionContext.transitionWasCancelled {
                     animating.toView.removeFromSuperview()
