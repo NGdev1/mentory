@@ -31,7 +31,7 @@ final class MP3Player: NSObject {
             let audioItem = DefaultAudioItem(audioUrl: track.url, sourceType: .stream)
             items.append(audioItem)
         }
-        player.automaticallyWaitsToMinimizeStalling = true
+        player.automaticallyWaitsToMinimizeStalling = false
         try? player.add(items: items)
         try? player.jumpToItem(atIndex: current)
         player.remoteCommands = [

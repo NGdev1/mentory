@@ -118,7 +118,12 @@ extension MainPageController: MainPageDataSourceDelegate {
         }
     }
 
-    func tryForFree() {}
+    func tryForFree() {
+        DispatchQueue.main.async { [weak self] in
+            let nextController = BuyController()
+            self?.present(nextController, animated: true)
+        }
+    }
 }
 
 // MARK: - ViewControllerImageBasedAnimatable

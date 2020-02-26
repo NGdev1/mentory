@@ -35,3 +35,16 @@ Lesson.Listen = "Listen";
 Lesson.SubtitleOneTrack = "%@ ∙ AUDIO";
 Lesson.Subtitle2to4Tracks = "%@ ∙ %d AUDIOS";
 Lesson.SubtitleFrom5Tracks = "%@ ∙ %d AUDIOS";
+
+Buy.TryFree = "Try free!";
+Buy.Advantage1 = "Complete course library";
+Buy.Advantage2 = "Complete library of affirmations";
+Buy.Advantage3 = "Complete Motivation Library";
+Buy.Advantage4 = "Daily Motivational Quotes";
+Buy.Advantage5 = "Convenient reminder system";
+Buy.YearView.Title = "Annual - 3 days for free!";
+Buy.YearView.Subtitle = "Then 149 ₽ / month, payment once a year 1788 ₽";
+Buy.MonthView.Title = "Monthly Plan";
+Buy.MonthView.Subtitle = "Subscription for $ 169 / month, billing once a month";
+Buy.Info = "You can unsubscribe at any time, one day before the cancellation of the next period.";
+Buy.Get = "GET 3 DAYS FOR FREE";

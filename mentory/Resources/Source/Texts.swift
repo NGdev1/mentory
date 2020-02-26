@@ -25,6 +25,37 @@ public enum Text {
     public static let yes = Text.tr("Localizable", "Alert.Yes")
   }
 
+  public enum Buy {
+    /// Полная библиотека курсов
+    public static let advantage1 = Text.tr("Localizable", "Buy.Advantage1")
+    /// Полная библиотека афирмаций
+    public static let advantage2 = Text.tr("Localizable", "Buy.Advantage2")
+    /// Полная библиотека мотиваций
+    public static let advantage3 = Text.tr("Localizable", "Buy.Advantage3")
+    /// Ежедневные мотивационные цитаты
+    public static let advantage4 = Text.tr("Localizable", "Buy.Advantage4")
+    /// Удобная система напоминаний
+    public static let advantage5 = Text.tr("Localizable", "Buy.Advantage5")
+    /// ПОЛУЧИТЬ 3 ДНЯ БЕСПЛАТНО
+    public static let `get` = Text.tr("Localizable", "Buy.Get")
+    /// Подписку можно отменить в любой момент, за день до списания следующего периода.
+    public static let info = Text.tr("Localizable", "Buy.Info")
+    /// Попробуй бесплатно!
+    public static let tryFree = Text.tr("Localizable", "Buy.TryFree")
+    public enum MonthView {
+      /// Подписка за 169 ₽/месяц, списание раз в месяц
+      public static let subtitle = Text.tr("Localizable", "Buy.MonthView.Subtitle")
+      /// Месячный план
+      public static let title = Text.tr("Localizable", "Buy.MonthView.Title")
+    }
+    public enum YearView {
+      /// Затем 149 ₽/месяц, оплата раз в год 1788 ₽
+      public static let subtitle = Text.tr("Localizable", "Buy.YearView.Subtitle")
+      /// Годовой - 3 дня бесплатно!
+      public static let title = Text.tr("Localizable", "Buy.YearView.Title")
+    }
+  }
+
   public enum Common {
     /// Назад
     public static let back = Text.tr("Localizable", "Common.Back")
@@ -54,7 +85,7 @@ public enum Text {
   }
 
   public enum Lesson {
-    ///    Начать слушать
+    /// Начать слушать
     public static let listen = Text.tr("Localizable", "Lesson.Listen")
     /// Следующий урок
     public static let nextLesson = Text.tr("Localizable", "Lesson.NextLesson")

@@ -35,3 +35,16 @@ Lesson.Listen = "Начать слушать";
 Lesson.SubtitleOneTrack = "%@ ∙ АУДИОЗАПИСЬ";
 Lesson.Subtitle2to4Tracks = "%@ ∙ %d АУДИОЗАПИСИ";
 Lesson.SubtitleFrom5Tracks = "%@ ∙ %d АУДИОЗАПИСЕЙ";
+
+Buy.TryFree = "Попробуй бесплатно!";
+Buy.Advantage1 = "Полная библиотека курсов";
+Buy.Advantage2 = "Полная библиотека афирмаций";
+Buy.Advantage3 = "Полная библиотека мотиваций";
+Buy.Advantage4 = "Ежедневные мотивационные цитаты";
+Buy.Advantage5 = "Удобная система напоминаний";
+Buy.YearView.Title = "Годовой - 3 дня бесплатно!";
+Buy.YearView.Subtitle = "Затем 149 ₽/месяц, оплата раз в год 1788 ₽";
+Buy.MonthView.Title = "Месячный план";
+Buy.MonthView.Subtitle = "Подписка за 169 ₽/месяц, списание раз в месяц";
+Buy.Info = "Подписку можно отменить в любой момент, за день до списания следующего периода.";
+Buy.Get = "ПОЛУЧИТЬ 3 ДНЯ БЕСПЛАТНО";

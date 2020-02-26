@@ -9,20 +9,26 @@
             "tracks": [
                 {
                     "id": "1",
-                    "title": "Название аудио",
-                    "subtitle": "ПОДПИСЬ",
-                    "url": "http://keepfreemusic.com/60s.m3u"
+                    "title": "Vitya Tsoi",
+                    "subtitle": "KUKUSHKA",
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 },
                 {
                     "id": "2",
-                    "title": "Еще аудио",
-                    "subtitle": "ПОДПИСЬ",
-                    "url": "https://www.myinstants.com/media/sounds/cade-o-respeito.mp3"
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false"
                 },
                 {
                     "id": "3",
+                    "title": "Vitya Tsoi again",
+                    "subtitle": "KUKUSHKA",
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                },
+                {
+                    "id": "4",
                     "title": "Музыка какая то",
-                    "subtitle": "ПОДПИСЬ 1231 123 SADASDASD",
+                    "subtitle": "ПОДПИСЬ QWERTY QWERTYUI",
                     "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false"
                 }
             ]
@@ -55,7 +61,7 @@
                     "id": "1",
                     "title": "Название аудио",
                     "subtitle": "ПОДПИСЬ",
-                    "url": "https://www.myinstants.com/media/sounds/cade-o-respeito.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
                 }
             ]
         }

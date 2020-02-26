@@ -30,6 +30,10 @@
 		6B7D9D6823FAE521003F7B45 /* NextLessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D9D6623FAE521003F7B45 /* NextLessonCell.swift */; };
 		6B7D9D6923FAE521003F7B45 /* NextLessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7D9D6723FAE521003F7B45 /* NextLessonCell.xib */; };
 		6B7D9D6B23FAE92F003F7B45 /* LessonViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D9D6A23FAE92F003F7B45 /* LessonViewDataSource.swift */; };
+		6B9A90DA2406A84B0018E4E6 /* BuyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A90D52406A84A0018E4E6 /* BuyController.swift */; };
+		6B9A90DB2406A84B0018E4E6 /* BuyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A90D62406A84A0018E4E6 /* BuyInteractor.swift */; };
+		6B9A90DC2406A84B0018E4E6 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A90D72406A84A0018E4E6 /* BuyView.swift */; };
+		6B9A90DD2406A84B0018E4E6 /* BuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B9A90D82406A84A0018E4E6 /* BuyView.xib */; };
 		6BA09A7823FA90FC00C95B08 /* mentory_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BA09A7723FA90FC00C95B08 /* mentory_ru.json */; };
 		6BA09A7B23FA95A700C95B08 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA09A7A23FA95A700C95B08 /* DataManager.swift */; };
 		6BA09A7D23FAA10C00C95B08 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA09A7C23FAA10C00C95B08 /* Track.swift */; };
@@ -91,6 +95,10 @@
 		6B7D9D6723FAE521003F7B45 /* NextLessonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextLessonCell.xib; sourceTree = "<group>"; };
 		6B7D9D6A23FAE92F003F7B45 /* LessonViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewDataSource.swift; sourceTree = "<group>"; };
 		6B95CCA523F3497300BE1A17 /* Mentory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mentory.entitlements; sourceTree = "<group>"; };
+		6B9A90D52406A84A0018E4E6 /* BuyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyController.swift; sourceTree = "<group>"; };
+		6B9A90D62406A84A0018E4E6 /* BuyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyInteractor.swift; sourceTree = "<group>"; };
+		6B9A90D72406A84A0018E4E6 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
+		6B9A90D82406A84A0018E4E6 /* BuyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyView.xib; sourceTree = "<group>"; };
 		6BA09A7723FA90FC00C95B08 /* mentory_ru.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mentory_ru.json; sourceTree = "<group>"; };
 		6BA09A7A23FA95A700C95B08 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		6BA09A7C23FAA10C00C95B08 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -236,6 +244,7 @@
 		6B65851B23ED53EC004016BA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6B9A90D32406A7EE0018E4E6 /* Buy */,
 				6B7A517123EE3675009D3047 /* Player */,
 				6BC24FAE23EDA5D60054C8B9 /* Lesson */,
 				6B81D5B423ED67A000EC2F89 /* MainPage */,
@@ -309,6 +318,25 @@
 				6B032CEC23ED71C600662BF5 /* VIew */,
 			);
 			path = MainPage;
+			sourceTree = "<group>";
+		};
+		6B9A90D32406A7EE0018E4E6 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A90D52406A84A0018E4E6 /* BuyController.swift */,
+				6B9A90D62406A84A0018E4E6 /* BuyInteractor.swift */,
+				6B9A90DE2406A8550018E4E6 /* View */,
+			);
+			path = Buy;
+			sourceTree = "<group>";
+		};
+		6B9A90DE2406A8550018E4E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A90D72406A84A0018E4E6 /* BuyView.swift */,
+				6B9A90D82406A84A0018E4E6 /* BuyView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6BA09A7623FA90FC00C95B08 /* Json */ = {
@@ -574,6 +602,7 @@
 				6BA09A7823FA90FC00C95B08 /* mentory_ru.json in Resources */,
 				6BA848FD23FAE26D00C6DDEB /* LessonHeaderCell.xib in Resources */,
 				6B65852423ED54AC004016BA /* LaunchScreen.storyboard in Resources */,
+				6B9A90DD2406A84B0018E4E6 /* BuyView.xib in Resources */,
 				6B7A518823EE3BCE009D3047 /* PlayerView.xib in Resources */,
 				6B032CF923ED770400662BF5 /* LessonCell.xib in Resources */,
 				6BE5A91323ED8B66005D65CC /* TitleCell.xib in Resources */,
@@ -688,9 +717,12 @@
 				6BC8872423EB63320046E598 /* MainPageController.swift in Sources */,
 				6B65851923ED53B3004016BA /* MainPageServiceProtocol.swift in Sources */,
 				6BF9EA7A23ED7F290006066E /* MainPagePresenter.swift in Sources */,
+				6B9A90DA2406A84B0018E4E6 /* BuyController.swift in Sources */,
+				6B9A90DB2406A84B0018E4E6 /* BuyInteractor.swift in Sources */,
 				6BC8872023EB63320046E598 /* AppDelegate.swift in Sources */,
 				6B65851723ED53B3004016BA /* MentoryServiceFactory.swift in Sources */,
 				6BAB96FF23EE1DAD00354E39 /* LessonControllerModels.swift in Sources */,
+				6B9A90DC2406A84B0018E4E6 /* BuyView.swift in Sources */,
 				6BA09A7B23FA95A700C95B08 /* DataManager.swift in Sources */,
 				6BA848F823FAB2AC00C6DDEB /* MDHeaderView.swift in Sources */,
 				6BAB96FB23EDA9B400354E39 /* ImagePushAnimatedTransition.swift in Sources */,
@@ -851,20 +883,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = HY59K9S4C6;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = NXAGVF2MTG;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
+				MARKETING_VERSION = 1.0.7;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.md.mentory;
 				PRODUCT_NAME = Mentory;
-				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Distribution)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -876,20 +908,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = HY59K9S4C6;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = NXAGVF2MTG;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
+				MARKETING_VERSION = 1.0.7;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.md.mentory;
 				PRODUCT_NAME = Mentory;
-				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Distribution)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
