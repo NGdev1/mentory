@@ -38,8 +38,10 @@ public enum Text {
     public static let advantage5 = Text.tr("Localizable", "Buy.Advantage5")
     /// ПОЛУЧИТЬ
     public static let `get` = Text.tr("Localizable", "Buy.Get")
-    /// Ошибка покупки
+    /// Ошибка при совершении покупки. Транзакция отменена.
     public static let purchaseFailed = Text.tr("Localizable", "Buy.PurchaseFailed")
+    /// Восстановить покупки
+    public static let restorePurchases = Text.tr("Localizable", "Buy.RestorePurchases")
     /// Полная библиотека
     public static let subtitle = Text.tr("Localizable", "Buy.Subtitle")
     public enum MonthView {

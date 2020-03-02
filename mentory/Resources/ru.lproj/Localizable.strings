@@ -51,4 +51,5 @@ Buy.YearView.Subtitle = "Ежегододно. 12 месяцев = 6 чашек 
 Buy.MonthView.Title = "Месячный план";
 Buy.MonthView.Subtitle = "Ежемесячно. 1 месяц = 1 чашка кофе.";
 Buy.Get = "ПОЛУЧИТЬ";
-Buy.PurchaseFailed = "Ошибка покупки";
+Buy.PurchaseFailed = "Произошла ошибка при совершении покупки. Транзакция отменена.";
+Buy.RestorePurchases = "Восстановить покупки";

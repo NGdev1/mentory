@@ -10,6 +10,7 @@ import StoreKit
 
 protocol BuyBusinessLogic: AnyObject {
     func loadProducts()
+    func restorePurchases()
     func purchase(product: IAPProduct)
 }
 
@@ -25,7 +26,7 @@ class BuyInteractor: BuyBusinessLogic, IAPServiceDelegate {
         service.delegate = self
     }
 
-    // MARK: - Init
+    // MARK: - Internal methods
 
     func purchase(product: IAPProduct) {
         service.purchase(product: product)
@@ -33,6 +34,10 @@ class BuyInteractor: BuyBusinessLogic, IAPServiceDelegate {
 
     func loadProducts() {
         service.loadProducts()
+    }
+
+    func restorePurchases() {
+        service.restore()
     }
 
     // MARK: - Results

@@ -52,3 +52,4 @@ Buy.MonthView.Title = "Monthly Plan";
 Buy.MonthView.Subtitle = "Monthly. 1 month = 1 cup of coffee.";
 Buy.Get = "GET";
 Buy.PurchaseFailed = "Purchase failed";
+Buy.RestorePurchases = "Restore purchases";

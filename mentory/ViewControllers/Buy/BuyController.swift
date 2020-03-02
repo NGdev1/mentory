@@ -63,6 +63,11 @@ public class BuyController: UIViewController, BuyControllerLogic {
             action: #selector(buy),
             for: .touchUpInside
         )
+        customView?.restorePurchases.addTarget(
+            self,
+            action: #selector(restorePurchases),
+            for: .touchUpInside
+        )
         customView?.delegate = self
     }
 
@@ -74,6 +79,10 @@ public class BuyController: UIViewController, BuyControllerLogic {
         let product: IAPProduct = customView?.currentState == BuyView.State.buyPerMonth
             ? IAPProduct.monthly : IAPProduct.yearly
         interactor?.purchase(product: product)
+    }
+
+    @objc func restorePurchases() {
+        interactor?.restorePurchases()
     }
 
     // MARK: - BuyControllerLogic

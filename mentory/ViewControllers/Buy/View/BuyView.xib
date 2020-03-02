@@ -199,6 +199,13 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-oi-FLu">
+                                    <rect key="frame" x="16" y="751" width="130" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <state key="normal" title="Restore purchases">
+                                        <color key="titleColor" name="Title"/>
+                                    </state>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="8T3-Yw-TzA" firstAttribute="leading" secondItem="s77-MO-zLy" secondAttribute="leading" constant="16" id="0DZ-zw-Dct"/>
@@ -216,6 +223,7 @@
                                 <constraint firstItem="LyN-VK-pY8" firstAttribute="trailing" secondItem="8T3-Yw-TzA" secondAttribute="trailing" id="L2x-aQ-Zbc"/>
                                 <constraint firstAttribute="trailing" secondItem="hYA-X5-Yhl" secondAttribute="trailing" constant="16" id="Moh-ID-EPe"/>
                                 <constraint firstItem="v2C-9k-13I" firstAttribute="top" secondItem="hYA-X5-Yhl" secondAttribute="bottom" constant="16" id="OGf-T6-MvE"/>
+                                <constraint firstItem="1Yg-oi-FLu" firstAttribute="top" secondItem="FxH-7K-SQ4" secondAttribute="bottom" constant="8" id="OK6-ki-oGK"/>
                                 <constraint firstItem="Kq8-fe-lJw" firstAttribute="leading" secondItem="knt-zI-vmg" secondAttribute="trailing" constant="11" id="QY2-RP-9Db"/>
                                 <constraint firstItem="SiR-gc-3Ur" firstAttribute="top" secondItem="8T3-Yw-TzA" secondAttribute="bottom" constant="33" id="Qfx-xi-xDU"/>
                                 <constraint firstItem="v2C-9k-13I" firstAttribute="trailing" secondItem="hYA-X5-Yhl" secondAttribute="trailing" id="U6R-ef-hwl"/>
@@ -239,6 +247,7 @@
                                 <constraint firstItem="O4R-Z9-O54" firstAttribute="leading" secondItem="zag-IE-5XF" secondAttribute="leading" id="qDZ-zq-SKK"/>
                                 <constraint firstItem="RA1-eT-rH7" firstAttribute="leading" secondItem="HfY-mb-pKo" secondAttribute="trailing" constant="11" id="qtR-Zx-v4i"/>
                                 <constraint firstItem="SiR-gc-3Ur" firstAttribute="leading" secondItem="8T3-Yw-TzA" secondAttribute="leading" id="sBO-vE-vj7"/>
+                                <constraint firstItem="1Yg-oi-FLu" firstAttribute="leading" secondItem="FxH-7K-SQ4" secondAttribute="leading" id="sKs-Fa-Caw"/>
                                 <constraint firstItem="Kq8-fe-lJw" firstAttribute="centerY" secondItem="knt-zI-vmg" secondAttribute="centerY" id="tAL-FU-jj4"/>
                                 <constraint firstItem="LyN-VK-pY8" firstAttribute="leading" secondItem="CfY-wk-H2r" secondAttribute="trailing" constant="11" id="udF-MX-Ukw"/>
                                 <constraint firstItem="WWa-tA-6L9" firstAttribute="top" secondItem="e1e-nZ-KSj" secondAttribute="bottom" constant="18" id="v7p-sI-279"/>
@@ -286,6 +295,7 @@
                 <outlet property="perMonthTitle" destination="VFM-Us-Dvr" id="jFj-aB-3Ij"/>
                 <outlet property="perYearSubtitle" destination="1KE-eW-VDS" id="YkZ-Io-cBc"/>
                 <outlet property="perYearTitle" destination="f2k-Mz-SBs" id="E4h-AE-J1v"/>
+                <outlet property="restorePurchases" destination="1Yg-oi-FLu" id="zJQ-9y-XDY"/>
                 <outlet property="tryFreeLabel" destination="SiR-gc-3Ur" id="E3T-ts-jNb"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
@@ -300,7 +310,7 @@
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BuyPageBackground">
-            <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12200000137090683" green="0.12200000137090683" blue="0.12200000137090683" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Title">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -309,7 +319,7 @@
             <color red="0.62352941176470589" green="0.62352941176470589" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WinterGreen">
-            <color red="0.090000003576278687" green="1" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.090196078431372548" green="1" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
