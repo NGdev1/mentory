@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import Storable
 import StoreKit
 
 protocol IAPServiceDelegate: AnyObject {
+    func didFailPurchase()
+    func didCompletePurchase()
     func didLoadProducts(_ skProducts: [SKProduct])
 }
 
@@ -81,10 +84,21 @@ extension IAPService: SKPaymentTransactionObserver {
         _ queue: SKPaymentQueue,
         updatedTransactions transactions: [SKPaymentTransaction]
     ) {
-        for transiction in transactions {
-            if transiction.transactionState == .purchasing { continue }
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .purchasing, .deferred:
+                continue
+            case .purchased, .restored:
+                delegate?.didCompletePurchase()
+                AppService.shared.app.appState = .premium
+                NotificationCenter.default.post(Notification(name: .appStateChanged))
+            case .failed:
+                delegate?.didFailPurchase()
+            @unknown default:
+                break
+            }
 
-            queue.finishTransaction(transiction)
+            queue.finishTransaction(transaction)
         }
     }
 }

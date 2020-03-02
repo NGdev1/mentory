@@ -3,7 +3,11 @@ ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 platform :ios, '11.0'
 
+require "./scripts/modules_helper.rb"
+
 def other_pods
+  pod 'KeychainAccess', '3.2.0', :inhibit_warnings => true
+  pod 'SwiftyUserDefaults', '4.0.0', :inhibit_warnings => true
   pod 'SnapKit', '~> 5.0.0', :inhibit_warnings => true
   pod 'Kingfisher', '5.7.0', :inhibit_warnings => true
   pod 'SwiftAudio', '~> 0.11.2', :inhibit_warnings => true
@@ -12,6 +16,7 @@ end
 
 def mdPods
   pod 'MDFoundation', :tag => '1.0.4', :git => 'https://github.com/NGdev1/MDFoundation.git'
+  pod 'Storable', path: './Storable'
 end
 
 target 'mentory' do

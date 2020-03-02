@@ -21,7 +21,7 @@ Common.Cancel = "Отмена";
 
 MainPage.Programs = "Программы";
 MainPage.ProgramsDescription = "Тринадцать уникальных уроков. Слушайте по одному в день. И вы удивитесь как изменится ваша жизнь. ";
-MainPage.TryPremium = "Попробуй PREMIUM бесплатно!";
+MainPage.GetPremium = "Получи PREMIUM!";
 MainPage.PressForInfo = "Нажми для подробностей";
 
 Errors.TryAgain = "Повторить";
@@ -36,7 +36,7 @@ Lesson.SubtitleOneTrack = "%@ ∙ АУДИОЗАПИСЬ";
 Lesson.Subtitle2to4Tracks = "%@ ∙ %d АУДИОЗАПИСИ";
 Lesson.SubtitleFrom5Tracks = "%@ ∙ %d АУДИОЗАПИСЕЙ";
 
-Buy.TryFree = "Попробуй бесплатно!";
+Buy.Subtitle = "Полная библиотека";
 Buy.Advantage1 = "Полный доступ к категории «Программы»";
 Buy.Advantage2 = "Полная доступ категории «Фокус»";
 Buy.Advantage3 = "Полная доступ категории «Мотивация»";
@@ -51,3 +51,4 @@ Buy.YearView.Subtitle = "Ежегододно. 12 месяцев = 6 чашек 
 Buy.MonthView.Title = "Месячный план";
 Buy.MonthView.Subtitle = "Ежемесячно. 1 месяц = 1 чашка кофе.";
 Buy.Get = "ПОЛУЧИТЬ";
+Buy.PurchaseFailed = "Ошибка покупки";

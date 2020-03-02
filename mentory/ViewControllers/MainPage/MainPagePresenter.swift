@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Storable
 
 protocol MainPagePresentationLogic: AnyObject {
     func presentLessons(_ response: MainPageResponse)
@@ -14,10 +15,11 @@ protocol MainPagePresentationLogic: AnyObject {
 }
 
 class MainPagePresenter: MainPagePresentationLogic {
-    var isPremiumAccount = false
     weak var controller: MainPageControllerLogic?
 
     func presentLessons(_ response: MainPageResponse) {
+        let isPremiumAccount = AppService.shared.app.appState == .premium
+
         var viewModels: [MainPageCellViewModel] = []
         for lesson in response.introLessons ?? [] {
             viewModels.append(
@@ -59,7 +61,7 @@ class MainPagePresenter: MainPagePresentationLogic {
 
         if isPremiumAccount == false {
             let buyFullViewModel = MainPageBuyPremiumCellViewModel(
-                title: Text.MainPage.tryPremium,
+                title: Text.MainPage.getPremium,
                 subtitle: Text.MainPage.pressForInfo
             )
             viewModels.append(

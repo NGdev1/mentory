@@ -1,4 +1,5 @@
 PODS:
+  - KeychainAccess (3.2.0)
   - Kingfisher (5.7.0)
   - MDFoundation (1.0.4):
     - MDFoundation/Source (= 1.0.4)
@@ -6,24 +7,39 @@ PODS:
   - MDFoundation/Source (1.0.4):
     - SnapKit (~> 5.0.0)
   - SnapKit (5.0.1)
+  - Storable (1.0):
+    - KeychainAccess
+    - Storable/Source (= 1.0)
+    - SwiftyUserDefaults
+  - Storable/Source (1.0):
+    - KeychainAccess
+    - SwiftyUserDefaults
   - SwiftAudio (0.11.2)
+  - SwiftyUserDefaults (4.0.0)
 
 DEPENDENCIES:
+  - KeychainAccess (= 3.2.0)
   - Kingfisher (= 5.7.0)
   - MDFoundation (from `https://github.com/NGdev1/MDFoundation.git`, tag `1.0.4`)
   - SnapKit (~> 5.0.0)
+  - Storable (from `./Storable`)
   - SwiftAudio (~> 0.11.2)
+  - SwiftyUserDefaults (= 4.0.0)
 
 SPEC REPOS:
   trunk:
+    - KeychainAccess
     - Kingfisher
     - SnapKit
     - SwiftAudio
+    - SwiftyUserDefaults
 
 EXTERNAL SOURCES:
   MDFoundation:
     :git: https://github.com/NGdev1/MDFoundation.git
     :tag: 1.0.4
+  Storable:
+    :path: "./Storable"
 
 CHECKOUT OPTIONS:
   MDFoundation:
@@ -31,11 +47,14 @@ CHECKOUT OPTIONS:
     :tag: 1.0.4
 
 SPEC CHECKSUMS:
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
   MDFoundation: e67f4e7aee0b6b238d35f463bfb1b5dc40b379b5
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Storable: bcb4dad8b5c62ea7c5fdb3e19161855467802bd5
   SwiftAudio: 217f5f184b27a0e25ff0fe7647021f05a21c06c9
+  SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
 
-PODFILE CHECKSUM: b97c90e23035d3477d86f64fc16f404812ad1f88
+PODFILE CHECKSUM: f75169609b8bd182ab78af56babb41df573f9382
 
 COCOAPODS: 1.8.3

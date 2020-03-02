@@ -36,6 +36,7 @@ class MainPageController: UIViewController, MainPageControllerLogic {
         super.viewDidLoad()
         setup()
         setupAppearance()
+        addActionHandlers()
         loadLessons()
     }
 
@@ -50,6 +51,25 @@ class MainPageController: UIViewController, MainPageControllerLogic {
     private func setupAppearance() {
         customView.initDataSource()
         customView.dataSource?.delegate = self
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    // MARK: - Action handlers
+
+    private func addActionHandlers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(appStateChanged),
+            name: .appStateChanged,
+            object: nil
+        )
+    }
+
+    @objc func appStateChanged() {
+        loadLessons()
     }
 
     // MARK: - Network requests

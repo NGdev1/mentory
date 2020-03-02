@@ -21,7 +21,7 @@ Common.Cancel = "Cancel";
 
 MainPage.Programs = "Programs";
 MainPage.ProgramsDescription = "Thirteen unique lessons. Listen one at a time. And you will be surprised how your life will change.";
-MainPage.TryPremium = "Try PREMIUM for free!";
+MainPage.GetPremium = "Get PREMIUM!";
 MainPage.PressForInfo = "Click for details";
 
 Errors.TryAgain = "Try again";
@@ -36,7 +36,7 @@ Lesson.SubtitleOneTrack = "%@ ∙ AUDIO";
 Lesson.Subtitle2to4Tracks = "%@ ∙ %d AUDIOS";
 Lesson.SubtitleFrom5Tracks = "%@ ∙ %d AUDIOS";
 
-Buy.TryFree = "Try it for Free!";
+Buy.Subtitle = "Full library";
 Buy.Advantage1 = "Full access to the \"Programs\" category";
 Buy.Advantage2 = "Full access to the Focus category";
 Buy.Advantage3 = "Full access to the Motivation category";
@@ -51,3 +51,4 @@ Buy.YearView.Subtitle = "Annually. 12 months = 6 cups of coffee.";
 Buy.MonthView.Title = "Monthly Plan";
 Buy.MonthView.Subtitle = "Monthly. 1 month = 1 cup of coffee.";
 Buy.Get = "GET";
+Buy.PurchaseFailed = "Purchase failed";

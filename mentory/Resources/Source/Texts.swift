@@ -38,8 +38,10 @@ public enum Text {
     public static let advantage5 = Text.tr("Localizable", "Buy.Advantage5")
     /// ПОЛУЧИТЬ
     public static let `get` = Text.tr("Localizable", "Buy.Get")
-    /// Попробуй бесплатно!
-    public static let tryFree = Text.tr("Localizable", "Buy.TryFree")
+    /// Ошибка покупки
+    public static let purchaseFailed = Text.tr("Localizable", "Buy.PurchaseFailed")
+    /// Полная библиотека
+    public static let subtitle = Text.tr("Localizable", "Buy.Subtitle")
     public enum MonthView {
       /// Ежемесячно. 1 месяц = 1 чашка кофе.
       public static let subtitle = Text.tr("Localizable", "Buy.MonthView.Subtitle")
@@ -118,14 +120,14 @@ public enum Text {
   }
 
   public enum MainPage {
+    /// Получи PREMIUM!
+    public static let getPremium = Text.tr("Localizable", "MainPage.GetPremium")
     /// Нажми для подробностей
     public static let pressForInfo = Text.tr("Localizable", "MainPage.PressForInfo")
     /// Программы
     public static let programs = Text.tr("Localizable", "MainPage.Programs")
     /// Тринадцать уникальных уроков. Слушайте по одному в день. И вы удивитесь как изменится ваша жизнь. 
     public static let programsDescription = Text.tr("Localizable", "MainPage.ProgramsDescription")
-    /// Попробуй PREMIUM бесплатно!
-    public static let tryPremium = Text.tr("Localizable", "MainPage.TryPremium")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

@@ -10,6 +10,7 @@ import MDFoundation
 import StoreKit
 
 protocol BuyControllerLogic: AnyObject {
+    func purchaseCompleted()
     func didLoadProducts(_ products: [Product])
     func presentError(message: String)
 }
@@ -57,6 +58,11 @@ public class BuyController: UIViewController, BuyControllerLogic {
             action: #selector(close),
             for: .touchUpInside
         )
+        customView?.buyButton.addTarget(
+            self,
+            action: #selector(buy),
+            for: .touchUpInside
+        )
         customView?.delegate = self
     }
 
@@ -64,7 +70,17 @@ public class BuyController: UIViewController, BuyControllerLogic {
         dismiss(animated: true)
     }
 
+    @objc func buy() {
+        let product: IAPProduct = customView?.currentState == BuyView.State.buyPerMonth
+            ? IAPProduct.monthly : IAPProduct.yearly
+        interactor?.purchase(product: product)
+    }
+
     // MARK: - BuyControllerLogic
+
+    func purchaseCompleted() {
+        close()
+    }
 
     func didLoadProducts(_ products: [Product]) {
         for product in products {

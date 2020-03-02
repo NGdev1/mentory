@@ -37,6 +37,8 @@ final class BuyView: UIView {
     @IBOutlet var perMonthTitle: UILabel!
     @IBOutlet var perMonthSubtitle: UILabel!
 
+    @IBOutlet var buyButton: UIButton!
+
     weak var delegate: BuyViewDelegate?
 
     var currentState: State = .buyPerYear {
@@ -66,7 +68,7 @@ final class BuyView: UIView {
     }
 
     private func setupStyle() {
-        tryFreeLabel.text = Text.Buy.tryFree
+        tryFreeLabel.text = Text.Buy.subtitle
 
         adv1Label.text = Text.Buy.advantage1
         adv2Label.text = Text.Buy.advantage2
@@ -78,6 +80,8 @@ final class BuyView: UIView {
         perMonthTitle.text = Text.Buy.MonthView.title
         perYearSubtitle.text = Text.Buy.YearView.subtitle
         perMonthSubtitle.text = Text.Buy.MonthView.subtitle
+
+        buyButton.setTitle(Text.Buy.get, for: .normal)
 
         currentState = .buyPerYear
     }

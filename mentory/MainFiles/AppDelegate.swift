@@ -6,6 +6,7 @@
 //  Copyright © 2020 Михаил Андреичев. All rights reserved.
 //
 
+import Storable
 import UIKit
 
 @UIApplicationMain
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        AppService.shared.app.appOpenedCount += 1
+        print("App opened count: \(AppService.shared.app.appOpenedCount)")
         let nextController = MainPageController()
         window?.rootViewController = nextController
         window?.makeKeyAndVisible()
