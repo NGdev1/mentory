@@ -26,33 +26,47 @@ public enum Text {
   }
 
   public enum Buy {
-    /// Полная библиотека курсов
+    /// Полный доступ к категории «Программы»
     public static let advantage1 = Text.tr("Localizable", "Buy.Advantage1")
-    /// Полная библиотека афирмаций
+    /// Полная доступ категории «Фокус»
     public static let advantage2 = Text.tr("Localizable", "Buy.Advantage2")
-    /// Полная библиотека мотиваций
+    /// Полная доступ категории «Мотивация»
     public static let advantage3 = Text.tr("Localizable", "Buy.Advantage3")
-    /// Ежедневные мотивационные цитаты
+    /// Уведомления и напоминания
     public static let advantage4 = Text.tr("Localizable", "Buy.Advantage4")
-    /// Удобная система напоминаний
+    /// Обновление контента
     public static let advantage5 = Text.tr("Localizable", "Buy.Advantage5")
-    /// ПОЛУЧИТЬ 3 ДНЯ БЕСПЛАТНО
+    /// ПОЛУЧИТЬ
     public static let `get` = Text.tr("Localizable", "Buy.Get")
-    /// Подписку можно отменить в любой момент, за день до списания следующего периода.
-    public static let info = Text.tr("Localizable", "Buy.Info")
     /// Попробуй бесплатно!
     public static let tryFree = Text.tr("Localizable", "Buy.TryFree")
     public enum MonthView {
-      /// Подписка за 169 ₽/месяц, списание раз в месяц
+      /// Ежемесячно. 1 месяц = 1 чашка кофе.
       public static let subtitle = Text.tr("Localizable", "Buy.MonthView.Subtitle")
+      /// Ежемесячно - %@. 1 месяц = 1 чашка кофе.
+      public static func subtitleWithPrice(_ p1: String) -> String {
+        return Text.tr("Localizable", "Buy.MonthView.SubtitleWithPrice", p1)
+      }
       /// Месячный план
       public static let title = Text.tr("Localizable", "Buy.MonthView.Title")
+      /// Месячный план – %@/месяц
+      public static func titleWithPrice(_ p1: String) -> String {
+        return Text.tr("Localizable", "Buy.MonthView.TitleWithPrice", p1)
+      }
     }
     public enum YearView {
-      /// Затем 149 ₽/месяц, оплата раз в год 1788 ₽
+      /// Ежегододно. 12 месяцев = 6 чашек кофе.
       public static let subtitle = Text.tr("Localizable", "Buy.YearView.Subtitle")
-      /// Годовой - 3 дня бесплатно!
+      /// Ежегододно – %@. 12 месяцев = 6 чашек кофе.
+      public static func subtitleWithPrice(_ p1: String) -> String {
+        return Text.tr("Localizable", "Buy.YearView.SubtitleWithPrice", p1)
+      }
+      /// Годовой план
       public static let title = Text.tr("Localizable", "Buy.YearView.Title")
+      /// Годовой план – %@/месяц 
+      public static func titleWithPrice(_ p1: String) -> String {
+        return Text.tr("Localizable", "Buy.YearView.TitleWithPrice", p1)
+      }
     }
   }
 

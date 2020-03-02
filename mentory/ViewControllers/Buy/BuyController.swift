@@ -7,8 +7,10 @@
 //
 
 import MDFoundation
+import StoreKit
 
 protocol BuyControllerLogic: AnyObject {
+    func didLoadProducts(_ products: [Product])
     func presentError(message: String)
 }
 
@@ -17,6 +19,7 @@ public class BuyController: UIViewController, BuyControllerLogic {
 
     var interactor: BuyInteractor?
     lazy var customView: BuyView? = view as? BuyView
+
     private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
 
     // MARK: - Init
@@ -28,6 +31,7 @@ public class BuyController: UIViewController, BuyControllerLogic {
         )
         setup()
         addActionHandlers()
+        loadProducts()
     }
 
     required init?(coder: NSCoder) {
@@ -37,6 +41,12 @@ public class BuyController: UIViewController, BuyControllerLogic {
     private func setup() {
         interactor = BuyInteractor()
         interactor?.controller = self
+    }
+
+    // MARK: - Network
+
+    private func loadProducts() {
+        interactor?.loadProducts()
     }
 
     // MARK: - Action handlers
@@ -55,6 +65,16 @@ public class BuyController: UIViewController, BuyControllerLogic {
     }
 
     // MARK: - BuyControllerLogic
+
+    func didLoadProducts(_ products: [Product]) {
+        for product in products {
+            if product.iapProduct == .yearly {
+                customView?.setYearlyProduct(product: product.skProduct)
+            } else {
+                customView?.setMonthlyProduct(product: product.skProduct)
+            }
+        }
+    }
 
     func presentError(message: String) {
         customView?.stopShowingActivityIndicator()

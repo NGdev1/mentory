@@ -7,6 +7,7 @@
 //
 
 import MDFoundation
+import StoreKit
 
 protocol BuyViewDelegate: AnyObject {
     func planChanged(state: BuyView.State)
@@ -104,6 +105,20 @@ final class BuyView: UIView {
         } else {
             currentState = .buyPerMonth
         }
+    }
+
+    // MARK: - Internal methods
+
+    func setYearlyProduct(product: SKProduct) {
+        let currencySymbol: String = product.priceLocale.currencySymbol ?? .empty
+        perYearTitle.text = Text.Buy.YearView.titleWithPrice("\(Int(truncating: product.price) / 12) \(currencySymbol)")
+        perYearSubtitle.text = Text.Buy.YearView.subtitleWithPrice("\(Int(truncating: product.price)) \(currencySymbol)")
+    }
+
+    func setMonthlyProduct(product: SKProduct) {
+        let currencySymbol: String = product.priceLocale.currencySymbol ?? .empty
+        perMonthTitle.text = Text.Buy.MonthView.titleWithPrice("\(Int(truncating: product.price)) \(currencySymbol)")
+        perMonthSubtitle.text = Text.Buy.MonthView.subtitleWithPrice("\(Int(truncating: product.price)) \(currencySymbol)")
     }
 
     // MARK: - Private methods

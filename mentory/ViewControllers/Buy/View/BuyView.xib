@@ -22,11 +22,11 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="David" translatesAutoresizingMaskIntoConstraints="NO" id="Pcb-xj-gxV">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMF-Dz-8FK">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMF-Dz-8FK">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s77-MO-zLy">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="684"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="793"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYA-X5-Yhl">
                                     <rect key="frame" x="358" y="16" width="40" height="40"/>
@@ -188,6 +188,22 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-7K-SQ4">
+                                    <rect key="frame" x="16" y="693" width="382" height="50"/>
+                                    <color key="backgroundColor" name="WinterGreen"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="GrR-EQ-tKa"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <state key="normal" title="Get">
+                                        <color key="titleColor" name="Black"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="8T3-Yw-TzA" firstAttribute="leading" secondItem="s77-MO-zLy" secondAttribute="leading" constant="16" id="0DZ-zw-Dct"/>
@@ -199,7 +215,7 @@
                                 <constraint firstItem="LyN-VK-pY8" firstAttribute="centerY" secondItem="CfY-wk-H2r" secondAttribute="centerY" id="C5N-yU-TxP"/>
                                 <constraint firstItem="e1e-nZ-KSj" firstAttribute="leading" secondItem="aWl-JK-GMs" secondAttribute="trailing" constant="11" id="CfS-L2-GKg"/>
                                 <constraint firstItem="e1e-nZ-KSj" firstAttribute="top" secondItem="SiR-gc-3Ur" secondAttribute="bottom" constant="30.5" id="EKR-rT-GBg"/>
-                                <constraint firstAttribute="bottom" secondItem="O4R-Z9-O54" secondAttribute="bottom" constant="40" id="EMt-5P-0mc"/>
+                                <constraint firstItem="FxH-7K-SQ4" firstAttribute="trailing" secondItem="O4R-Z9-O54" secondAttribute="trailing" id="EQ6-Hp-xzA"/>
                                 <constraint firstItem="zag-IE-5XF" firstAttribute="trailing" secondItem="RA1-eT-rH7" secondAttribute="trailing" id="GDa-qi-eww"/>
                                 <constraint firstItem="RA1-eT-rH7" firstAttribute="centerY" secondItem="HfY-mb-pKo" secondAttribute="centerY" id="IOu-AN-5jG"/>
                                 <constraint firstItem="LyN-VK-pY8" firstAttribute="trailing" secondItem="8T3-Yw-TzA" secondAttribute="trailing" id="L2x-aQ-Zbc"/>
@@ -211,13 +227,16 @@
                                 <constraint firstItem="e1e-nZ-KSj" firstAttribute="centerY" secondItem="aWl-JK-GMs" secondAttribute="centerY" id="Ubl-Mw-UUh"/>
                                 <constraint firstItem="Kq8-fe-lJw" firstAttribute="top" secondItem="LyN-VK-pY8" secondAttribute="bottom" constant="18" id="WAU-gl-shF"/>
                                 <constraint firstItem="LyN-VK-pY8" firstAttribute="top" secondItem="WWa-tA-6L9" secondAttribute="bottom" constant="18" id="WDc-GT-5Qk"/>
+                                <constraint firstAttribute="bottom" secondItem="FxH-7K-SQ4" secondAttribute="bottom" constant="50" id="XQ4-dv-NQd"/>
                                 <constraint firstItem="e1e-nZ-KSj" firstAttribute="trailing" secondItem="8T3-Yw-TzA" secondAttribute="trailing" id="YvB-6x-ri2"/>
                                 <constraint firstItem="8T3-Yw-TzA" firstAttribute="trailing" secondItem="v2C-9k-13I" secondAttribute="trailing" id="Zdd-nZ-9pY"/>
                                 <constraint firstItem="RA1-eT-rH7" firstAttribute="top" secondItem="Kq8-fe-lJw" secondAttribute="bottom" constant="18" id="b85-Mt-ePF"/>
+                                <constraint firstItem="FxH-7K-SQ4" firstAttribute="leading" secondItem="O4R-Z9-O54" secondAttribute="leading" id="bRf-z2-Gjy"/>
                                 <constraint firstItem="Kq8-fe-lJw" firstAttribute="trailing" secondItem="8T3-Yw-TzA" secondAttribute="trailing" id="bSm-gy-WKY"/>
                                 <constraint firstItem="O4R-Z9-O54" firstAttribute="top" secondItem="zag-IE-5XF" secondAttribute="bottom" constant="8" id="er2-Kg-L0I"/>
                                 <constraint firstItem="WWa-tA-6L9" firstAttribute="leading" secondItem="Ult-AM-yvj" secondAttribute="trailing" constant="11" id="f2Q-5q-a2m"/>
                                 <constraint firstItem="O4R-Z9-O54" firstAttribute="trailing" secondItem="zag-IE-5XF" secondAttribute="trailing" id="fok-RI-QfN"/>
+                                <constraint firstItem="FxH-7K-SQ4" firstAttribute="top" secondItem="O4R-Z9-O54" secondAttribute="bottom" constant="49" id="iaf-KV-Gcq"/>
                                 <constraint firstItem="zag-IE-5XF" firstAttribute="top" secondItem="RA1-eT-rH7" secondAttribute="bottom" constant="33.5" id="inM-Bm-nv8"/>
                                 <constraint firstItem="HfY-mb-pKo" firstAttribute="leading" secondItem="knt-zI-vmg" secondAttribute="leading" id="kwA-7K-9z4"/>
                                 <constraint firstItem="WWa-tA-6L9" firstAttribute="trailing" secondItem="8T3-Yw-TzA" secondAttribute="trailing" id="ng3-Jk-mqM"/>
@@ -234,7 +253,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" name="Black"/>
+                    <color key="backgroundColor" name="BuyPageBackground"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="s77-MO-zLy" secondAttribute="trailing" id="2uf-S8-22n"/>
                         <constraint firstItem="s77-MO-zLy" firstAttribute="top" secondItem="cMF-Dz-8FK" secondAttribute="top" id="6ut-Bp-OcM"/>
@@ -282,6 +301,9 @@
         <image name="TitleImage" width="332" height="112"/>
         <namedColor name="Black">
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BuyPageBackground">
+            <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Title">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
