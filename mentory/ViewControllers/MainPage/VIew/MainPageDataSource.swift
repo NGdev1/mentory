@@ -11,7 +11,7 @@ import MDFoundation
 import UIKit
 
 protocol MainPageDataSourceDelegate: AnyObject {
-    func tryForFree()
+    func showPurchasePage()
     func displayLesson(
         _ lesson: Lesson,
         lessonIsLocked: Bool,
@@ -161,7 +161,7 @@ extension MainPageDataSource: UITableViewDelegate {
                 cellView: cell
             )
         } else if item.type == .buyFull {
-            delegate?.tryForFree()
+            delegate?.showPurchasePage()
         }
     }
 }

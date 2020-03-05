@@ -81,6 +81,9 @@ public class PlayerController: UIViewController {
         guard let touchEvent = event.allTouches?.first else { return }
         if touchEvent.phase == .ended {
             player.setProgress(customView?.progressSlider.value ?? 0)
+            customView?.userChangingProgress = false
+        } else {
+            customView?.userChangingProgress = true
         }
     }
 

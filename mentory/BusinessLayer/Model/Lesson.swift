@@ -16,7 +16,8 @@ public struct Lesson: Decodable {
         subtitle: String,
         description: String,
         backgroundImageUrl: String,
-        tracks: [Track]
+        tracks: [Track],
+        tag: String?
     ) {
         self.id = id
         self.title = title
@@ -24,6 +25,7 @@ public struct Lesson: Decodable {
         self.description = description
         self.backgroundImageUrl = backgroundImageUrl
         self.tracks = tracks
+        self.tag = tag
     }
 
     let id: String
@@ -32,6 +34,7 @@ public struct Lesson: Decodable {
     let description: String
     let backgroundImageUrl: String
     let tracks: [Track]
+    let tag: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -40,5 +43,6 @@ public struct Lesson: Decodable {
         case description
         case backgroundImageUrl
         case tracks
+        case tag
     }
 }

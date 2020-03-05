@@ -37,6 +37,14 @@ class LessonHeaderCell: UITableViewCell {
         } else {
             subtitleLabel.text = Text.Lesson.subtitleFrom5Tracks(lesson.subtitle, lesson.tracks.count)
         }
-        descriptionLabel.text = lesson.description
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        let attributedString = NSMutableAttributedString(string: lesson.description)
+        attributedString.addAttribute(
+            NSAttributedString.Key.paragraphStyle,
+            value: paragraphStyle,
+            range: NSRange(0 ... attributedString.length - 1)
+        )
+        descriptionLabel.attributedText = attributedString
     }
 }

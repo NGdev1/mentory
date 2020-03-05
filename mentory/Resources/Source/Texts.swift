@@ -28,9 +28,9 @@ public enum Text {
   public enum Buy {
     /// Полный доступ к категории «Программы»
     public static let advantage1 = Text.tr("Localizable", "Buy.Advantage1")
-    /// Полная доступ категории «Фокус»
+    /// Полный доступ к категории «Фокус»
     public static let advantage2 = Text.tr("Localizable", "Buy.Advantage2")
-    /// Полная доступ категории «Мотивация»
+    /// Полный доступ к категории «Мотивация»
     public static let advantage3 = Text.tr("Localizable", "Buy.Advantage3")
     /// Уведомления и напоминания
     public static let advantage4 = Text.tr("Localizable", "Buy.Advantage4")
@@ -38,6 +38,8 @@ public enum Text {
     public static let advantage5 = Text.tr("Localizable", "Buy.Advantage5")
     /// ПОЛУЧИТЬ
     public static let `get` = Text.tr("Localizable", "Buy.Get")
+    /// Периодическая оплата. Возможность отмены в любой момент. Оплата за подписку будет списана с Вашего iTunes аккаунта. Подписка автоматически обновляется в течении 24 часов до истечения периода подписки. Вы можете отменить подписку в любой момент в разделе Настройки в iTunes. В случае отмены Ваша подписка прекращается в конце действующего цикла оплаты. После начала подписки весь неиспользованный Вами бесплатный период будет аннулирован.
+    public static let info = Text.tr("Localizable", "Buy.Info")
     /// Произошла ошибка при совершении покупки. Транзакция отменена.
     public static let purchaseFailed = Text.tr("Localizable", "Buy.PurchaseFailed")
     /// Восстановить покупки
@@ -61,7 +63,7 @@ public enum Text {
     public enum YearView {
       /// Ежегододно. 12 месяцев = 6 чашек кофе.
       public static let subtitle = Text.tr("Localizable", "Buy.YearView.Subtitle")
-      /// Ежегододно – %@. 12 месяцев = 6 чашек кофе.
+      /// Ежегодно – %@. 12 месяцев = 6 чашек кофе.
       public static func subtitleWithPrice(_ p1: String) -> String {
         return Text.tr("Localizable", "Buy.YearView.SubtitleWithPrice", p1)
       }

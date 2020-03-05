@@ -22,10 +22,9 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MK-4g-ENx">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6J-gn-X3e">
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6J-gn-X3e">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="sso-bQ-eUR">
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sso-bQ-eUR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
@@ -127,13 +126,17 @@
             <constraints>
                 <constraint firstItem="kiV-JH-a4y" firstAttribute="top" secondItem="U0q-dg-uzJ" secondAttribute="bottom" constant="40" id="4u7-eT-66e"/>
                 <constraint firstAttribute="trailing" secondItem="Wn9-sz-JPW" secondAttribute="trailing" constant="16" id="7bc-ey-P5A"/>
+                <constraint firstItem="k6J-gn-X3e" firstAttribute="trailing" secondItem="RGJ-Xq-IRP" secondAttribute="trailing" id="8Si-QQ-Z8w"/>
                 <constraint firstItem="8MK-4g-ENx" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" id="GMG-Wz-piv"/>
                 <constraint firstAttribute="trailing" secondItem="T1z-et-Jaq" secondAttribute="trailing" constant="16" id="GYX-wD-QVJ"/>
                 <constraint firstItem="Wn9-sz-JPW" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" constant="16" id="Ico-id-k9v"/>
                 <constraint firstItem="Zw2-Kz-3c7" firstAttribute="bottom" secondItem="T1z-et-Jaq" secondAttribute="bottom" constant="20" id="JdU-cM-ncE"/>
                 <constraint firstItem="IJn-w0-H0F" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" constant="16" id="LHe-lU-Cxl"/>
+                <constraint firstAttribute="bottom" secondItem="k6J-gn-X3e" secondAttribute="bottom" id="LaH-Uu-Yc0"/>
                 <constraint firstAttribute="trailing" secondItem="kiV-JH-a4y" secondAttribute="trailing" constant="16" id="Lul-eo-4Dp"/>
                 <constraint firstItem="U0q-dg-uzJ" firstAttribute="centerY" secondItem="RGJ-Xq-IRP" secondAttribute="centerY" id="PaP-sk-Atd"/>
+                <constraint firstItem="k6J-gn-X3e" firstAttribute="top" secondItem="RGJ-Xq-IRP" secondAttribute="top" id="TXj-q3-Gmy"/>
+                <constraint firstItem="k6J-gn-X3e" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" id="bVg-gu-4D7"/>
                 <constraint firstItem="Wn9-sz-JPW" firstAttribute="centerX" secondItem="U0q-dg-uzJ" secondAttribute="centerX" id="eO6-VH-a8L"/>
                 <constraint firstItem="kiV-JH-a4y" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" constant="16" id="fLl-Fy-X22"/>
                 <constraint firstAttribute="trailing" secondItem="IJn-w0-H0F" secondAttribute="trailing" constant="16" id="nmp-wj-5Ms"/>
@@ -176,7 +179,7 @@
             <color red="0.62352941176470589" green="0.62352941176470589" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WinterGreen">
-            <color red="0.090000003576278687" green="1" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.090196078431372548" green="1" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

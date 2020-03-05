@@ -18,6 +18,9 @@ class LessonCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var playImageView: UIImageView!
 
+    @IBOutlet var tagView: UIView!
+    @IBOutlet var tagLabel: UILabel!
+
     // MARK: - Xib init
 
     override func awakeFromNib() {
@@ -50,6 +53,8 @@ class LessonCell: UITableViewCell {
         } else {
             playImageView.image = Assets.play.image
         }
+        tagView.isHidden = lesson.tag == nil
+        tagLabel.text = lesson.tag
     }
 
     func configure(with model: MainPageCellViewModel) {

@@ -116,7 +116,7 @@ extension MainPageController: MainPageDataSourceDelegate {
     ) {
         guard lessonIsLocked == false else {
             notificationsFeedbackGenerator.notificationOccurred(.error)
-            cellView?.playImageView.shake()
+            showPurchasePage()
             return
         }
 
@@ -138,9 +138,10 @@ extension MainPageController: MainPageDataSourceDelegate {
         }
     }
 
-    func tryForFree() {
+    func showPurchasePage() {
+        let nextController = BuyController()
+        nextController.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async { [weak self] in
-            let nextController = BuyController()
             self?.present(nextController, animated: true)
         }
     }

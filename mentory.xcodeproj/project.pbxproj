@@ -54,6 +54,7 @@
 		6BAB96FC23EDA9B400354E39 /* ImageBasedTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB96F623EDA9B400354E39 /* ImageBasedTransitionManager.swift */; };
 		6BAB96FD23EDA9B400354E39 /* ImageBasedContextTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB96F723EDA9B400354E39 /* ImageBasedContextTransitioning.swift */; };
 		6BAB96FF23EE1DAD00354E39 /* LessonControllerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB96FE23EE1DAD00354E39 /* LessonControllerModels.swift */; };
+		6BB322BA2410E70A006CD926 /* ExtensionFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB322B92410E70A006CD926 /* ExtensionFloat.swift */; };
 		6BC24FAC23ED945B0054C8B9 /* TryPremiumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC24FAA23ED945B0054C8B9 /* TryPremiumCell.swift */; };
 		6BC24FAD23ED945B0054C8B9 /* TryPremiumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BC24FAB23ED945B0054C8B9 /* TryPremiumCell.xib */; };
 		6BC24FB523EDA5E70054C8B9 /* LessonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC24FB023EDA5E70054C8B9 /* LessonController.swift */; };
@@ -124,6 +125,7 @@
 		6BAB96F623EDA9B400354E39 /* ImageBasedTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBasedTransitionManager.swift; sourceTree = "<group>"; };
 		6BAB96F723EDA9B400354E39 /* ImageBasedContextTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBasedContextTransitioning.swift; sourceTree = "<group>"; };
 		6BAB96FE23EE1DAD00354E39 /* LessonControllerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonControllerModels.swift; sourceTree = "<group>"; };
+		6BB322B92410E70A006CD926 /* ExtensionFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFloat.swift; sourceTree = "<group>"; };
 		6BC24FAA23ED945B0054C8B9 /* TryPremiumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryPremiumCell.swift; sourceTree = "<group>"; };
 		6BC24FAB23ED945B0054C8B9 /* TryPremiumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryPremiumCell.xib; sourceTree = "<group>"; };
 		6BC24FB023EDA5E70054C8B9 /* LessonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				6B5B8ED023EE96620001A6C3 /* UIView+LoadingView */,
 				6B032CE823ED6D8A00662BF5 /* ExtensionUINavigationBar.swift */,
+				6BB322B92410E70A006CD926 /* ExtensionFloat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -778,6 +781,7 @@
 				6B7A518523EE3BCE009D3047 /* PlayerController.swift in Sources */,
 				6BA848FC23FAE26D00C6DDEB /* LessonHeaderCell.swift in Sources */,
 				6B032CE923ED6D8A00662BF5 /* ExtensionUINavigationBar.swift in Sources */,
+				6BB322BA2410E70A006CD926 /* ExtensionFloat.swift in Sources */,
 				6BA8490323FAE2D000C6DDEB /* AudioCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -921,7 +925,7 @@
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = HY59K9S4C6;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -929,7 +933,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
 				PRODUCT_NAME = Mentory;
 				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Distribution)";
@@ -946,7 +950,7 @@
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = HY59K9S4C6;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -954,7 +958,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
 				PRODUCT_NAME = Mentory;
 				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Distribution)";

@@ -38,6 +38,7 @@ final class BuyView: UIView {
     @IBOutlet var perMonthSubtitle: UILabel!
 
     @IBOutlet var restorePurchases: UIButton!
+    @IBOutlet var infoLabel: UILabel!
     @IBOutlet var buyButton: UIButton!
 
     weak var delegate: BuyViewDelegate?
@@ -83,6 +84,7 @@ final class BuyView: UIView {
         perMonthSubtitle.text = Text.Buy.MonthView.subtitle
 
         buyButton.setTitle(Text.Buy.get, for: .normal)
+        infoLabel.text = Text.Buy.info
         restorePurchases.setTitle(Text.Buy.restorePurchases, for: .normal)
 
         currentState = .buyPerYear
@@ -117,14 +119,18 @@ final class BuyView: UIView {
 
     func setYearlyProduct(product: SKProduct) {
         let currencySymbol: String = product.priceLocale.currencySymbol ?? .empty
-        perYearTitle.text = Text.Buy.YearView.titleWithPrice("\(Int(truncating: product.price) / 12) \(currencySymbol)")
-        perYearSubtitle.text = Text.Buy.YearView.subtitleWithPrice("\(Int(truncating: product.price)) \(currencySymbol)")
+        let price = Float(truncating: product.price)
+        perYearTitle.text = Text.Buy.YearView.titleWithPrice(
+            "\((price / 12).currencyValue) \(currencySymbol)"
+        )
+        perYearSubtitle.text = Text.Buy.YearView.subtitleWithPrice("\(price.currencyValue) \(currencySymbol)")
     }
 
     func setMonthlyProduct(product: SKProduct) {
         let currencySymbol: String = product.priceLocale.currencySymbol ?? .empty
-        perMonthTitle.text = Text.Buy.MonthView.titleWithPrice("\(Int(truncating: product.price)) \(currencySymbol)")
-        perMonthSubtitle.text = Text.Buy.MonthView.subtitleWithPrice("\(Int(truncating: product.price)) \(currencySymbol)")
+        let price = Float(truncating: product.price)
+        perMonthTitle.text = Text.Buy.MonthView.titleWithPrice("\(price.currencyValue) \(currencySymbol)")
+        perMonthSubtitle.text = Text.Buy.MonthView.subtitleWithPrice("\(price.currencyValue) \(currencySymbol)")
     }
 
     // MARK: - Private methods

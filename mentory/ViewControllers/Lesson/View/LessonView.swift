@@ -12,9 +12,6 @@ import UIKit
 
 final class LessonView: UIView {
     struct Appearance {
-        // static let headerHeight: CGFloat = 375
-        // static let navBarStartTurningPoint: CGFloat = 220
-        // static let navBarTurnСompletelyTurnPoint: CGFloat = 240
         static var headerHeight: CGFloat = 200
         static let navBarStartTurningPoint: CGFloat = 70
         static let navBarTurnСompletelyTurnPoint: CGFloat = 120

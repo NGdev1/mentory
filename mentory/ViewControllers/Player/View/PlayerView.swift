@@ -25,6 +25,8 @@ final class PlayerView: UIView {
     @IBOutlet var playSmallButton: UIButton!
     @IBOutlet var forwardButton: UIButton!
 
+    var userChangingProgress: Bool = false
+
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(Assets.backButton.image, for: .normal)
@@ -105,7 +107,7 @@ final class PlayerView: UIView {
 
 extension PlayerView: MP3PlayerDelegate {
     func progressUpdated(_ value: Float) {
-        if progressSlider.isTracking == false {
+        if userChangingProgress == false {
             showProgress(value)
         }
     }

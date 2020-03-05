@@ -20,6 +20,7 @@
 public enum Assets {
   public static let black = ColorAsset(name: "Black")
   public static let buyPageBackground = ColorAsset(name: "BuyPageBackground")
+  public static let coolGrey = ColorAsset(name: "CoolGrey")
   public static let title = ColorAsset(name: "Title")
   public static let unactive = ColorAsset(name: "Unactive")
   public static let warmGrey = ColorAsset(name: "WarmGrey")

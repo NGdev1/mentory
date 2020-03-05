@@ -51,6 +51,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTI-KV-RXd">
+                                <rect key="frame" x="16" y="16" width="45" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8w-g2-fYp">
+                                        <rect key="frame" x="12" y="6" width="21" height="12"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <color key="textColor" name="Black"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="CoolGrey"/>
+                                <constraints>
+                                    <constraint firstItem="f8w-g2-fYp" firstAttribute="leading" secondItem="CTI-KV-RXd" secondAttribute="leading" constant="12" id="EIh-vW-hiJ"/>
+                                    <constraint firstItem="f8w-g2-fYp" firstAttribute="top" secondItem="CTI-KV-RXd" secondAttribute="top" constant="6" id="Sfu-Rg-DQ9"/>
+                                    <constraint firstAttribute="trailing" secondItem="f8w-g2-fYp" secondAttribute="trailing" constant="12" id="SpF-su-a14"/>
+                                    <constraint firstAttribute="bottom" secondItem="f8w-g2-fYp" secondAttribute="bottom" constant="6" id="x43-sU-6k5"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="7rt-z8-9jx" firstAttribute="top" secondItem="LuC-3L-EuY" secondAttribute="bottom" constant="6" id="0Gl-XH-TYk"/>
@@ -58,6 +81,7 @@
                             <constraint firstItem="w1p-Ng-xQM" firstAttribute="trailing" secondItem="MjC-7Y-S5e" secondAttribute="trailing" id="7k7-zP-c0H"/>
                             <constraint firstItem="K6h-X6-R5N" firstAttribute="leading" secondItem="7rt-z8-9jx" secondAttribute="trailing" constant="6" id="7wO-Hc-T6J"/>
                             <constraint firstItem="MjC-7Y-S5e" firstAttribute="top" secondItem="2qy-ee-Yxe" secondAttribute="top" id="Cr6-D4-sUZ"/>
+                            <constraint firstItem="CTI-KV-RXd" firstAttribute="leading" secondItem="2qy-ee-Yxe" secondAttribute="leading" constant="16" id="THe-R1-sj5"/>
                             <constraint firstItem="w1p-Ng-xQM" firstAttribute="bottom" secondItem="MjC-7Y-S5e" secondAttribute="bottom" id="TqR-3i-foY"/>
                             <constraint firstAttribute="bottom" secondItem="K6h-X6-R5N" secondAttribute="bottom" constant="16" id="TyD-uP-4u3"/>
                             <constraint firstAttribute="trailing" secondItem="MjC-7Y-S5e" secondAttribute="trailing" id="U5n-U6-90P"/>
@@ -66,6 +90,7 @@
                             <constraint firstItem="LuC-3L-EuY" firstAttribute="leading" secondItem="7rt-z8-9jx" secondAttribute="leading" id="XOd-HY-ViI"/>
                             <constraint firstItem="7rt-z8-9jx" firstAttribute="leading" secondItem="2qy-ee-Yxe" secondAttribute="leading" constant="16" id="YA3-n0-Fn5"/>
                             <constraint firstAttribute="trailing" secondItem="K6h-X6-R5N" secondAttribute="trailing" constant="16" id="Yw4-El-7kL"/>
+                            <constraint firstItem="CTI-KV-RXd" firstAttribute="top" secondItem="2qy-ee-Yxe" secondAttribute="top" constant="16" id="pDG-wx-V3F"/>
                             <constraint firstItem="MjC-7Y-S5e" firstAttribute="leading" secondItem="2qy-ee-Yxe" secondAttribute="leading" id="st2-UQ-Pyf"/>
                             <constraint firstAttribute="bottom" secondItem="MjC-7Y-S5e" secondAttribute="bottom" id="zi8-To-Qwx"/>
                         </constraints>
@@ -89,6 +114,8 @@
                 <outlet property="backgroundImageView" destination="MjC-7Y-S5e" id="CJ6-dC-XXs"/>
                 <outlet property="playImageView" destination="K6h-X6-R5N" id="f3S-ze-zs1"/>
                 <outlet property="subtitleLabel" destination="7rt-z8-9jx" id="e5a-vg-Hfk"/>
+                <outlet property="tagLabel" destination="f8w-g2-fYp" id="4aY-n6-Fdf"/>
+                <outlet property="tagView" destination="CTI-KV-RXd" id="MHs-cf-YRL"/>
                 <outlet property="titleLabel" destination="LuC-3L-EuY" id="1vv-ec-G5o"/>
                 <outlet property="viewWithInsets" destination="2qy-ee-Yxe" id="Mk4-Li-vkv"/>
             </connections>
@@ -101,11 +128,14 @@
         <namedColor name="Black">
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="CoolGrey">
+            <color red="0.73333333333333328" green="0.73333333333333328" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Title">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WinterGreen">
-            <color red="0.090000003576278687" green="1" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.090196078431372548" green="1" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

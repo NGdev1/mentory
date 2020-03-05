@@ -31,6 +31,7 @@
     "lessons": [
         {
             "id": "2",
+            "tag": "POPULAR",
             "title": "Creativity",
             "subtitle": "LESSON 1",
             "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
@@ -46,6 +47,7 @@
         },
         {
             "id": "3",
+            "tag": "NEW",
             "title": "ADalksdaksd",
             "subtitle": "LESSON 2",
             "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
@@ -63,6 +65,7 @@
     "premiumLessons": [
         {
             "id": "4",
+            "tag": "POPULAR",
             "title": "Premium lesson",
             "subtitle": "LESSON 3",
             "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
@@ -78,6 +81,7 @@
         },
         {
             "id": "5",
+            "tag": "NEW",
             "title": "Premium other lesson",
             "subtitle": "LESSON 4",
             "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
@@ -93,6 +97,7 @@
         },
         {
             "id": "6",
+            "tag": "NEW",
             "title": "More lessons",
             "subtitle": "LESSON 5",
             "description": "MENTORY is a form of experiencing a need that is characterized by awareness (what I want), understanding of the motive (why I want it) and there is an idea of possible ways to satisfy (how can I achieve this). Number of desires of one person is not limited by anything - they differ in terms of objects, sustainability, methods of satisfaction, etc. In accordance with these criteria, they identify feasible desires and unrealistic, reckless, targeted and others. ",
