@@ -39,6 +39,7 @@ final class BuyView: UIView {
 
     @IBOutlet var restorePurchases: UIButton!
     @IBOutlet var infoLabel: UILabel!
+    @IBOutlet var buyInfoLabel: UILabel!
     @IBOutlet var buyButton: UIButton!
 
     weak var delegate: BuyViewDelegate?
@@ -83,6 +84,7 @@ final class BuyView: UIView {
         perYearSubtitle.text = Text.Buy.YearView.subtitle
         perMonthSubtitle.text = Text.Buy.MonthView.subtitle
 
+        buyInfoLabel.text = Text.Buy.getInfo
         buyButton.setTitle(Text.Buy.get, for: .normal)
         infoLabel.text = Text.Buy.info
         restorePurchases.setTitle(Text.Buy.restorePurchases, for: .normal)

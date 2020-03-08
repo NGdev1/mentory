@@ -21,7 +21,7 @@ Common.Cancel = "Cancel";
 
 MainPage.Programs = "Programs";
 MainPage.ProgramsDescription = "Thirteen unique lessons. Listen one at a time. And you will be surprised how your life will change.";
-MainPage.GetPremium = "Get PREMIUM!";
+MainPage.GetPremium = "Try PREMIUM Free!";
 MainPage.PressForInfo = "Click for details";
 
 Errors.TryAgain = "Try again";
@@ -36,7 +36,7 @@ Lesson.SubtitleOneTrack = "%@ ∙ AUDIO";
 Lesson.Subtitle2to4Tracks = "%@ ∙ %d AUDIOS";
 Lesson.SubtitleFrom5Tracks = "%@ ∙ %d AUDIOS";
 
-Buy.Subtitle = "Full library";
+Buy.Subtitle = "Try free!";
 Buy.Advantage1 = "Full access to the \"Programs\" category";
 Buy.Advantage2 = "Full access to the Focus category";
 Buy.Advantage3 = "Full access to the Motivation category";
@@ -50,7 +50,8 @@ Buy.YearView.Title = "Annual Plan";
 Buy.YearView.Subtitle = "Annually. 12 months = 6 cups of coffee.";
 Buy.MonthView.Title = "Monthly Plan";
 Buy.MonthView.Subtitle = "Monthly. 1 month = 1 cup of coffee.";
-Buy.Get = "GET";
+Buy.Get = "GET 3 DAYS FREE";
+Buy.GetInfo = "You can unsubscribe at any time, the day before the cancellation of the next period.";
 Buy.PurchaseFailed = "Purchase failed";
 Buy.Info = "Periodic payment. Ability to cancel at any time. Subscription fees will be charged to your iTunes account. The subscription is automatically renewed within 24 hours before the expiration of the subscription period. You can unsubscribe at any time in the Settings section of iTunes. In case of cancellation, your subscription is terminated at the end of the current payment cycle. After the start of the subscription, the entire unused free period will be canceled.";
 Buy.RestorePurchases = "Restore purchases";

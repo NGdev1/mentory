@@ -36,15 +36,17 @@ public enum Text {
     public static let advantage4 = Text.tr("Localizable", "Buy.Advantage4")
     /// Обновление контента
     public static let advantage5 = Text.tr("Localizable", "Buy.Advantage5")
-    /// ПОЛУЧИТЬ
+    /// ПОЛУЧИТЬ 3 ДНЯ БЕСПЛАТНО
     public static let `get` = Text.tr("Localizable", "Buy.Get")
+    /// Подписку можно отменить в любой момент, за день до списания следующего периода.
+    public static let getInfo = Text.tr("Localizable", "Buy.GetInfo")
     /// Периодическая оплата. Возможность отмены в любой момент. Оплата за подписку будет списана с Вашего iTunes аккаунта. Подписка автоматически обновляется в течении 24 часов до истечения периода подписки. Вы можете отменить подписку в любой момент в разделе Настройки в iTunes. В случае отмены Ваша подписка прекращается в конце действующего цикла оплаты. После начала подписки весь неиспользованный Вами бесплатный период будет аннулирован.
     public static let info = Text.tr("Localizable", "Buy.Info")
     /// Произошла ошибка при совершении покупки. Транзакция отменена.
     public static let purchaseFailed = Text.tr("Localizable", "Buy.PurchaseFailed")
     /// Восстановить покупки
     public static let restorePurchases = Text.tr("Localizable", "Buy.RestorePurchases")
-    /// Полная библиотека
+    /// Попробуй бесплатно!
     public static let subtitle = Text.tr("Localizable", "Buy.Subtitle")
     public enum MonthView {
       /// Ежемесячно. 1 месяц = 1 чашка кофе.
@@ -124,7 +126,7 @@ public enum Text {
   }
 
   public enum MainPage {
-    /// Получи PREMIUM!
+    /// Попробуй PREMIUM бесплатно!
     public static let getPremium = Text.tr("Localizable", "MainPage.GetPremium")
     /// Нажми для подробностей
     public static let pressForInfo = Text.tr("Localizable", "MainPage.PressForInfo")

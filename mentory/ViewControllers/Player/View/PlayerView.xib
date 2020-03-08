@@ -31,7 +31,7 @@
                     <blurEffect style="systemUltraThinMaterial"/>
                 </visualEffectView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T1z-et-Jaq">
-                    <rect key="frame" x="16" y="777" width="382" height="65"/>
+                    <rect key="frame" x="16" y="785.5" width="382" height="56.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bco-tb-YdZ">
                             <rect key="frame" x="16" y="8" width="204" height="19.5"/>
@@ -40,13 +40,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ox-SN-2Gm">
-                            <rect key="frame" x="16" y="32.5" width="204" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="16" y="32.5" width="204" height="12"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                             <color key="textColor" name="WarmGrey"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEr-Mh-umq">
-                            <rect key="frame" x="274" y="19.5" width="28" height="26"/>
+                            <rect key="frame" x="274" y="15.5" width="28" height="26"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="28" id="3TA-9e-DUq"/>
                                 <constraint firstAttribute="height" constant="26" id="PHx-1W-ClN"/>
@@ -55,7 +55,7 @@
                             <state key="normal" backgroundImage="iconPlay"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gd-Q5-anv">
-                            <rect key="frame" x="322" y="21.5" width="30" height="22"/>
+                            <rect key="frame" x="322" y="17.5" width="30" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="LtO-dd-MYw"/>
                                 <constraint firstAttribute="width" constant="30" id="baq-Yw-vs8"/>
@@ -64,7 +64,7 @@
                             <state key="normal" backgroundImage="iconForward"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-mn-NuV">
-                            <rect key="frame" x="224" y="21.5" width="30" height="22"/>
+                            <rect key="frame" x="224" y="17.5" width="30" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="bXL-WB-c80"/>
                                 <constraint firstAttribute="height" constant="22" id="mxZ-P6-fLH"/>
