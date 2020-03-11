@@ -104,7 +104,7 @@ public class BuyController: UIViewController, BuyControllerLogic {
     func presentError(message: String) {
         customView?.stopShowingActivityIndicator()
         guard message != .empty else { return }
-        let alert = AlertsFactory.error(
+        let alert = AlertsFactory.plain(
             title: Text.Alert.error,
             message: message,
             cancelText: Text.Alert.cancel

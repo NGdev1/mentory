@@ -7,6 +7,7 @@
 //
 
 import MDFoundation
+import Storable
 import UIKit
 
 protocol MainPageControllerLogic: AnyObject {
@@ -51,6 +52,11 @@ class MainPageController: UIViewController, MainPageControllerLogic {
     private func setupAppearance() {
         customView.initDataSource()
         customView.dataSource?.delegate = self
+
+        if AppService.shared.app.appOpenedCount > 3,
+            AppService.shared.app.appState == .free {
+            showPurchasePage()
+        }
     }
 
     deinit {
@@ -69,6 +75,14 @@ class MainPageController: UIViewController, MainPageControllerLogic {
     }
 
     @objc func appStateChanged() {
+        if AppService.shared.app.appState == .premium {
+            let alert = AlertsFactory.plain(
+                title: Text.Alert.error,
+                message: Text.Buy.success,
+                cancelText: Text.Alert.cancel
+            )
+            present(alert, animated: true, completion: nil)
+        }
         loadLessons()
     }
 
@@ -95,7 +109,7 @@ class MainPageController: UIViewController, MainPageControllerLogic {
         customView.showEmptyPage()
         // customView.stopShowingActivityIndicator()
         guard message != .empty else { return }
-        let alert = AlertsFactory.error(
+        let alert = AlertsFactory.plain(
             title: Text.Alert.error,
             message: message,
             cancelText: Text.Alert.cancel

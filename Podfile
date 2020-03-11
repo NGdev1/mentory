@@ -15,7 +15,7 @@ def other_pods
 end
 
 def mdPods
-  pod 'MDFoundation', :tag => '1.0.4', :git => 'https://github.com/NGdev1/MDFoundation.git'
+  pod 'MDFoundation', :tag => '1.0.6', :git => 'https://github.com/NGdev1/MDFoundation.git'
   pod 'Storable', path: './Storable'
 end
 
