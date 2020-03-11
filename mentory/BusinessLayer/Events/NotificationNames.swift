@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
     static let appStateChanged
         = NSNotification.Name("AppStateChanged")
+    static let onboardingFinished = NSNotification.Name("OnboardingFinished")
 }

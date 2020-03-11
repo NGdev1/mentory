@@ -19,9 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         AppService.shared.app.appOpenedCount += 1
         print("App opened count: \(AppService.shared.app.appOpenedCount)")
-        let nextController = MainPageController()
+        let nextController = OnboardingController()
         window?.rootViewController = nextController
         window?.makeKeyAndVisible()
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(onboardingFinished),
+            name: .onboardingFinished,
+            object: nil
+        )
+
         return true
+    }
+
+    @objc func onboardingFinished() {
+        let nextController = MainPageController()
+        window?.rootViewController = nextController
     }
 }

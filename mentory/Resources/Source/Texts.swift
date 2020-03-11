@@ -135,6 +135,55 @@ public enum Text {
     /// Тринадцать уникальных уроков. Слушайте по одному в день. И вы удивитесь как изменится ваша жизнь. 
     public static let programsDescription = Text.tr("Localizable", "MainPage.ProgramsDescription")
   }
+
+  public enum Onboarding {
+    /// НАЧАТЬ
+    public static let begin = Text.tr("Localizable", "Onboarding.Begin")
+    /// ДАЛЬШЕ
+    public static let next = Text.tr("Localizable", "Onboarding.Next")
+    /// ПРОПУСТИТЬ
+    public static let skip = Text.tr("Localizable", "Onboarding.Skip")
+    public enum Slide1 {
+      /// помочь вам стать\n лучшей версией себя!
+      public static let highlited = Text.tr("Localizable", "Onboarding.Slide1.Highlited")
+      /// Меня зовут Mentory.\n Я Ваш виртуальный наставник.\n Я создан, чтобы 
+      public static let subtitle = Text.tr("Localizable", "Onboarding.Slide1.Subtitle")
+      /// Добро пожаловать!
+      public static let title = Text.tr("Localizable", "Onboarding.Slide1.Title")
+    }
+    public enum Slide2 {
+      /// я буду делиться\nс вами этими знаниями.
+      public static let highlited = Text.tr("Localizable", "Onboarding.Slide2.Highlited")
+      /// Во мне сосредоточены знания\n тысячи книг по саморазвитию,\n бизнесу и психологии.\n\nВ формате ежедневных\nаудиосессий 
+      public static let subtitle = Text.tr("Localizable", "Onboarding.Slide2.Subtitle")
+      /// Знание – сила!
+      public static let title = Text.tr("Localizable", "Onboarding.Slide2.Title")
+    }
+    public enum Slide3 {
+      /// я передам вам\nэтот опыт.
+      public static let highlited = Text.tr("Localizable", "Onboarding.Slide3.Highlited")
+      /// Во мне концентрация опыта тысячи успешных, богатых и счастливых людей.\n\nВ формате ежедневных аудиопрактик 
+      public static let subtitle = Text.tr("Localizable", "Onboarding.Slide3.Subtitle")
+      /// Опыт — лучший учитель!
+      public static let title = Text.tr("Localizable", "Onboarding.Slide3.Title")
+    }
+    public enum Slide4 {
+      /// я научу вас управлять эмоциями, чувствами и энергией.
+      public static let highlited = Text.tr("Localizable", "Onboarding.Slide4.Highlited")
+      /// Духовность — основа гармоничной жизни.\n\nВ формате ежедневных аудио медитаций 
+      public static let subtitle = Text.tr("Localizable", "Onboarding.Slide4.Subtitle")
+      /// Осознанность – путь к равновесию!
+      public static let title = Text.tr("Localizable", "Onboarding.Slide4.Title")
+    }
+    public enum Slide5 {
+      /// И никогда не останавливайтесь на достигнутом!
+      public static let highlited = Text.tr("Localizable", "Onboarding.Slide5.Highlited")
+      /// Хватит пытаться изменить жизнь\nк лучшему за один день!\nПрактикуйтесь ежедневно, и уже совсем скоро увидите первые результаты.\n\n
+      public static let subtitle = Text.tr("Localizable", "Onboarding.Slide5.Subtitle")
+      /// Ежедневная практика!
+      public static let title = Text.tr("Localizable", "Onboarding.Slide5.Title")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingController" customModule="Mentory" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="Xgf-Jy-0q2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="OnboardingView" customModule="Mentory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="17P-yO-Si0">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" name="Black"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CRu-Ba-SWd">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZPi-XS-oos">
+                    <rect key="frame" x="171.5" y="720" width="71" height="37"/>
+                    <color key="pageIndicatorTintColor" name="BlackThree"/>
+                    <color key="currentPageIndicatorTintColor" name="WinterGreen"/>
+                </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifd-oq-oh0">
+                    <rect key="frame" x="16" y="794" width="100" height="48"/>
+                    <color key="backgroundColor" name="BlackThree"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="RfC-WS-1Q9"/>
+                        <constraint firstAttribute="width" constant="100" id="h7b-dX-QCF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <state key="normal" title="SKIP">
+                        <color key="titleColor" name="GreyishBrown"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="XTD-iD-B5N">
+                    <rect key="frame" x="147" y="104" width="120" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="0ca-x9-sL5"/>
+                        <constraint firstAttribute="height" constant="60" id="wiu-o2-QTT"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-Yt-Yaw">
+                    <rect key="frame" x="124" y="794" width="100" height="48"/>
+                    <color key="backgroundColor" name="WinterGreen"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="0al-ya-WcE"/>
+                        <constraint firstAttribute="width" constant="100" id="gne-nl-2e2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <state key="normal" title="NEXT">
+                        <color key="titleColor" name="Black"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" name="Black"/>
+            <constraints>
+                <constraint firstItem="XTD-iD-B5N" firstAttribute="top" secondItem="niq-Jh-HGT" secondAttribute="top" constant="60" id="4di-dW-C21"/>
+                <constraint firstItem="ZPi-XS-oos" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="90Q-kF-Bpf"/>
+                <constraint firstAttribute="bottom" secondItem="17P-yO-Si0" secondAttribute="bottom" id="CwQ-PM-zGs"/>
+                <constraint firstItem="3Tc-Yt-Yaw" firstAttribute="leading" secondItem="ifd-oq-oh0" secondAttribute="trailing" constant="8" id="DWH-cy-4K3"/>
+                <constraint firstItem="XTD-iD-B5N" firstAttribute="centerX" secondItem="niq-Jh-HGT" secondAttribute="centerX" id="FXc-rU-A8V"/>
+                <constraint firstItem="17P-yO-Si0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LcL-RH-g6J"/>
+                <constraint firstItem="ifd-oq-oh0" firstAttribute="leading" secondItem="niq-Jh-HGT" secondAttribute="leading" constant="16" id="OyL-Vv-Tf5"/>
+                <constraint firstItem="niq-Jh-HGT" firstAttribute="bottom" secondItem="ifd-oq-oh0" secondAttribute="bottom" constant="20" id="QdB-hg-DHM"/>
+                <constraint firstItem="ifd-oq-oh0" firstAttribute="top" secondItem="ZPi-XS-oos" secondAttribute="bottom" constant="37" id="T2k-8i-I6j"/>
+                <constraint firstAttribute="trailing" secondItem="17P-yO-Si0" secondAttribute="trailing" id="ilt-cM-clU"/>
+                <constraint firstItem="17P-yO-Si0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="u9S-fQ-ceZ"/>
+                <constraint firstItem="3Tc-Yt-Yaw" firstAttribute="centerY" secondItem="ifd-oq-oh0" secondAttribute="centerY" id="v5x-X9-ReV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="niq-Jh-HGT"/>
+            <connections>
+                <outlet property="buttonsDistance" destination="DWH-cy-4K3" id="TBb-nS-eZ1"/>
+                <outlet property="collectionView" destination="17P-yO-Si0" id="sU3-zY-8VI"/>
+                <outlet property="nextButton" destination="3Tc-Yt-Yaw" id="v5B-jM-hs0"/>
+                <outlet property="nextButtonWidth" destination="gne-nl-2e2" id="DWo-2y-AfQ"/>
+                <outlet property="pageControl" destination="ZPi-XS-oos" id="3rE-Hd-cyC"/>
+                <outlet property="skipButton" destination="ifd-oq-oh0" id="eeW-Rh-hXF"/>
+                <outlet property="skipButtonWidth" destination="h7b-dX-QCF" id="1fu-1r-DXp"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Logo" width="1026" height="159"/>
+        <namedColor name="Black">
+            <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BlackThree">
+            <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GreyishBrown">
+            <color red="0.28627450980392155" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WinterGreen">
+            <color red="0.090196078431372548" green="1" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
