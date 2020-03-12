@@ -80,5 +80,5 @@ Buy.PurchaseFailed = "Purchase failed";
 Buy.Info = "Periodic payment. Ability to cancel at any time. Subscription fees will be charged to your iTunes account. The subscription is automatically renewed within 24 hours before the expiration of the subscription period. You can unsubscribe at any time in the Settings section of iTunes. In case of cancellation, your subscription is terminated at the end of the current payment cycle. After the start of the subscription, the entire unused free period will be canceled.";
 Buy.RestorePurchases = "Restore purchases";
 Buy.Congragulations = "Congratulations!";
-Buy.Success = "Вы получили премиум аккаунт.";
-Buy.Done = "Готово";
+Buy.Success = "You have received a premium account.";
+Buy.Done = "Done";
