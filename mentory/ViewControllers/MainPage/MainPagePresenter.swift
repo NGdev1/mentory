@@ -47,37 +47,7 @@ class MainPagePresenter: MainPagePresentationLogic {
             viewModels.append(
                 MainPageCellViewModel(
                     type: .lesson,
-                    isLocked: false,
-                    data: lesson
-                )
-            )
-        }
-
-        guard response.premiumLessons != nil, response.premiumLessons?.isEmpty == false
-        else {
-            controller?.presenLessons(viewModels)
-            return
-        }
-
-        if isPremiumAccount == false {
-            let buyFullViewModel = MainPageBuyPremiumCellViewModel(
-                title: Text.MainPage.getPremium,
-                subtitle: Text.MainPage.pressForInfo
-            )
-            viewModels.append(
-                MainPageCellViewModel(
-                    type: .buyFull,
-                    isLocked: false,
-                    data: buyFullViewModel
-                )
-            )
-        }
-
-        for lesson in response.premiumLessons ?? [] {
-            viewModels.append(
-                MainPageCellViewModel(
-                    type: .lesson,
-                    isLocked: isPremiumAccount == false,
+                    isLocked: lesson.isLocked || isPremiumAccount,
                     data: lesson
                 )
             )

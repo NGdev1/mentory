@@ -102,13 +102,3 @@ final class PlayerView: UIView {
         }
     }
 }
-
-// MARK: - MP3PlayerDelegate
-
-extension PlayerView: MP3PlayerDelegate {
-    func progressUpdated(_ value: Float) {
-        if userChangingProgress == false {
-            showProgress(value)
-        }
-    }
-}

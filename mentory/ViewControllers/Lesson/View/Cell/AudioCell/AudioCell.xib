@@ -68,6 +68,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" name="Black"/>
             <connections>
+                <outlet property="playImageView" destination="Uiq-Bv-We7" id="EyG-FR-9Rf"/>
                 <outlet property="subtitleLabel" destination="ZeF-Uq-Ng7" id="LNz-c3-QcF"/>
                 <outlet property="titleLabel" destination="rCn-xm-MMf" id="RRl-V8-KAi"/>
             </connections>

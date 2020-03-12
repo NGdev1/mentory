@@ -11,21 +11,25 @@
                     "id": "1",
                     "title": "Vitya Tsoi",
                     "subtitle": "KUKUSHKA",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": false
                 },
                 {
                     "id": "2",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false"
+                    "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false",
+                    "isLocked": false
                 },
                 {
                     "id": "3",
                     "title": "Vitya Tsoi again",
                     "subtitle": "KUKUSHKA",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": false
                 }
-            ]
+            ],
+            "isLocked": false
         }
     ],
     "lessons": [
@@ -41,9 +45,11 @@
                     "id": "4",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": false
                 }
-            ]
+            ],
+            "isLocked": false
         },
         {
             "id": "3",
@@ -57,12 +63,19 @@
                     "id": "5",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": false
+                },
+                {
+                    "id": "5",
+                    "title": "Name audio",
+                    "subtitle": "SUBTITLE",
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": true
                 }
-            ]
-        }
-    ],
-    "premiumLessons": [
+            ],
+            "isLocked": false
+        },
         {
             "id": "4",
             "tag": "POPULAR",
@@ -75,9 +88,11 @@
                     "id": "6",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": false
                 }
-            ]
+            ],
+            "isLocked": false
         },
         {
             "id": "5",
@@ -91,9 +106,11 @@
                     "id": "7",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": false
                 }
-            ]
+            ],
+            "isLocked": true
         },
         {
             "id": "6",
@@ -107,21 +124,25 @@
                     "id": "8",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": false
                 },
                 {
                     "id": "9",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": false
                 },
                 {
                     "id": "10",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
-                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3"
+                    "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
+                    "isLocked": false
                 }
-            ]
+            ],
+            "isLocked": true
         }
     ]
 }

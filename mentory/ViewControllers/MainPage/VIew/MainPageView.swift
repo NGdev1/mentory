@@ -8,9 +8,20 @@
 
 import Foundation
 import MDFoundation
+import Storable
 import UIKit
 
 final class MainPageView: UIView {
+    struct Appearance {
+        static var bottomViewHeight: CGFloat {
+            if AppService.shared.app.appState == .premium {
+                return 0
+            } else {
+                return 80
+            }
+        }
+    }
+
     // MARK: - Properties
 
     var dataSource: MainPageDataSource?
@@ -42,6 +53,8 @@ final class MainPageView: UIView {
         return view
     }()
 
+    lazy var tryPremiumView: TryPremiumView = XibInitializer.loadFromXib(type: TryPremiumView.self)
+
     // MARK: - Init
 
     override init(frame: CGRect = UIScreen.main.bounds) {
@@ -67,13 +80,28 @@ final class MainPageView: UIView {
     private func addSubviews() {
         addSubview(tableView)
         tableView.tableHeaderView = headerView
+        addSubview(tryPremiumView)
     }
 
     private func makeConstraints() {
-        tableView.makeEdgesEqualToSuperview()
+        tableView.snp.makeConstraints { make in
+            make.leading.trailing.top.equalToSuperview()
+            make.bottom.equalTo(tryPremiumView.snp.top)
+        }
+        tryPremiumView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(Appearance.bottomViewHeight)
+            make.bottom.equalTo(safeAreaLayoutGuide)
+        }
     }
 
     // MARK: - Internal methods
+
+    func hideBottomView() {
+        tryPremiumView.snp.updateConstraints { make in
+            make.height.equalTo(0)
+        }
+    }
 
     func initDataSource() {
         dataSource = MainPageDataSource(tableView: tableView)

@@ -14,23 +14,27 @@ public struct Track: Decodable {
         id: String,
         title: String,
         subtitle: String,
-        url: String
+        url: String,
+        isLocked: Bool
     ) {
         self.id = id
         self.title = title
         self.subtitle = subtitle
         self.url = url
+        self.isLocked = isLocked
     }
 
     let id: String
     let title: String
     let subtitle: String
     let url: String
+    let isLocked: Bool
 
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case subtitle
         case url
+        case isLocked
     }
 }

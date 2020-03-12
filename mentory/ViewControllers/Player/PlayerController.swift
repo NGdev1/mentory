@@ -6,8 +6,9 @@
 //  Copyright © 2020 Михаил Андреичев. All rights reserved.
 //
 
-import AVFoundation
 import MDFoundation
+import Storable
+import SwiftAudio
 import UIKit
 
 public class PlayerController: UIViewController {
@@ -18,6 +19,7 @@ public class PlayerController: UIViewController {
     lazy var customView: PlayerView? = view as? PlayerView
     var lesson: Lesson
     var currentIndex: Int
+    var progress: Float = 0
 
     // MARK: - Init
 
@@ -74,7 +76,7 @@ public class PlayerController: UIViewController {
             action: #selector(sliderValueChanged(slider:event:)),
             for: .valueChanged
         )
-        player.delegate = customView
+        player.delegate = self
     }
 
     @objc func sliderValueChanged(slider: UISlider, event: UIEvent) {
@@ -89,25 +91,44 @@ public class PlayerController: UIViewController {
 
     @objc func previousTrackTapped(_ sender: UIButton) {
         guard currentIndex != 0 else { return }
+        guard lesson.tracks[currentIndex - 1].isLocked == false || AppService.shared.app.appState == .premium else {
+            showPurchasePage()
+            return
+        }
         currentIndex -= 1
         player.previousTrack()
-        updatePlayerAppearance(isPlaying: true)
     }
 
     @objc func nextTrackTapped(_ sender: UIButton) {
         guard currentIndex != lesson.tracks.count - 1 else { return }
+        guard lesson.tracks[currentIndex + 1].isLocked == false || AppService.shared.app.appState == .premium else {
+            showPurchasePage()
+            return
+        }
         currentIndex += 1
         player.nextTrack()
-        updatePlayerAppearance(isPlaying: true)
     }
 
     @objc func playButtonTapped(_ sender: UIButton) {
         if player.isPlaying() == false {
             player.play()
-            updatePlayerAppearance(isPlaying: true)
         } else {
             player.pause()
-            updatePlayerAppearance(isPlaying: false)
+        }
+    }
+
+    @objc func dismissController() {
+        player.stop()
+        navigationController?.popViewController()
+    }
+
+    // MARK: - Private methods
+
+    func showPurchasePage() {
+        let nextController = BuyController()
+        nextController.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async { [weak self] in
+            self?.present(nextController, animated: true)
         }
     }
 
@@ -119,9 +140,31 @@ public class PlayerController: UIViewController {
             forwardActive: currentIndex != lesson.tracks.count - 1
         )
     }
+}
 
-    @objc func dismissController() {
-        player.stop()
-        navigationController?.popViewController()
+// MARK: - MP3PlayerDelegate
+
+extension PlayerController: MP3PlayerDelegate {
+    func stateChanged(_ state: AudioPlayerState) {
+        switch state {
+        case .loading:
+            customView?.showMusicIsLoading()
+        case .playing:
+            updatePlayerAppearance(isPlaying: true)
+        case .ready:
+            customView?.musicLoadingFinished()
+        default:
+            if progress > 0.97 {
+                player.setProgress(0)
+            }
+            updatePlayerAppearance(isPlaying: false)
+        }
+    }
+
+    func progressUpdated(_ value: Float) {
+        if customView?.userChangingProgress == false {
+            progress = value
+            customView?.showProgress(value)
+        }
     }
 }

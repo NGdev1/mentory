@@ -72,6 +72,12 @@ class MainPageController: UIViewController, MainPageControllerLogic {
             name: .appStateChanged,
             object: nil
         )
+        let tapRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(showPurchasePage)
+        )
+        customView.tryPremiumView.isUserInteractionEnabled = true
+        customView.tryPremiumView.addGestureRecognizer(tapRecognizer)
     }
 
     @objc func appStateChanged() {
@@ -82,6 +88,7 @@ class MainPageController: UIViewController, MainPageControllerLogic {
                 cancelText: Text.Alert.cancel
             )
             present(alert, animated: true, completion: nil)
+            customView.hideBottomView()
         }
         loadLessons()
     }
@@ -152,7 +159,7 @@ extension MainPageController: MainPageDataSourceDelegate {
         }
     }
 
-    func showPurchasePage() {
+    @objc func showPurchasePage() {
         let nextController = BuyController()
         nextController.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async { [weak self] in

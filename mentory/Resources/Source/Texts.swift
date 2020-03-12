@@ -48,7 +48,7 @@ public enum Text {
     public static let restorePurchases = Text.tr("Localizable", "Buy.RestorePurchases")
     /// Попробуй бесплатно!
     public static let subtitle = Text.tr("Localizable", "Buy.Subtitle")
-    /// Успешная покупка.
+    /// Вы получили премиум аккаунт.
     public static let success = Text.tr("Localizable", "Buy.Success")
     public enum MonthView {
       /// Ежемесячно. 1 месяц = 1 чашка кофе.

@@ -7,6 +7,7 @@
 //
 
 import MDFoundation
+import Storable
 import UIKit
 
 final class LessonController: UIViewController {
@@ -46,6 +47,16 @@ final class LessonController: UIViewController {
             nextLessonIsLocked: viewModel.nextLessonLocked == true
         )
         customView?.dataSource?.delegate = self
+    }
+
+    // MARK: - Private methods
+
+    func showPurchasePage() {
+        let nextController = BuyController()
+        nextController.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async { [weak self] in
+            self?.present(nextController, animated: true)
+        }
     }
 
     // MARK: - Action handlers
@@ -94,6 +105,10 @@ extension LessonController: LessonViewDataSourceDelegate {
     }
 
     func playTrack(with index: Int) {
+        guard viewModel.lesson.tracks[index].isLocked == false || AppService.shared.app.appState == .premium else {
+            showPurchasePage()
+            return
+        }
         let nextController = PlayerController(lesson: viewModel.lesson, startIndex: index)
         navigationController?.pushViewController(nextController)
     }

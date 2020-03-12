@@ -10,6 +10,7 @@ import Foundation
 import SwiftAudio
 
 protocol MP3PlayerDelegate: AnyObject {
+    func stateChanged(_ state: AudioPlayerState)
     func progressUpdated(_ value: Float)
 }
 
@@ -42,6 +43,8 @@ final class MP3Player: NSObject {
         ]
         player.bufferDuration = 1
         player.event.secondElapse.addListener(self, handleAudioPlayerSecondElapsed)
+        player.event.stateChange.addListener(self, handleAudioPlayerStateChanged)
+        player.automaticallyPlayNextSong = false
     }
 
     private func setupAVAudioSession() {
@@ -80,6 +83,13 @@ final class MP3Player: NSObject {
     func pause() {
         if isPlaying() == true {
             player.pause()
+        }
+    }
+
+    func handleAudioPlayerStateChanged(state: AudioPlayerState) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.delegate?.stateChanged(state)
         }
     }
 
