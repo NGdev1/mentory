@@ -21,7 +21,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AjF-2M-8l0">
                     <rect key="frame" x="0.0" y="0.0" width="289" height="769"/>
-                    <color key="backgroundColor" name="Black"/>
+                    <color key="backgroundColor" name="Background1"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkq-Wm-z4e">
                     <rect key="frame" x="16" y="701" width="257" height="48"/>
@@ -40,14 +40,14 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7RG-A4-Hwf" customClass="MDHeaderView" customModule="Mentory" customModuleProvider="target">
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7RG-A4-Hwf" customClass="MDHeaderView" customModule="Mentory" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="289" height="375"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="375" id="asE-Iz-3Zg"/>
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" name="Black"/>
+            <color key="backgroundColor" name="Background1"/>
             <constraints>
                 <constraint firstItem="7RG-A4-Hwf" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" id="4Sd-25-DjE"/>
                 <constraint firstItem="AjF-2M-8l0" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" id="6eJ-zc-dX2"/>
@@ -73,8 +73,11 @@
     </objects>
     <resources>
         <image name="PlayButtonIcon" width="25" height="22"/>
-        <namedColor name="Black">
+        <namedColor name="Background1">
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="WinterGreen">
             <color red="0.090196078431372548" green="1" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

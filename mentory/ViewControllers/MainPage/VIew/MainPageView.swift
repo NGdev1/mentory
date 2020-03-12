@@ -13,11 +13,19 @@ import UIKit
 
 final class MainPageView: UIView {
     struct Appearance {
-        static var bottomViewHeight: CGFloat {
+        static var buttonPurchaseHeight: CGFloat {
             if AppService.shared.app.appState == .premium {
                 return 0
             } else {
-                return 80
+                return 48
+            }
+        }
+
+        static var bottomInset: CGFloat {
+            if AppService.shared.app.appState == .premium {
+                return 23
+            } else {
+                return 85
             }
         }
     }
@@ -33,8 +41,8 @@ final class MainPageView: UIView {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.keyboardDismissMode = .interactive
         tableView.showsVerticalScrollIndicator = false
-        tableView.backgroundColor = Assets.black.color
-        tableView.contentInset = UIEdgeInsets(top: 23, left: 0, bottom: 23, right: 0)
+        tableView.backgroundColor = Assets.background1.color
+        tableView.contentInset = UIEdgeInsets(top: 23, left: 0, bottom: Appearance.bottomInset, right: 0)
         return tableView
     }()
 
@@ -74,7 +82,7 @@ final class MainPageView: UIView {
     }
 
     private func setupStyle() {
-        backgroundColor = Assets.black.color
+        backgroundColor = Assets.background1.color
     }
 
     private func addSubviews() {
@@ -84,14 +92,11 @@ final class MainPageView: UIView {
     }
 
     private func makeConstraints() {
-        tableView.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
-            make.bottom.equalTo(tryPremiumView.snp.top)
-        }
+        tableView.makeEdgesEqualToSuperview()
         tryPremiumView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(Appearance.bottomViewHeight)
-            make.bottom.equalTo(safeAreaLayoutGuide)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(20)
+            make.height.equalTo(Appearance.buttonPurchaseHeight)
         }
     }
 
@@ -101,6 +106,7 @@ final class MainPageView: UIView {
         tryPremiumView.snp.updateConstraints { make in
             make.height.equalTo(0)
         }
+        tableView.contentInset.bottom = 23
     }
 
     func initDataSource() {

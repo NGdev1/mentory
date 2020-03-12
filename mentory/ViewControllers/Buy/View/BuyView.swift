@@ -139,22 +139,22 @@ final class BuyView: UIView {
 
     private func perYear() {
         UIView.animate(withDuration: 0.3) { [weak self] in
-            self?.perYearTitle.textColor = Assets.black.color
+            self?.perYearTitle.textColor = Assets.background1.color
             self?.perMonthTitle.textColor = Assets.title.color
-            self?.perYearSubtitle.textColor = Assets.black.color.withAlphaComponent(0.6)
+            self?.perYearSubtitle.textColor = Assets.background1.color.withAlphaComponent(0.6)
             self?.perMonthSubtitle.textColor = Assets.warmGrey.color
             self?.buyPerYearView.backgroundColor = Assets.winterGreen.color
-            self?.buyPerMonthView.backgroundColor = Assets.black.color
+            self?.buyPerMonthView.backgroundColor = Assets.background1.color
         }
     }
 
     private func perMonth() {
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.perYearTitle.textColor = Assets.title.color
-            self?.perMonthTitle.textColor = Assets.black.color
+            self?.perMonthTitle.textColor = Assets.background1.color
             self?.perYearSubtitle.textColor = Assets.warmGrey.color
-            self?.perMonthSubtitle.textColor = Assets.black.color.withAlphaComponent(0.6)
-            self?.buyPerYearView.backgroundColor = Assets.black.color
+            self?.perMonthSubtitle.textColor = Assets.background1.color.withAlphaComponent(0.6)
+            self?.buyPerYearView.backgroundColor = Assets.background1.color
             self?.buyPerMonthView.backgroundColor = Assets.winterGreen.color
         }
     }

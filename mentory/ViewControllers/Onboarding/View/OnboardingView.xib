@@ -21,7 +21,7 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="17P-yO-Si0">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" name="Black"/>
+                    <color key="backgroundColor" name="Background1"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CRu-Ba-SWd">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -52,7 +52,7 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="XTD-iD-B5N">
-                    <rect key="frame" x="147" y="104" width="120" height="60"/>
+                    <rect key="frame" x="147" y="84" width="120" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="0ca-x9-sL5"/>
                         <constraint firstAttribute="height" constant="60" id="wiu-o2-QTT"/>
@@ -76,9 +76,9 @@
                     </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" name="Black"/>
+            <color key="backgroundColor" name="Background1"/>
             <constraints>
-                <constraint firstItem="XTD-iD-B5N" firstAttribute="top" secondItem="niq-Jh-HGT" secondAttribute="top" constant="60" id="4di-dW-C21"/>
+                <constraint firstItem="XTD-iD-B5N" firstAttribute="top" secondItem="niq-Jh-HGT" secondAttribute="top" constant="40" id="4di-dW-C21"/>
                 <constraint firstItem="ZPi-XS-oos" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="90Q-kF-Bpf"/>
                 <constraint firstAttribute="bottom" secondItem="17P-yO-Si0" secondAttribute="bottom" id="CwQ-PM-zGs"/>
                 <constraint firstItem="3Tc-Yt-Yaw" firstAttribute="leading" secondItem="ifd-oq-oh0" secondAttribute="trailing" constant="8" id="DWH-cy-4K3"/>
@@ -95,6 +95,7 @@
             <connections>
                 <outlet property="buttonsDistance" destination="DWH-cy-4K3" id="TBb-nS-eZ1"/>
                 <outlet property="collectionView" destination="17P-yO-Si0" id="sU3-zY-8VI"/>
+                <outlet property="logoImageView" destination="XTD-iD-B5N" id="phu-pT-uFV"/>
                 <outlet property="nextButton" destination="3Tc-Yt-Yaw" id="v5B-jM-hs0"/>
                 <outlet property="nextButtonWidth" destination="gne-nl-2e2" id="DWo-2y-AfQ"/>
                 <outlet property="pageControl" destination="ZPi-XS-oos" id="3rE-Hd-cyC"/>
@@ -106,8 +107,11 @@
     </objects>
     <resources>
         <image name="Logo" width="1026" height="159"/>
-        <namedColor name="Black">
+        <namedColor name="Background1">
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BlackThree">
             <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

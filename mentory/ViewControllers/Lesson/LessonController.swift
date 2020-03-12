@@ -80,6 +80,10 @@ final class LessonController: UIViewController {
 
     @objc func play() {
         guard viewModel.lesson.tracks.isEmpty == false else { return }
+        guard viewModel.lesson.tracks[0].isLocked == false else {
+            showPurchasePage()
+            return
+        }
         let nextController = PlayerController(lesson: viewModel.lesson, startIndex: 0)
         navigationController?.pushViewController(nextController)
     }

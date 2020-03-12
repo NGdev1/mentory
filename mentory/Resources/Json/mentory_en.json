@@ -61,17 +61,17 @@
             "tracks": [
                 {
                     "id": "5",
-                    "title": "Name audio",
-                    "subtitle": "SUBTITLE",
+                    "title": "Name audio lockerd!!!",
+                    "subtitle": "SUBTITLE ZAKRITO",
                     "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
-                    "isLocked": false
+                    "isLocked": true
                 },
                 {
                     "id": "5",
                     "title": "Name audio",
                     "subtitle": "SUBTITLE",
                     "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
-                    "isLocked": true
+                    "isLocked": false
                 }
             ],
             "isLocked": false

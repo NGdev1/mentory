@@ -27,6 +27,7 @@ final class OnboardingView: UIView {
         return layout
     }()
 
+    @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var nextButton: UIButton!
@@ -49,7 +50,8 @@ final class OnboardingView: UIView {
     }
 
     private func setupStyle() {
-        backgroundColor = Assets.black.color
+        logoImageView.isHidden = ScreenSize.current == .sizeIPhoneSE
+        backgroundColor = Assets.background1.color
         collectionView.setCollectionViewLayout(layout, animated: false)
         collectionView.allowsSelection = false
         nextButton.setTitle(Text.Onboarding.next, for: .normal)

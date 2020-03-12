@@ -47,7 +47,7 @@
                     <constraint firstItem="KJ5-nN-bJx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="wch-8g-Kzw"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" name="Black"/>
+            <color key="backgroundColor" name="Background1"/>
             <connections>
                 <outlet property="descriptionLabel" destination="BfQ-Pz-Vx2" id="fX7-GL-iND"/>
                 <outlet property="subtitleLabel" destination="iuz-kj-qMR" id="Bvm-oy-ktI"/>
@@ -57,7 +57,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="Black">
+        <namedColor name="Background1">
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Title">

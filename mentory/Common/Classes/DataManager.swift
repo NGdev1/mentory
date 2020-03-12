@@ -1,9 +1,9 @@
 //
 //  DataManager.swift
-//  MyVkNews
+//  MD
 //
 //  Created by Apple on 24.06.17.
-//  Copyright © 2017 flatstack. All rights reserved.
+//  Copyright © 2017 MD. All rights reserved.
 //
 
 import Foundation

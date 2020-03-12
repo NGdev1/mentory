@@ -18,6 +18,7 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Assets {
+  public static let background1 = ColorAsset(name: "Background1")
   public static let black = ColorAsset(name: "Black")
   public static let blackThree = ColorAsset(name: "BlackThree")
   public static let buyPageBackground = ColorAsset(name: "BuyPageBackground")

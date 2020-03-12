@@ -135,7 +135,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" name="Black"/>
+                                    <color key="backgroundColor" name="Background1"/>
                                     <constraints>
                                         <constraint firstItem="1KE-eW-VDS" firstAttribute="trailing" secondItem="f2k-Mz-SBs" secondAttribute="trailing" id="04Z-02-kkL"/>
                                         <constraint firstItem="f2k-Mz-SBs" firstAttribute="top" secondItem="zag-IE-5XF" secondAttribute="top" constant="16" id="5Oo-G1-Hph"/>
@@ -167,7 +167,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" name="Black"/>
+                                    <color key="backgroundColor" name="Background1"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="RGM-cj-MUY" secondAttribute="bottom" constant="16" id="0SC-hu-lqE"/>
                                         <constraint firstItem="RGM-cj-MUY" firstAttribute="top" secondItem="VFM-Us-Dvr" secondAttribute="bottom" constant="4" id="3pX-tM-xo2"/>
@@ -288,7 +288,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="dFC-7g-lGJ"/>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" name="Black"/>
+            <color key="backgroundColor" name="Background1"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Pcb-xj-gxV" secondAttribute="bottom" id="4Zf-hD-PCs"/>
                 <constraint firstAttribute="trailing" secondItem="cMF-Dz-8FK" secondAttribute="trailing" id="Hdx-up-JiQ"/>
@@ -328,8 +328,11 @@
         <image name="David" width="3138" height="4707"/>
         <image name="Logo" width="1026" height="159"/>
         <image name="checkMark" width="66" height="66"/>
-        <namedColor name="Black">
+        <namedColor name="Background1">
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BuyPageBackground">
             <color red="0.12200000137090683" green="0.12200000137090683" blue="0.12200000137090683" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>

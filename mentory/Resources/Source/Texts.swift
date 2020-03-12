@@ -36,6 +36,10 @@ public enum Text {
     public static let advantage4 = Text.tr("Localizable", "Buy.Advantage4")
     /// Обновление контента
     public static let advantage5 = Text.tr("Localizable", "Buy.Advantage5")
+    /// Поздравляем!
+    public static let congragulations = Text.tr("Localizable", "Buy.Congragulations")
+    /// Done
+    public static let done = Text.tr("Localizable", "Buy.Done")
     /// ПОЛУЧИТЬ 3 ДНЯ БЕСПЛАТНО
     public static let `get` = Text.tr("Localizable", "Buy.Get")
     /// Подписку можно отменить в любой момент, за день до списания следующего периода.
@@ -48,7 +52,7 @@ public enum Text {
     public static let restorePurchases = Text.tr("Localizable", "Buy.RestorePurchases")
     /// Попробуй бесплатно!
     public static let subtitle = Text.tr("Localizable", "Buy.Subtitle")
-    /// Вы получили премиум аккаунт.
+    /// You have received a premium account.
     public static let success = Text.tr("Localizable", "Buy.Success")
     public enum MonthView {
       /// Ежемесячно. 1 месяц = 1 чашка кофе.
@@ -164,13 +168,13 @@ public enum Text {
     public enum Slide3 {
       /// я передам вам\nэтот опыт.
       public static let highlited = Text.tr("Localizable", "Onboarding.Slide3.Highlited")
-      /// Во мне концентрация опыта тысячи успешных, богатых и счастливых людей.\n\nВ формате ежедневных аудиопрактик 
+      /// Во мне концентрация опыта тысячи успешных, богатых и счастливых\nлюдей.\n\nВ формате ежедневных\nаудиопрактик 
       public static let subtitle = Text.tr("Localizable", "Onboarding.Slide3.Subtitle")
       /// Опыт — лучший учитель!
       public static let title = Text.tr("Localizable", "Onboarding.Slide3.Title")
     }
     public enum Slide4 {
-      /// я научу вас управлять эмоциями, чувствами и энергией.
+      /// я научу вас управлять эмоциями, чувствами\nи энергией.
       public static let highlited = Text.tr("Localizable", "Onboarding.Slide4.Highlited")
       /// Духовность — основа гармоничной жизни.\n\nВ формате ежедневных аудио медитаций 
       public static let subtitle = Text.tr("Localizable", "Onboarding.Slide4.Subtitle")
@@ -180,7 +184,7 @@ public enum Text {
     public enum Slide5 {
       /// И никогда не останавливайтесь на достигнутом!
       public static let highlited = Text.tr("Localizable", "Onboarding.Slide5.Highlited")
-      /// Хватит пытаться изменить жизнь\nк лучшему за один день!\nПрактикуйтесь ежедневно, и уже совсем скоро увидите первые результаты.\n\n
+      /// Хватит пытаться изменить жизнь\nк лучшему за один день!\nПрактикуйтесь ежедневно, и уже совсем скоро\nувидите первые результаты.\n\n
       public static let subtitle = Text.tr("Localizable", "Onboarding.Slide5.Subtitle")
       /// Ежедневная практика!
       public static let title = Text.tr("Localizable", "Onboarding.Slide5.Title")

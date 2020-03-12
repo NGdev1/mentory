@@ -52,7 +52,7 @@ public final class ImagePushAnimatedTransition: NSObject {
     }
 
     private func applyStartAnimationStyle(using animating: ImageBasedContextTransitioning) {
-        animating.containerView.backgroundColor = Assets.black.color
+        animating.containerView.backgroundColor = Assets.background1.color
         animating.actingImageView.contentMode = .scaleAspectFill
         animating.actingImageView.layer.masksToBounds = true
         animating.actingImageView.layer.cornerRadius = smallerViewBorderRadius

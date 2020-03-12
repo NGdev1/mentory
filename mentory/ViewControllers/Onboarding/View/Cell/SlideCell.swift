@@ -9,14 +9,27 @@
 import UIKit
 
 class SlideCell: UICollectionViewCell {
+    // MARK: - Properties
+
     @IBOutlet var emojiImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var centerYConstraint: NSLayoutConstraint!
+
+    // MARK: - Xib init
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupStyle()
     }
+
+    private func setupStyle() {
+        if ScreenSize.current == .sizeIPhoneSE {
+            centerYConstraint.constant = 0
+        }
+    }
+
+    // MARK: - Internal methods
 
     func createAttributedString(regularString: String, regularColor: UIColor, coloredString: String, color: UIColor) -> NSMutableAttributedString {
         let text = NSMutableAttributedString(string: "\(regularString)\(coloredString)")

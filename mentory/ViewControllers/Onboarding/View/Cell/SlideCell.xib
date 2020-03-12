@@ -18,19 +18,19 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-VM-4Hj">
-                        <rect key="frame" x="32" y="287.5" width="350" height="29"/>
+                        <rect key="frame" x="32" y="327.5" width="350" height="29"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <color key="textColor" name="Title"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csp-ZF-tlB">
-                        <rect key="frame" x="32" y="340.5" width="350" height="21.5"/>
+                        <rect key="frame" x="32" y="380.5" width="350" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" name="Title"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-Su-Kzq">
-                        <rect key="frame" x="189" y="235.5" width="36" height="47"/>
+                        <rect key="frame" x="189" y="275.5" width="36" height="47"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="7Sv-6B-3vR"/>
                             <constraint firstAttribute="height" constant="47" id="FTJ-KZ-syb"/>
@@ -38,11 +38,11 @@
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" name="Black"/>
+            <color key="backgroundColor" name="Background1"/>
             <constraints>
                 <constraint firstItem="9pd-Su-Kzq" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="1sU-fE-8db"/>
                 <constraint firstItem="IbW-VM-4Hj" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="4j1-vf-qTd"/>
-                <constraint firstItem="Csp-ZF-tlB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="RvN-GY-fT7"/>
+                <constraint firstItem="Csp-ZF-tlB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="40" id="RvN-GY-fT7"/>
                 <constraint firstItem="IbW-VM-4Hj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="32" id="XtA-D7-T0V"/>
                 <constraint firstItem="IbW-VM-4Hj" firstAttribute="top" secondItem="9pd-Su-Kzq" secondAttribute="bottom" constant="5" id="Yt0-QX-2ED"/>
                 <constraint firstItem="Csp-ZF-tlB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="32" id="ZPc-7f-gQG"/>
@@ -53,6 +53,7 @@
             </constraints>
             <size key="customSize" width="414" height="702"/>
             <connections>
+                <outlet property="centerYConstraint" destination="RvN-GY-fT7" id="6hV-Al-oqG"/>
                 <outlet property="emojiImageView" destination="9pd-Su-Kzq" id="83M-Oy-ngd"/>
                 <outlet property="subtitleLabel" destination="Csp-ZF-tlB" id="gL4-zO-ccc"/>
                 <outlet property="titleLabel" destination="IbW-VM-4Hj" id="kRb-5y-ZOO"/>
@@ -61,7 +62,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="Black">
+        <namedColor name="Background1">
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Title">

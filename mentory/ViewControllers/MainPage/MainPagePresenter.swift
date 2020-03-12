@@ -47,7 +47,7 @@ class MainPagePresenter: MainPagePresentationLogic {
             viewModels.append(
                 MainPageCellViewModel(
                     type: .lesson,
-                    isLocked: lesson.isLocked || isPremiumAccount,
+                    isLocked: lesson.isLocked && isPremiumAccount == false,
                     data: lesson
                 )
             )

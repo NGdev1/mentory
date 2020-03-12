@@ -10,10 +10,9 @@ import UIKit
 public final class ImagePopAnimatedTransition: NSObject {
     // MARK: - Properties
 
-    public let animationDuration = 0.5
+    public let animationDuration = 0.3
     public let smallerViewBorderRadius: CGFloat = 10
     public let transformScaleFactor: CGFloat = 0.9
-    public let returnSizeAnimationDamping: CGFloat = 0.7
 
     // MARK: - Init
 
@@ -54,7 +53,7 @@ public final class ImagePopAnimatedTransition: NSObject {
     }
 
     private func applyStartAnimationStyle(using animating: ImageBasedContextTransitioning) {
-        animating.containerView.backgroundColor = Assets.black.color
+        animating.containerView.backgroundColor = Assets.background1.color
         animating.actingControllerSnapshot.contentMode = .scaleAspectFill
         animating.actingControllerSnapshot.layer.masksToBounds = true
         animating.actingImageViewGradient.contentMode = .scaleToFill
@@ -79,21 +78,11 @@ public final class ImagePopAnimatedTransition: NSObject {
         using animating: ImageBasedContextTransitioning,
         transitionContext: UIViewControllerContextTransitioning
     ) {
-        let damping: CGFloat
-        if transitionContext.isInteractive {
-            damping = 1.0
-        } else {
-            damping = returnSizeAnimationDamping
-        }
-
         // Нужно сохранить finalFrame, так как после преобразования scale он измениться.
         let finalFrame: CGRect = animating.smallestView?.imageView.globalFrame ?? CGRect.centerOfScreen
         animating.toView.transform = CGAffineTransform(scaleX: transformScaleFactor, y: transformScaleFactor)
         UIView.animate(
             withDuration: animationDuration,
-            delay: 0,
-            usingSpringWithDamping: damping,
-            initialSpringVelocity: 0.0,
             animations: { [weak self] in
                 guard let self = self else { return }
                 animating.actingImageView.frame = finalFrame

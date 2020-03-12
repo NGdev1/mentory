@@ -26,7 +26,7 @@ public final class MDHeaderView: UIView {
     private lazy var dimmingView: UIView = {
         let view = UIView()
         view.isUserInteractionEnabled = false
-        view.backgroundColor = Assets.black.color
+        view.backgroundColor = Assets.background1.color
         view.alpha = 0
         return view
     }()

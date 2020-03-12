@@ -19,6 +19,30 @@ Common.Return = "Return";
 Common.Done = "Done";
 Common.Cancel = "Cancel";
 
+Onboarding.Slide1.Title = "Welcome!";
+Onboarding.Slide1.Subtitle = "My name is Mentory.\n I am your virtual mentor.\n I am created to";
+Onboarding.Slide1.Highlited = " help you become\n the best version of yourself!";
+
+Onboarding.Slide2.Title = "Knowledge is power!";
+Onboarding.Slide2.Subtitle = "I have concentrated knowledge\n thousands of books on self-development,\n business and psychology.\n\nIn the format of daily\naudio sessions ";
+Onboarding.Slide2.Highlited = "I will share this knowledge\nwith you.";
+
+Onboarding.Slide3.Title = "Experience is the best teacher!";
+Onboarding.Slide3.Subtitle = "I have thousands of successful, rich and happy people in me.\n\nIn the format of daily\n audio practitioners ";
+Onboarding.Slide3.Highlited = "I will pass on to you\nthis experience.";
+
+Onboarding.Slide4.Title = "Awareness is the way to balance!";
+Onboarding.Slide4.Subtitle = "Spirituality is the basis of a harmonious life.\n\nIn the format of daily audio meditation ";
+Onboarding.Slide4.Highlited = "I will teach you how to control emotions, feelings\n and energy.";
+
+Onboarding.Slide5.Title = "Daily Practice!";
+Onboarding.Slide5.Subtitle = "Stop trying to change your life\n for the better in one day!\n Practice daily and soon\nsee the first results.\n\n";
+Onboarding.Slide5.Highlited = "And never stop!";
+
+Onboarding.Skip = "SKIP";
+Onboarding.Next = "NEXT";
+Onboarding.Begin = "START";
+
 MainPage.Programs = "Programs";
 MainPage.ProgramsDescription = "Thirteen unique lessons. Listen one at a time. And you will be surprised how your life will change.";
 MainPage.GetPremium = "Try PREMIUM Free!";
@@ -55,3 +79,6 @@ Buy.GetInfo = "You can unsubscribe at any time, the day before the cancellation 
 Buy.PurchaseFailed = "Purchase failed";
 Buy.Info = "Periodic payment. Ability to cancel at any time. Subscription fees will be charged to your iTunes account. The subscription is automatically renewed within 24 hours before the expiration of the subscription period. You can unsubscribe at any time in the Settings section of iTunes. In case of cancellation, your subscription is terminated at the end of the current payment cycle. After the start of the subscription, the entire unused free period will be canceled.";
 Buy.RestorePurchases = "Restore purchases";
+Buy.Congragulations = "Congratulations!";
+Buy.Success = "Вы получили премиум аккаунт.";
+Buy.Done = "Готово";

@@ -83,9 +83,9 @@ class MainPageController: UIViewController, MainPageControllerLogic {
     @objc func appStateChanged() {
         if AppService.shared.app.appState == .premium {
             let alert = AlertsFactory.plain(
-                title: Text.Alert.error,
+                title: Text.Buy.congragulations,
                 message: Text.Buy.success,
-                cancelText: Text.Alert.cancel
+                cancelText: Text.Buy.done
             )
             present(alert, animated: true, completion: nil)
             customView.hideBottomView()
@@ -149,7 +149,7 @@ extension MainPageController: MainPageDataSourceDelegate {
         )
         let nextController = LessonController(viewModel: viewModel, delegate: self)
         let navigationController = UINavigationController(rootViewController: nextController)
-        navigationController.view.backgroundColor = Assets.black.color
+        navigationController.view.backgroundColor = Assets.background1.color
         navigationController.navigationBar.setTransparentAppearance()
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.transitioningDelegate = transitionManager

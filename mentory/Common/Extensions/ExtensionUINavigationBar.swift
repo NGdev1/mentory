@@ -13,7 +13,7 @@ extension UINavigationBar {
     public func setBaseAppearance() {
         setBackgroundImage(nil, for: .default)
         hideShadow(false)
-        barTintColor = Assets.black.color
+        barTintColor = Assets.background1.color
         tintColor = Assets.warmGrey.color
     }
 

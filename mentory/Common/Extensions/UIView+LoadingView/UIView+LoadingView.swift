@@ -56,7 +56,7 @@ private class HudView: UIView {
 
     private lazy var dimBackgroundEffect: UIView = {
         let view = UIView(frame: frame)
-        view.backgroundColor = Assets.black.color
+        view.backgroundColor = Assets.background1.color
         view.alpha = 0
         view.isUserInteractionEnabled = true
         return view
