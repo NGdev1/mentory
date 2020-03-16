@@ -11,7 +11,7 @@ import UIKit
 
 public struct Track: Decodable {
     init(
-        id: String,
+        id: Int,
         title: String,
         subtitle: String,
         url: String,
@@ -24,7 +24,7 @@ public struct Track: Decodable {
         self.isLocked = isLocked
     }
 
-    let id: String
+    let id: Int
     let title: String
     let subtitle: String
     let url: String
@@ -36,5 +36,15 @@ public struct Track: Decodable {
         case subtitle
         case url
         case isLocked
+    }
+
+    public init(from decoder: Decoder) throws {
+        let map = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try map.decode(Int.self, forKey: .id)
+        self.title = try map.decode(String.self, forKey: .title)
+        self.subtitle = try map.decode(String.self, forKey: .subtitle)
+        let rawUrl = try map.decode(String.self, forKey: .url)
+        self.url = rawUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? .empty
+        self.isLocked = try map.decode(Bool.self, forKey: .isLocked)
     }
 }

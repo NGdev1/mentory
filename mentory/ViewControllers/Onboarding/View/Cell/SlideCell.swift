@@ -29,9 +29,9 @@ class SlideCell: UICollectionViewCell {
         }
     }
 
-    // MARK: - Internal methods
+    // MARK: - Private methods
 
-    func createAttributedString(regularString: String, regularColor: UIColor, coloredString: String, color: UIColor) -> NSMutableAttributedString {
+    private func createAttributedString(regularString: String, regularColor: UIColor, coloredString: String, color: UIColor) -> NSMutableAttributedString {
         let text = NSMutableAttributedString(string: "\(regularString)\(coloredString)")
 
         let regularTextRange = NSRange(location: 0, length: regularString.count)
@@ -58,6 +58,8 @@ class SlideCell: UICollectionViewCell {
         )
         return text
     }
+
+    // MARK: - Internal methods
 
     func configure(with slide: Slide) {
         emojiImageView.image = slide.image

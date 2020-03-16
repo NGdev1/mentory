@@ -11,19 +11,19 @@ protocol MainPageBusinessLogic: AnyObject {
 }
 
 class MainPageInteractor: MainPageBusinessLogic {
-    weak var presenter: MainPagePresentationLogic?
+    weak var controller: MainPageControllerLogic?
     let service: MainPageServiceProtocol = MentoryServiceFactory.mainPageService
 
     func loadData() {
-        service.get { [weak self] lessons, error in
+        service.get { [weak self] viewModels, error in
             guard let self = self else { return }
             if let error = error {
-                self.presenter?.presentError(message: error.localizedDescription)
+                self.controller?.presentError(message: error.localizedDescription)
             }
-            if let lessons = lessons {
-                self.presenter?.presentLessons(lessons)
+            if let viewModels = viewModels {
+                self.controller?.presentData(viewModels)
             } else {
-                self.presenter?.presentError(message: Text.Errors.requestError)
+                self.controller?.presentError(message: Text.Errors.requestError)
             }
         }
     }

@@ -29,7 +29,7 @@ class TitleCell: UITableViewCell {
     // MARK: - Internal methods
 
     func configure(with model: MainPageCellViewModel) {
-        let viewModel = model.data as? MainPageTitleCellViewModel
+        let viewModel = model.data as? MainPageSectionHeader
         titleLabel.text = viewModel?.title
         subtitleLabel.text = viewModel?.subtitle
         layoutIfNeeded()

@@ -11,7 +11,7 @@ import UIKit
 
 public struct Lesson: Decodable {
     init(
-        id: String,
+        id: Int,
         title: String,
         subtitle: String,
         description: String,
@@ -24,19 +24,19 @@ public struct Lesson: Decodable {
         self.title = title
         self.subtitle = subtitle
         self.description = description
-        self.backgroundImageUrl = backgroundImageUrl
+        self.backgroundImageUrl = backgroundImageUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? .empty
         self.tracks = tracks
         self.tag = tag
         self.isLocked = isLocked
     }
 
-    let id: String
+    let id: Int
     let title: String
     let subtitle: String
     let description: String
     let backgroundImageUrl: String
     let tracks: [Track]
-    let tag: String?
+    var tag: String?
     let isLocked: Bool
 
     enum CodingKeys: String, CodingKey {
@@ -48,5 +48,19 @@ public struct Lesson: Decodable {
         case tracks
         case tag
         case isLocked
+    }
+
+    public init(from decoder: Decoder) throws {
+        let map = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try map.decode(Int.self, forKey: .id)
+        self.title = try map.decode(String.self, forKey: .title)
+        self.subtitle = try map.decode(String.self, forKey: .subtitle)
+        self.description = try map.decode(String.self, forKey: .description)
+        let backgroundImageRawUrl = try map.decode(String.self, forKey: .backgroundImageUrl)
+        self.backgroundImageUrl = backgroundImageRawUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? .empty
+        self.tracks = try map.decode([Track].self, forKey: .tracks)
+        self.tag = try? map.decode(String.self, forKey: .tag)
+        if tag == .empty { self.tag = nil }
+        self.isLocked = try map.decode(Bool.self, forKey: .isLocked)
     }
 }

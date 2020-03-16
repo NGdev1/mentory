@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="Black"/>
+                        <color key="backgroundColor" name="Background1"/>
                         <constraints>
                             <constraint firstItem="eOh-0u-7Yl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="B6b-OR-Alx"/>
                             <constraint firstItem="eOh-0u-7Yl" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="cyt-tx-PGi"/>
@@ -40,7 +40,7 @@
     </scenes>
     <resources>
         <image name="TitleImage" width="332" height="112"/>
-        <namedColor name="Black">
+        <namedColor name="Background1">
             <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

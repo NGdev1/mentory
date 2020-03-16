@@ -9,38 +9,6 @@
 import Foundation
 import UIKit
 
-struct MainPageTitleCellViewModel {
-    let title: String
-    let subtitle: String
-}
-
-struct MainPageBuyPremiumCellViewModel {
-    let title: String
-    let subtitle: String
-}
-
-struct MainPageCellViewModel {
-    init(
-        type: MainPageCellViewModel.CellType,
-        isLocked: Bool,
-        data: Any
-    ) {
-        self.type = type
-        self.isLocked = isLocked
-        self.data = data
-    }
-
-    enum CellType {
-        case lesson
-        case title
-        case buyFull
-    }
-
-    let type: CellType
-    let isLocked: Bool
-    let data: Any
-}
-
 struct NextLessonRetrievingResult {
     let lesson: Lesson?
     let isLocked: Bool?

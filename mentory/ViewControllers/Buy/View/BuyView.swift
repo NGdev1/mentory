@@ -38,7 +38,7 @@ final class BuyView: UIView {
     @IBOutlet var perMonthSubtitle: UILabel!
 
     @IBOutlet var restorePurchases: UIButton!
-    @IBOutlet var infoLabel: UILabel!
+    @IBOutlet var infoTextView: UITextView!
     @IBOutlet var buyInfoLabel: UILabel!
     @IBOutlet var buyButton: UIButton!
 
@@ -86,7 +86,12 @@ final class BuyView: UIView {
 
         buyInfoLabel.text = Text.Buy.getInfo
         buyButton.setTitle(Text.Buy.get, for: .normal)
-        infoLabel.text = Text.Buy.info
+        infoTextView.attributedText = createAttributedString(
+            regularString: Text.Buy.info,
+            linkString: Text.Buy.privacyPolicy,
+            urlString: "https://mentory.flycricket.io/privacy.html"
+        )
+        infoTextView.tintColor = Assets.title.color
         restorePurchases.setTitle(Text.Buy.restorePurchases, for: .normal)
 
         currentState = .buyPerYear
@@ -157,5 +162,48 @@ final class BuyView: UIView {
             self?.buyPerYearView.backgroundColor = Assets.background1.color
             self?.buyPerMonthView.backgroundColor = Assets.winterGreen.color
         }
+    }
+
+    private func createAttributedString(
+        regularString: String,
+        linkString: String,
+        urlString: String
+    ) -> NSMutableAttributedString {
+        let text = NSMutableAttributedString(string: "\(regularString)\(linkString)")
+
+        let regularTextRange = NSRange(location: 0, length: regularString.count)
+        let linkTextRange = NSRange(location: regularString.count, length: linkString.count)
+        guard
+            let regularFont = Fonts.SFUIDisplay.regular.font(size: 12),
+            let linkFont = Fonts.SFUIDisplay.bold.font(size: 12),
+            let url = URL(string: urlString)
+        else { return text }
+
+        text.addAttribute(
+            NSAttributedString.Key.link,
+            value: url,
+            range: linkTextRange
+        )
+        text.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: Assets.coolGrey.color,
+            range: regularTextRange
+        )
+        text.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: Assets.title.color,
+            range: linkTextRange
+        )
+        text.addAttribute(
+            NSAttributedString.Key.font,
+            value: regularFont,
+            range: regularTextRange
+        )
+        text.addAttribute(
+            NSAttributedString.Key.font,
+            value: linkFont,
+            range: linkTextRange
+        )
+        return text
     }
 }

@@ -93,7 +93,7 @@ extension MainPageDataSource: UITableViewDataSource {
             return UITableViewCell()
         }
         switch item.type {
-        case .title:
+        case .sectionHeader:
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: TitleCell.identifier,
                 for: indexPath
@@ -127,7 +127,7 @@ extension MainPageDataSource: UITableViewDelegate {
         }
 
         switch item.type {
-        case .title, .buyFull:
+        case .sectionHeader, .buyFull:
             return UITableView.automaticDimension
         case .lesson:
             return 165

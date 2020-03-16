@@ -7,5 +7,5 @@
 //
 
 protocol MainPageServiceProtocol {
-    func get(completion: @escaping (MainPageResponse?, Error?) -> Void)
+    func get(completion: @escaping ([MainPageCellViewModel]?, Error?) -> Void)
 }

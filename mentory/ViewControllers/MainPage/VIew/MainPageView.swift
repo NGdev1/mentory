@@ -17,7 +17,7 @@ final class MainPageView: UIView {
             if AppService.shared.app.appState == .premium {
                 return 0
             } else {
-                return 48
+                return 60
             }
         }
 
@@ -25,7 +25,7 @@ final class MainPageView: UIView {
             if AppService.shared.app.appState == .premium {
                 return 23
             } else {
-                return 85
+                return 97
             }
         }
     }

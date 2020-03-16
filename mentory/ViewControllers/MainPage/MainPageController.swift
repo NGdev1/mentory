@@ -11,7 +11,7 @@ import Storable
 import UIKit
 
 protocol MainPageControllerLogic: AnyObject {
-    func presenLessons(_ lessons: [MainPageCellViewModel])
+    func presentData(_ viewModels: [MainPageCellViewModel])
     func presentError(message: String)
     func retrieveNextLesson(afrer lesson: Lesson) -> NextLessonRetrievingResult?
 }
@@ -21,7 +21,6 @@ class MainPageController: UIViewController, MainPageControllerLogic {
 
     lazy var customView = MainPageView()
     var interactor: MainPageInteractor?
-    var presenter: MainPagePresenter?
     private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
     private let notificationsFeedbackGenerator = UINotificationFeedbackGenerator()
     private var growingAnimatableView: ViewImageBasedAnimatable?
@@ -42,11 +41,8 @@ class MainPageController: UIViewController, MainPageControllerLogic {
     }
 
     private func setup() {
-        let controller = self
         interactor = MainPageInteractor()
-        presenter = MainPagePresenter()
-        interactor?.presenter = presenter
-        presenter?.controller = controller
+        interactor?.controller = self
     }
 
     private func setupAppearance() {
@@ -102,8 +98,8 @@ class MainPageController: UIViewController, MainPageControllerLogic {
 
     // MARK: - MainPageControllerLogic
 
-    func presenLessons(_ lessons: [MainPageCellViewModel]) {
-        customView.updateAppearance(with: lessons)
+    func presentData(_ viewModels: [MainPageCellViewModel]) {
+        customView.updateAppearance(with: viewModels)
     }
 
     func retrieveNextLesson(afrer lesson: Lesson) -> NextLessonRetrievingResult? {
