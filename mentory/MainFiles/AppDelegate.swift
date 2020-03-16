@@ -8,6 +8,7 @@
 
 import Storable
 import UIKit
+import YandexMobileMetrica
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        if let configuration = YMMYandexMetricaConfiguration(
+            apiKey: "cae75d90-5010-4d97-aa07-58cdfac34708"
+        ) { YMMYandexMetrica.activate(with: configuration) }
+
         AppService.shared.app.appOpenedCount += 1
         print("App opened count: \(AppService.shared.app.appOpenedCount)")
 

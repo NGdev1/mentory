@@ -16,6 +16,14 @@ PODS:
     - SwiftyUserDefaults
   - SwiftAudio (0.11.2)
   - SwiftyUserDefaults (4.0.0)
+  - YandexMobileMetrica (3.9.4):
+    - YandexMobileMetrica/Static (= 3.9.4)
+  - YandexMobileMetrica/Static (3.9.4):
+    - YandexMobileMetrica/Static/Core (= 3.9.4)
+    - YandexMobileMetrica/Static/Crashes (= 3.9.4)
+  - YandexMobileMetrica/Static/Core (3.9.4)
+  - YandexMobileMetrica/Static/Crashes (3.9.4):
+    - YandexMobileMetrica/Static/Core
 
 DEPENDENCIES:
   - KeychainAccess (= 3.2.0)
@@ -25,6 +33,7 @@ DEPENDENCIES:
   - Storable (from `./Storable`)
   - SwiftAudio (~> 0.11.2)
   - SwiftyUserDefaults (= 4.0.0)
+  - YandexMobileMetrica (= 3.9.4)
 
 SPEC REPOS:
   trunk:
@@ -33,6 +42,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftAudio
     - SwiftyUserDefaults
+    - YandexMobileMetrica
 
 EXTERNAL SOURCES:
   MDFoundation:
@@ -54,7 +64,8 @@ SPEC CHECKSUMS:
   Storable: bcb4dad8b5c62ea7c5fdb3e19161855467802bd5
   SwiftAudio: 217f5f184b27a0e25ff0fe7647021f05a21c06c9
   SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
+  YandexMobileMetrica: 1030df2959c886a7be3bc3d274eb54c8e86afd6f
 
-PODFILE CHECKSUM: 6ccc8a9cb389aa6f8c2b9f7edcc66157196d7abb
+PODFILE CHECKSUM: 8c6888710d280d979def0502de2bb1c9dfb1434d
 
 COCOAPODS: 1.8.3
