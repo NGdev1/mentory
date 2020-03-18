@@ -44,6 +44,7 @@ final class BuyView: UIView {
 
     weak var delegate: BuyViewDelegate?
 
+    var yearlyPrice: String?
     var currentState: State = .buyPerYear {
         didSet {
             switch currentState {
@@ -84,7 +85,7 @@ final class BuyView: UIView {
         perYearSubtitle.text = Text.Buy.YearView.subtitle
         perMonthSubtitle.text = Text.Buy.MonthView.subtitle
 
-        buyInfoLabel.text = Text.Buy.getInfo
+        buyInfoLabel.text = .empty
         buyButton.setTitle(Text.Buy.get, for: .normal)
         infoTextView.attributedText = createAttributedString(
             regularString: Text.Buy.info,
@@ -128,16 +129,22 @@ final class BuyView: UIView {
         let currencySymbol: String = product.priceLocale.currencySymbol ?? .empty
         let price = Float(truncating: product.price)
         perYearTitle.text = Text.Buy.YearView.titleWithPrice(
+            "\(price.currencyValue) \(currencySymbol)",
             "\((price / 12).currencyValue) \(currencySymbol)"
         )
-        perYearSubtitle.text = Text.Buy.YearView.subtitleWithPrice("\(price.currencyValue) \(currencySymbol)")
+        yearlyPrice = "\(price.currencyValue) \(currencySymbol)"
+        if currentState == .buyPerYear {
+            buyInfoLabel.text = Text.Buy.yearlyPrice("\(price.currencyValue) \(currencySymbol)")
+        } else {
+            buyInfoLabel.text = .empty
+        }
     }
 
     func setMonthlyProduct(product: SKProduct) {
         let currencySymbol: String = product.priceLocale.currencySymbol ?? .empty
         let price = Float(truncating: product.price)
         perMonthTitle.text = Text.Buy.MonthView.titleWithPrice("\(price.currencyValue) \(currencySymbol)")
-        perMonthSubtitle.text = Text.Buy.MonthView.subtitleWithPrice("\(price.currencyValue) \(currencySymbol)")
+        buyInfoLabel.text = .empty
     }
 
     // MARK: - Private methods
@@ -150,6 +157,12 @@ final class BuyView: UIView {
             self?.perMonthSubtitle.textColor = Assets.warmGrey.color
             self?.buyPerYearView.backgroundColor = Assets.winterGreen.color
             self?.buyPerMonthView.backgroundColor = Assets.background1.color
+            self?.buyButton.setTitle(Text.Buy.get3DaysFree, for: .normal)
+            if let yearlyPrice = self?.yearlyPrice {
+                self?.buyInfoLabel.text = Text.Buy.yearlyPrice(yearlyPrice)
+            } else {
+                self?.buyInfoLabel.text = .empty
+            }
         }
     }
 
@@ -161,6 +174,8 @@ final class BuyView: UIView {
             self?.perMonthSubtitle.textColor = Assets.background1.color.withAlphaComponent(0.6)
             self?.buyPerYearView.backgroundColor = Assets.background1.color
             self?.buyPerMonthView.backgroundColor = Assets.winterGreen.color
+            self?.buyButton.setTitle(Text.Buy.get, for: .normal)
+            self?.buyInfoLabel.text = .empty
         }
     }
 
@@ -173,12 +188,21 @@ final class BuyView: UIView {
 
         let regularTextRange = NSRange(location: 0, length: regularString.count)
         let linkTextRange = NSRange(location: regularString.count, length: linkString.count)
+        let allTextRange = NSRange(location: 0, length: text.string.count)
         guard
             let regularFont = Fonts.SFUIDisplay.regular.font(size: 12),
             let linkFont = Fonts.SFUIDisplay.bold.font(size: 12),
             let url = URL(string: urlString)
         else { return text }
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        paragraphStyle.lineSpacing = 3
 
+        text.addAttribute(
+            NSAttributedString.Key.paragraphStyle,
+            value: paragraphStyle,
+            range: allTextRange
+        )
         text.addAttribute(
             NSAttributedString.Key.link,
             value: url,
