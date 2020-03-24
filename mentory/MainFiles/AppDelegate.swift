@@ -6,6 +6,8 @@
 //  Copyright © 2020 Михаил Андреичев. All rights reserved.
 //
 
+import FBSDKCoreKit
+import Firebase
 import Storable
 import UIKit
 import YandexMobileMetrica
@@ -18,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+
+        FirebaseApp.configure()
+
         if let configuration = YMMYandexMetricaConfiguration(
             apiKey: "cae75d90-5010-4d97-aa07-58cdfac34708"
         ) { YMMYandexMetrica.activate(with: configuration) }
@@ -46,6 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         return true
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        AppEvents.activateApp()
     }
 
     @objc func onboardingFinished() {

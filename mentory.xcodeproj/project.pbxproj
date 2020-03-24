@@ -26,6 +26,7 @@
 		6B27507E2419B03900FBC8D2 /* TryPremiumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B27507D2419B03900FBC8D2 /* TryPremiumView.xib */; };
 		6B50D01E240D989900202DA6 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50D01D240D989900202DA6 /* NotificationNames.swift */; };
 		6B5B8ED523EE96620001A6C3 /* UIView+LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B8ED323EE96620001A6C3 /* UIView+LoadingView.swift */; };
+		6B5BB156242A74E700279794 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B5BB155242A74E700279794 /* GoogleService-Info.plist */; };
 		6B65851323ED5391004016BA /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65851223ED5391004016BA /* Lesson.swift */; };
 		6B65851723ED53B3004016BA /* MentoryServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65851423ED53B2004016BA /* MentoryServiceFactory.swift */; };
 		6B65851823ED53B3004016BA /* MainPageServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65851523ED53B2004016BA /* MainPageServiceMock.swift */; };
@@ -106,6 +107,7 @@
 		6B27507D2419B03900FBC8D2 /* TryPremiumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryPremiumView.xib; sourceTree = "<group>"; };
 		6B50D01D240D989900202DA6 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		6B5B8ED323EE96620001A6C3 /* UIView+LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LoadingView.swift"; sourceTree = "<group>"; };
+		6B5BB155242A74E700279794 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6B65851223ED5391004016BA /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		6B65851423ED53B2004016BA /* MentoryServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoryServiceFactory.swift; sourceTree = "<group>"; };
 		6B65851523ED53B2004016BA /* MainPageServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageServiceMock.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		6B65850623ED52C1004016BA /* MainFiles */ = {
 			isa = PBXGroup;
 			children = (
+				6B5BB155242A74E700279794 /* GoogleService-Info.plist */,
 				6BC8871F23EB63320046E598 /* AppDelegate.swift */,
 				6B65852323ED54AC004016BA /* LaunchScreen.storyboard */,
 				6BC8872D23EB63340046E598 /* Info.plist */,
@@ -709,6 +712,7 @@
 				6B65851F23ED5494004016BA /* Localizable.strings in Resources */,
 				6B7D9D6923FAE521003F7B45 /* NextLessonCell.xib in Resources */,
 				6B8CA12124198E8200D122C3 /* OnboardingView.xib in Resources */,
+				6B5BB156242A74E700279794 /* GoogleService-Info.plist in Resources */,
 				6B65852923ED5560004016BA /* README.md in Resources */,
 				6B27507E2419B03900FBC8D2 /* TryPremiumView.xib in Resources */,
 				6BC24FB823EDA5E70054C8B9 /* LessonView.xib in Resources */,
@@ -1001,7 +1005,7 @@
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = HY59K9S4C6;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1026,7 +1030,7 @@
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = HY59K9S4C6;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

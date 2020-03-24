@@ -12,6 +12,8 @@ def other_pods
   pod 'Kingfisher', '5.7.0', :inhibit_warnings => true
   pod 'SwiftAudio', '~> 0.11.2', :inhibit_warnings => true
   pod 'YandexMobileMetrica', '3.9.4', :inhibit_warnings => true
+  pod 'Firebase/Analytics', :inhibit_warnings => true
+  pod 'FacebookCore', :inhibit_warnings => true
   # pod 'SPAlert', '2.1.1', :inhibit_warnings => true
 end
 
