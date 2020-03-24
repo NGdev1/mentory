@@ -47,6 +47,7 @@ public class BuyController: UIViewController, BuyControllerLogic {
     // MARK: - Network
 
     private func loadProducts() {
+        customView?.startShowingActivityIndicator(needToDimBackground: true)
         interactor?.loadProducts()
     }
 
@@ -76,12 +77,14 @@ public class BuyController: UIViewController, BuyControllerLogic {
     }
 
     @objc func buy() {
+        customView?.startShowingActivityIndicator(needToDimBackground: true)
         let product: IAPProduct = customView?.currentState == BuyView.State.buyPerMonth
             ? IAPProduct.monthly : IAPProduct.yearly
         interactor?.purchase(product: product)
     }
 
     @objc func restorePurchases() {
+        customView?.startShowingActivityIndicator(needToDimBackground: true)
         interactor?.restorePurchases()
     }
 
@@ -92,6 +95,7 @@ public class BuyController: UIViewController, BuyControllerLogic {
     }
 
     func didLoadProducts(_ products: [Product]) {
+        customView?.stopShowingActivityIndicator()
         for product in products {
             if product.iapProduct == .yearly {
                 customView?.setYearlyProduct(product: product.skProduct)

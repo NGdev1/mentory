@@ -21,6 +21,7 @@ final class IAPService: NSObject {
 
     private var products: [SKProduct] = []
     private let paymentQueue = SKPaymentQueue.default()
+    private var request: SKProductsRequest?
 
     weak var delegate: IAPServiceDelegate?
 
@@ -40,12 +41,13 @@ final class IAPService: NSObject {
     // MARK: - Internal methods
 
     func loadProducts() {
-        let request = SKProductsRequest(productIdentifiers: [
+        request?.cancel()
+        request = SKProductsRequest(productIdentifiers: [
             IAPProduct.yearly.rawValue,
             IAPProduct.monthly.rawValue,
         ])
-        request.delegate = self
-        request.start()
+        request?.delegate = self
+        request?.start()
     }
 
     func purchase(product: IAPProduct) {

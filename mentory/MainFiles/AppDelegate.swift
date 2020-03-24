@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             apiKey: "cae75d90-5010-4d97-aa07-58cdfac34708"
         ) { YMMYandexMetrica.activate(with: configuration) }
 
+        if AppService.shared.app.appState == .free {
+            IAPService.shared.loadProducts()
+        }
+
         AppService.shared.app.appOpenedCount += 1
         print("App opened count: \(AppService.shared.app.appOpenedCount)")
 

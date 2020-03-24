@@ -42,8 +42,6 @@ public enum Text {
     public static let done = Text.tr("Localizable", "Buy.Done")
     /// ПРОДОЛЖИТЬ
     public static let `get` = Text.tr("Localizable", "Buy.Get")
-    /// ПОЛУЧИТЬ 3 ДНЯ БЕСПЛАТНО
-    public static let get3DaysFree = Text.tr("Localizable", "Buy.Get3DaysFree")
     /// Периодическая оплата. Возможность отмены в любой момент. Оплата за подписку будет списана с Вашего iTunes аккаунта. Подписка автоматически обновляется в течении 24 часов до истечения периода подписки. Вы можете отменить подписку в любой момент в разделе Настройки в iTunes. В случае отмены Ваша подписка прекращается в конце действующего цикла оплаты. После начала подписки весь неиспользованный Вами бесплатный период будет аннулирован. Более детальную информацию Вы можете найти в 
     public static let info = Text.tr("Localizable", "Buy.Info")
     /// Условиях Пользования и Политике Конфиденциальности.
@@ -56,10 +54,6 @@ public enum Text {
     public static let subtitle = Text.tr("Localizable", "Buy.Subtitle")
     /// Вы получили премиум аккаунт.
     public static let success = Text.tr("Localizable", "Buy.Success")
-    /// Затем %@/год
-    public static func yearlyPrice(_ p1: String) -> String {
-      return Text.tr("Localizable", "Buy.YearlyPrice", p1)
-    }
     public enum MonthView {
       /// Оплата ежемесячно
       public static let subtitle = Text.tr("Localizable", "Buy.MonthView.Subtitle")
@@ -75,9 +69,9 @@ public enum Text {
       public static let subtitle = Text.tr("Localizable", "Buy.YearView.Subtitle")
       /// Годовой план
       public static let title = Text.tr("Localizable", "Buy.YearView.Title")
-      /// Годовой план  – %@/год (%@/мес)
-      public static func titleWithPrice(_ p1: String, _ p2: String) -> String {
-        return Text.tr("Localizable", "Buy.YearView.TitleWithPrice", p1, p2)
+      /// Годовой план  – %@/год
+      public static func titleWithPrice(_ p1: String) -> String {
+        return Text.tr("Localizable", "Buy.YearView.TitleWithPrice", p1)
       }
     }
   }
@@ -166,7 +160,7 @@ public enum Text {
     public enum Slide3 {
       /// я передам\nэтот опыт вам.
       public static let highlited = Text.tr("Localizable", "Onboarding.Slide3.Highlited")
-      /// Во мне концентрация опыта тысячи успешных, богатых и счастливых\nлюдей.\n\nВ формате ежедневных\nаудиопрактик, 
+      /// Во мне сконцентрирован опыт тысячи успешных, богатых и счастливых\nлюдей.\n\nВ формате ежедневных\nаудиопрактик, 
       public static let subtitle = Text.tr("Localizable", "Onboarding.Slide3.Subtitle")
       /// Опыт — лучший учитель!
       public static let title = Text.tr("Localizable", "Onboarding.Slide3.Title")

@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s77-MO-zLy">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="883"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="829"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYA-X5-Yhl">
                                     <rect key="frame" x="16" y="8" width="40" height="40"/>
@@ -184,7 +184,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-7K-SQ4">
-                                    <rect key="frame" x="16" y="563" width="382" height="50"/>
+                                    <rect key="frame" x="16" y="561" width="382" height="50"/>
                                     <color key="backgroundColor" name="WinterGreen"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="GrR-EQ-tKa"/>
@@ -200,25 +200,19 @@
                                     </userDefinedRuntimeAttributes>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-oi-FLu">
-                                    <rect key="frame" x="142" y="824" width="130" height="29"/>
+                                    <rect key="frame" x="142" y="770" width="130" height="29"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                     <state key="normal" title="Restore purchases">
                                         <color key="titleColor" name="Title"/>
                                     </state>
                                 </button>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9LZ-hq-B3a">
-                                    <rect key="frame" x="16" y="683" width="382" height="131"/>
+                                    <rect key="frame" x="16" y="629" width="382" height="131"/>
                                     <string key="text">Periodic payment. Ability to cancel at any time. Subscription fees will be charged to your iTunes account. The subscription is automatically renewed within 24 hours before the expiration of the subscription period. You can unsubscribe at any time in the Settings section of iTunes. In case of cancellation, your subscription is terminated at the end of the current payment cycle. After the start of the subscription, the entire unused free period will be canceled.</string>
                                     <color key="textColor" name="CoolGrey"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can unsubscribe at any time, the day before the cancellation of the next period." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMc-zt-lQT">
-                                    <rect key="frame" x="16" y="630" width="382" height="29"/>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                    <color key="textColor" name="Title"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="8T3-Yw-TzA" firstAttribute="leading" secondItem="s77-MO-zLy" secondAttribute="leading" constant="16" id="0DZ-zw-Dct"/>
@@ -238,13 +232,12 @@
                                 <constraint firstAttribute="bottom" secondItem="1Yg-oi-FLu" secondAttribute="bottom" constant="30" id="GHr-KM-ffX"/>
                                 <constraint firstItem="RA1-eT-rH7" firstAttribute="centerY" secondItem="HfY-mb-pKo" secondAttribute="centerY" id="IOu-AN-5jG"/>
                                 <constraint firstItem="LyN-VK-pY8" firstAttribute="trailing" secondItem="8T3-Yw-TzA" secondAttribute="trailing" id="L2x-aQ-Zbc"/>
-                                <constraint firstItem="XMc-zt-lQT" firstAttribute="top" secondItem="FxH-7K-SQ4" secondAttribute="bottom" constant="17" id="NdB-Wr-xhP"/>
                                 <constraint firstItem="v2C-9k-13I" firstAttribute="top" secondItem="hYA-X5-Yhl" secondAttribute="bottom" constant="5" id="OGf-T6-MvE"/>
                                 <constraint firstItem="hYA-X5-Yhl" firstAttribute="leading" secondItem="Tnr-Mh-POZ" secondAttribute="leading" constant="16" id="OyN-RR-2xg"/>
                                 <constraint firstItem="Kq8-fe-lJw" firstAttribute="leading" secondItem="knt-zI-vmg" secondAttribute="trailing" constant="11" id="QY2-RP-9Db"/>
                                 <constraint firstItem="SiR-gc-3Ur" firstAttribute="top" secondItem="8T3-Yw-TzA" secondAttribute="bottom" constant="20" id="Qfx-xi-xDU"/>
-                                <constraint firstItem="FxH-7K-SQ4" firstAttribute="top" secondItem="O4R-Z9-O54" secondAttribute="bottom" constant="32" id="QrN-tI-Wxb"/>
-                                <constraint firstItem="XMc-zt-lQT" firstAttribute="trailing" secondItem="O4R-Z9-O54" secondAttribute="trailing" id="ROJ-tr-RL5"/>
+                                <constraint firstItem="FxH-7K-SQ4" firstAttribute="top" secondItem="O4R-Z9-O54" secondAttribute="bottom" constant="30" id="QrN-tI-Wxb"/>
+                                <constraint firstItem="9LZ-hq-B3a" firstAttribute="top" secondItem="FxH-7K-SQ4" secondAttribute="bottom" constant="18" id="RkK-jk-y5y"/>
                                 <constraint firstItem="e1e-nZ-KSj" firstAttribute="centerY" secondItem="aWl-JK-GMs" secondAttribute="centerY" id="Ubl-Mw-UUh"/>
                                 <constraint firstItem="Kq8-fe-lJw" firstAttribute="top" secondItem="LyN-VK-pY8" secondAttribute="bottom" constant="18" id="WAU-gl-shF"/>
                                 <constraint firstItem="LyN-VK-pY8" firstAttribute="top" secondItem="WWa-tA-6L9" secondAttribute="bottom" constant="18" id="WDc-GT-5Qk"/>
@@ -258,8 +251,6 @@
                                 <constraint firstItem="WWa-tA-6L9" firstAttribute="leading" secondItem="Ult-AM-yvj" secondAttribute="trailing" constant="11" id="f2Q-5q-a2m"/>
                                 <constraint firstItem="O4R-Z9-O54" firstAttribute="trailing" secondItem="zag-IE-5XF" secondAttribute="trailing" id="fok-RI-QfN"/>
                                 <constraint firstItem="zag-IE-5XF" firstAttribute="top" secondItem="RA1-eT-rH7" secondAttribute="bottom" constant="15" id="inM-Bm-nv8"/>
-                                <constraint firstItem="XMc-zt-lQT" firstAttribute="leading" secondItem="O4R-Z9-O54" secondAttribute="leading" id="jGg-rh-aNx"/>
-                                <constraint firstItem="9LZ-hq-B3a" firstAttribute="top" secondItem="XMc-zt-lQT" secondAttribute="bottom" constant="24" id="kiQ-ut-t7e"/>
                                 <constraint firstItem="HfY-mb-pKo" firstAttribute="leading" secondItem="knt-zI-vmg" secondAttribute="leading" id="kwA-7K-9z4"/>
                                 <constraint firstItem="WWa-tA-6L9" firstAttribute="trailing" secondItem="8T3-Yw-TzA" secondAttribute="trailing" id="ng3-Jk-mqM"/>
                                 <constraint firstItem="zag-IE-5XF" firstAttribute="leading" secondItem="HfY-mb-pKo" secondAttribute="leading" id="ngV-gL-2Do"/>
@@ -308,7 +299,6 @@
                 <outlet property="adv4Label" destination="Kq8-fe-lJw" id="cdV-Wx-m7v"/>
                 <outlet property="adv5Label" destination="RA1-eT-rH7" id="Hd6-CU-hYq"/>
                 <outlet property="buyButton" destination="FxH-7K-SQ4" id="pjU-rO-Czd"/>
-                <outlet property="buyInfoLabel" destination="XMc-zt-lQT" id="4jd-jQ-n0r"/>
                 <outlet property="buyPerMonthView" destination="O4R-Z9-O54" id="EFh-vi-lZb"/>
                 <outlet property="buyPerYearView" destination="zag-IE-5XF" id="u0e-2l-sz9"/>
                 <outlet property="closeButton" destination="hYA-X5-Yhl" id="Vag-WY-ZyZ"/>
