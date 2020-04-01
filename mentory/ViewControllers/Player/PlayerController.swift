@@ -133,7 +133,7 @@ public class PlayerController: UIViewController {
     }
 
     private func updatePlayerAppearance(isPlaying: Bool) {
-        customView?.displayTrack(lesson: lesson, track: lesson.tracks[currentIndex])
+        customView?.displayTrack(lesson: lesson, track: lesson.tracks[player.currentIndex])
         customView?.updateAppearance(
             backwardActive: currentIndex != 0,
             isPlaying: isPlaying,
@@ -162,9 +162,19 @@ extension PlayerController: MP3PlayerDelegate {
     }
 
     func progressUpdated(_ value: Float) {
+        guard lesson.tracks[player.currentIndex].isLocked == false || AppService.shared.app.appState == .premium else {
+            showPurchasePage()
+            player.pause()
+            return
+        }
+
         if customView?.userChangingProgress == false {
             progress = value
             customView?.showProgress(value)
+            if currentIndex != player.currentIndex {
+                currentIndex = player.currentIndex
+                updatePlayerAppearance(isPlaying: true)
+            }
         }
     }
 }

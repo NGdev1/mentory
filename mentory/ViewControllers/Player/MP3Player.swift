@@ -21,6 +21,10 @@ final class MP3Player: NSObject {
     let controller = RemoteCommandController()
     weak var delegate: MP3PlayerDelegate?
 
+    var currentIndex: Int {
+        return player.currentIndex
+    }
+
     // MARK: - Init
 
     init(tracks: [Track], current: Int) {
@@ -44,7 +48,7 @@ final class MP3Player: NSObject {
         player.bufferDuration = 1
         player.event.secondElapse.addListener(self, handleAudioPlayerSecondElapsed)
         player.event.stateChange.addListener(self, handleAudioPlayerStateChanged)
-        player.automaticallyPlayNextSong = false
+        player.automaticallyPlayNextSong = true
     }
 
     private func setupAVAudioSession() {
