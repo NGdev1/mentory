@@ -75,6 +75,7 @@ extension IAPService: SKProductsRequestDelegate {
     }
 
     func request(_ request: SKRequest, didFailWithError error: Error) {
+        delegate?.didFailPurchase()
         print(error.localizedDescription)
     }
 }
@@ -100,7 +101,9 @@ extension IAPService: SKPaymentTransactionObserver {
                 break
             }
 
-            queue.finishTransaction(transaction)
+            if transaction.transactionState != .purchasing, transaction.transactionState != .deferred {
+                queue.finishTransaction(transaction)
+            }
         }
     }
 }
