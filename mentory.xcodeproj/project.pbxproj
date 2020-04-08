@@ -38,6 +38,8 @@
 		6B65853123ED5726004016BA /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65852E23ED5726004016BA /* Texts.swift */; };
 		6B65853223ED5726004016BA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65852F23ED5726004016BA /* Fonts.swift */; };
 		6B689F09241F9D620078FDC7 /* MainPageSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B689F08241F9D620078FDC7 /* MainPageSectionHeader.swift */; };
+		6B797016243D2C3600BE673E /* ItunesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B797015243D2C3600BE673E /* ItunesApi.swift */; };
+		6B797018243D339800BE673E /* ItunesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B797017243D339800BE673E /* ItunesModels.swift */; };
 		6B7A518523EE3BCE009D3047 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A518023EE3BCE009D3047 /* PlayerController.swift */; };
 		6B7A518723EE3BCE009D3047 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A518223EE3BCE009D3047 /* PlayerView.swift */; };
 		6B7A518823EE3BCE009D3047 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7A518323EE3BCE009D3047 /* PlayerView.xib */; };
@@ -120,6 +122,8 @@
 		6B65852E23ED5726004016BA /* Texts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		6B65852F23ED5726004016BA /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6B689F08241F9D620078FDC7 /* MainPageSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageSectionHeader.swift; sourceTree = "<group>"; };
+		6B797015243D2C3600BE673E /* ItunesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesApi.swift; sourceTree = "<group>"; };
+		6B797017243D339800BE673E /* ItunesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesModels.swift; sourceTree = "<group>"; };
 		6B7A518023EE3BCE009D3047 /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 		6B7A518223EE3BCE009D3047 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		6B7A518323EE3BCE009D3047 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
@@ -454,6 +458,8 @@
 			children = (
 				6BA82406240D2C1100536CF4 /* IAPProduct.swift */,
 				6BA82408240D2C5500536CF4 /* IAPService.swift */,
+				6B797015243D2C3600BE673E /* ItunesApi.swift */,
+				6B797017243D339800BE673E /* ItunesModels.swift */,
 			);
 			path = Purchasing;
 			sourceTree = "<group>";
@@ -828,12 +834,14 @@
 				6B9A90DA2406A84B0018E4E6 /* BuyController.swift in Sources */,
 				6B9A90DB2406A84B0018E4E6 /* BuyInteractor.swift in Sources */,
 				6BA82409240D2C5500536CF4 /* IAPService.swift in Sources */,
+				6B797016243D2C3600BE673E /* ItunesApi.swift in Sources */,
 				6B90A773241A896C00B7A7BB /* StyleUtils.swift in Sources */,
 				6BC8872023EB63320046E598 /* AppDelegate.swift in Sources */,
 				6B65851723ED53B3004016BA /* MentoryServiceFactory.swift in Sources */,
 				6BAB96FF23EE1DAD00354E39 /* LessonControllerModels.swift in Sources */,
 				6B9A90DC2406A84B0018E4E6 /* BuyView.swift in Sources */,
 				6BA8240B240D473F00536CF4 /* BuyModels.swift in Sources */,
+				6B797018243D339800BE673E /* ItunesModels.swift in Sources */,
 				6BA09A7B23FA95A700C95B08 /* DataManager.swift in Sources */,
 				6BA848F823FAB2AC00C6DDEB /* MDHeaderView.swift in Sources */,
 				6BAB96FB23EDA9B400354E39 /* ImagePushAnimatedTransition.swift in Sources */,
@@ -1003,7 +1011,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HY59K9S4C6;
@@ -1016,7 +1024,7 @@
 				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
 				PRODUCT_NAME = Mentory;
-				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Distribution)";
+				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1028,7 +1036,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HY59K9S4C6;
@@ -1041,7 +1049,7 @@
 				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
 				PRODUCT_NAME = Mentory;
-				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Distribution)";
+				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Debug)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

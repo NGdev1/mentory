@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        setupDebugConfiguration()
+
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         FirebaseApp.configure()
@@ -30,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if AppService.shared.app.appState == .free {
             IAPService.shared.loadProducts()
+        } else {
+            IAPService.shared.checkSubscription { [weak self] response, error in
+                guard let self = self else { return }
+                print("YES!")
+            }
         }
 
         AppService.shared.app.appOpenedCount += 1
@@ -52,6 +59,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         return true
+    }
+
+    func setupDebugConfiguration() {
+        // let url = URL(string: "URL")
+        // AppService.shared.app.baseURL = url!
+        let url = URL(string: "https://sandbox.itunes.apple.com")
+        AppService.shared.app.itunesURL = url!
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

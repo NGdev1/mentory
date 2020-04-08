@@ -25,4 +25,30 @@ public final class App {
         }
         set { keysRegistry.appState.value = newValue.rawValue }
     }
+
+    public var baseURL: URL {
+        get {
+            guard
+                let value = keysRegistry.baseURL.value,
+                let url = URL(string: value)
+            else {
+                fatalError("Base URL should at start time of app")
+            }
+            return url
+        }
+        set { keysRegistry.baseURL.value = newValue.absoluteString }
+    }
+
+    public var itunesURL: URL {
+        get {
+            guard
+                let value = keysRegistry.itunesURL.value,
+                let url = URL(string: value)
+            else {
+                fatalError("Base URL should at start time of app")
+            }
+            return url
+        }
+        set { keysRegistry.itunesURL.value = newValue.absoluteString }
+    }
 }

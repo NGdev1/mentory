@@ -8,4 +8,8 @@ final class KeysRegistry {
     var appOpenedCount: Storable<Int, Storages.Defaults> = "com.deltapps.mentory.key.appOpenedCount"
     /// Премиум аккаунт или обычный
     var appState: Storable<String, Storages.Defaults> = "com.deltapps.mentory.key.appState"
+    /// URL сервера
+    var baseURL: Storable<String, Storages.InMemory> = "com.deltapps.mentory.key.baseURL"
+    /// URL сервера iTunes
+    var itunesURL: Storable<String, Storages.InMemory> = "com.deltapps.mentory.key.itunesUrl"
 }

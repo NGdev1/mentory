@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Moya
 import Storable
 import StoreKit
 
@@ -22,6 +23,7 @@ final class IAPService: NSObject {
     private var products: [SKProduct] = []
     private let paymentQueue = SKPaymentQueue.default()
     private var request: SKProductsRequest?
+    let dataProvider = MoyaProvider<ItunesApi>()
 
     weak var delegate: IAPServiceDelegate?
 
@@ -48,6 +50,36 @@ final class IAPService: NSObject {
         ])
         request?.delegate = self
         request?.start()
+    }
+
+    func checkSubscription(completion: @escaping (Bool?, Error?) -> Void) {
+        guard
+            let url = Bundle.main.appStoreReceiptURL,
+            let receiptData = try? Data(contentsOf: url, options: .alwaysMapped)
+        else { return }
+        let receiptString = receiptData.base64EncodedString(options: [])
+        let request = VerifyReceiptRequest(recieptData: receiptString, password: "")
+        dataProvider.request(.verifyReceipt(request)) { result in
+            switch result {
+            case let .success(moyaResponse):
+                print(moyaResponse.statusCode)
+                print(String(data: moyaResponse.data, encoding: .utf8) ?? .empty)
+                guard moyaResponse.statusCode == 200
+                else { completion(nil, nil); return }
+//                do {
+//                    let decoder = JSONDecoder()
+//                    let response = try decoder.decode(
+//                        Chat.self,
+//                        from: moyaResponse.data
+//                    )
+//                    completion(response, nil)
+//                } catch {
+//                    completion(nil, error)
+//                }
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
     }
 
     func purchase(product: IAPProduct) {

@@ -14,6 +14,7 @@ def other_pods
   pod 'YandexMobileMetrica', '3.9.4', :inhibit_warnings => true
   pod 'Firebase/Analytics', :inhibit_warnings => true
   pod 'FacebookCore', :inhibit_warnings => true
+  pod 'Moya', '~> 13.0', :inhibit_warnings => true
   # pod 'SPAlert', '2.1.1', :inhibit_warnings => true
 end
 
