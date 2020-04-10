@@ -52,32 +52,36 @@ final class IAPService: NSObject {
         request?.start()
     }
 
-    func checkSubscription(completion: @escaping (Bool?, Error?) -> Void) {
+    func checkSubscription() {
         guard
             let url = Bundle.main.appStoreReceiptURL,
             let receiptData = try? Data(contentsOf: url, options: .alwaysMapped)
         else { return }
         let receiptString = receiptData.base64EncodedString(options: [])
-        let request = VerifyReceiptRequest(recieptData: receiptString, password: "")
+        let request = VerifyReceiptRequest(
+            recieptData: receiptString,
+            password: "d0f8706027ea4c05a2c5b42f64da0293"
+        )
+
         dataProvider.request(.verifyReceipt(request)) { result in
             switch result {
             case let .success(moyaResponse):
-                print(moyaResponse.statusCode)
-                print(String(data: moyaResponse.data, encoding: .utf8) ?? .empty)
                 guard moyaResponse.statusCode == 200
-                else { completion(nil, nil); return }
-//                do {
-//                    let decoder = JSONDecoder()
-//                    let response = try decoder.decode(
-//                        Chat.self,
-//                        from: moyaResponse.data
-//                    )
-//                    completion(response, nil)
-//                } catch {
-//                    completion(nil, error)
-//                }
+                else { return }
+                let decoder = JSONDecoder()
+                let response = try? decoder.decode(
+                    VerifyReceiptResponse.self,
+                    from: moyaResponse.data
+                )
+                if let expiresDate = response?.lastReciepts.last?.expiresDate {
+                    print("Date subscription will expired: \(expiresDate)")
+                    if expiresDate < Date() {
+                        AppService.shared.app.appState = .free
+                        NotificationCenter.default.post(Notification(name: .appStateChanged))
+                    }
+                }
             case let .failure(error):
-                completion(nil, error)
+                print(error.localizedDescription)
             }
         }
     }

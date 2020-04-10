@@ -33,10 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if AppService.shared.app.appState == .free {
             IAPService.shared.loadProducts()
         } else {
-            IAPService.shared.checkSubscription { [weak self] response, error in
-                guard let self = self else { return }
-                print("YES!")
-            }
+            IAPService.shared.checkSubscription()
         }
 
         AppService.shared.app.appOpenedCount += 1
