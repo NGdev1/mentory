@@ -43,6 +43,12 @@ Onboarding.Skip = "ПРОПУСТИТЬ";
 Onboarding.Next = "ДАЛЬШЕ";
 Onboarding.Begin = "НАЧАТЬ";
 
+Name.Title = "ПРИВЕТ!\nЯ  –  ПРИЛОЖЕНИЕ\nНАСТАВНИК";
+Name.Subtitle = "Я создан, чтобы помочь тебе стать лучшей версией себя!";
+Name.WhatIsYourName = "Как тебя зовут?";
+Name.Placeholder = "ВВЕДИ СВОЁ ИМЯ";
+Name.Next = "Продолжить";
+
 MainPage.Programs = "Программы";
 MainPage.ProgramsDescription = "Тринадцать уникальных уроков. Слушайте по одному в день. И вы удивитесь как изменится ваша жизнь. ";
 MainPage.GetPremium = "Попробуй PREMIUM бесплатно!";

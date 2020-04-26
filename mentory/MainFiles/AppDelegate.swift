@@ -49,6 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 name: .onboardingFinished,
                 object: nil
             )
+        } else if AppService.shared.app.userName == nil {
+            let nextController = NameController()
+            window?.rootViewController = nextController
         } else {
             let nextController = MainPageController()
             window?.rootViewController = nextController

@@ -26,6 +26,11 @@ public final class App {
         set { keysRegistry.appState.value = newValue.rawValue }
     }
 
+    public var userName: String? {
+        get { return keysRegistry.userName.value }
+        set { keysRegistry.userName.value = newValue }
+    }
+
     public var baseURL: URL {
         get {
             guard
