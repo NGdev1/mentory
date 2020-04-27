@@ -13,6 +13,12 @@ public class NameController: UIViewController {
 
     lazy var customView: NameView? = view as? NameView
 
+    public override var inputAccessoryView: UIView? {
+        return customView?.nextView
+    }
+
+    public override var canBecomeFirstResponder: Bool { true }
+
     // MARK: - Init
 
     public init() {
@@ -33,18 +39,12 @@ public class NameController: UIViewController {
     // MARK: - ActionHandlers
 
     private func addActionHandlers() {
-        customView?.nextButton.addTarget(
+        customView?.nextView.actionButton.addTarget(
             self,
             action: #selector(nextAction),
             for: .touchUpInside
         )
-        customView?.backButton.addTargetForAction(
-            self,
-            action: #selector(backAction)
-        )
     }
-
-    @objc func backAction() {}
 
     @objc func nextAction() {}
 }

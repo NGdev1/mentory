@@ -23,7 +23,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yk1-Se-rgd">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="417"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="347"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Po6-t5-gdd">
                                     <rect key="frame" x="16" y="278" width="382" height="49"/>
@@ -37,10 +37,6 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFloatingPlaceholder" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdV-Lv-Neh">
-                                    <rect key="frame" x="191" y="367" width="32" height="30"/>
-                                    <state key="normal" title="Next"/>
-                                </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slide1" translatesAutoresizingMaskIntoConstraints="NO" id="Gcw-qe-V56">
                                     <rect key="frame" x="16" y="34" width="36" height="47"/>
                                     <constraints>
@@ -84,15 +80,13 @@
                                 <constraint firstItem="Po6-t5-gdd" firstAttribute="top" secondItem="YO7-PL-aem" secondAttribute="bottom" constant="14" id="MIJ-ES-BJt"/>
                                 <constraint firstAttribute="trailing" secondItem="HQN-hu-Ppz" secondAttribute="trailing" constant="16" id="MyG-MN-3fC"/>
                                 <constraint firstItem="YO7-PL-aem" firstAttribute="leading" secondItem="Po6-t5-gdd" secondAttribute="leading" id="R4d-gQ-w75"/>
-                                <constraint firstItem="wdV-Lv-Neh" firstAttribute="top" secondItem="Po6-t5-gdd" secondAttribute="bottom" constant="40" id="WLY-51-KwK"/>
                                 <constraint firstItem="piE-FK-mCb" firstAttribute="top" secondItem="Dtj-jj-gOK" secondAttribute="bottom" constant="21" id="ZIb-zh-ike"/>
+                                <constraint firstAttribute="bottom" secondItem="Po6-t5-gdd" secondAttribute="bottom" constant="20" id="Zhl-Sv-VkE"/>
                                 <constraint firstItem="Gcw-qe-V56" firstAttribute="leading" secondItem="Yk1-Se-rgd" secondAttribute="leading" constant="16" id="cnU-Np-Unn"/>
                                 <constraint firstItem="Gcw-qe-V56" firstAttribute="top" secondItem="Yk1-Se-rgd" secondAttribute="top" constant="34" id="efd-KC-Df8"/>
-                                <constraint firstItem="wdV-Lv-Neh" firstAttribute="centerX" secondItem="Yk1-Se-rgd" secondAttribute="centerX" id="moD-ci-fky"/>
                                 <constraint firstItem="Dtj-jj-gOK" firstAttribute="leading" secondItem="HQN-hu-Ppz" secondAttribute="leading" id="n26-M5-Akl"/>
                                 <constraint firstItem="YO7-PL-aem" firstAttribute="top" secondItem="piE-FK-mCb" secondAttribute="bottom" constant="50" id="ncs-L4-G8X"/>
                                 <constraint firstAttribute="trailing" secondItem="piE-FK-mCb" secondAttribute="trailing" constant="16" id="o5p-sX-XJh"/>
-                                <constraint firstAttribute="bottom" secondItem="wdV-Lv-Neh" secondAttribute="bottom" constant="20" id="rc2-I3-dCD"/>
                                 <constraint firstItem="Po6-t5-gdd" firstAttribute="centerX" secondItem="Yk1-Se-rgd" secondAttribute="centerX" id="sd6-lT-6le"/>
                                 <constraint firstItem="HQN-hu-Ppz" firstAttribute="top" secondItem="Gcw-qe-V56" secondAttribute="bottom" id="tzk-Pb-yqY"/>
                             </constraints>
@@ -121,7 +115,7 @@
                 <outlet property="infoLabel" destination="piE-FK-mCb" id="b4Y-c5-ixv"/>
                 <outlet property="nameTextField" destination="Po6-t5-gdd" id="OTb-lR-i0Y"/>
                 <outlet property="nameTitle" destination="YO7-PL-aem" id="bnH-xQ-ILQ"/>
-                <outlet property="nextButton" destination="wdV-Lv-Neh" id="WLm-3V-4DL"/>
+                <outlet property="nameTopConstraint" destination="ncs-L4-G8X" id="0sD-Tn-cPr"/>
                 <outlet property="scrollView" destination="YaQ-na-Qox" id="Sbk-I6-RzB"/>
             </connections>
             <point key="canvasLocation" x="89.855072463768124" y="87.723214285714278"/>

@@ -37,6 +37,7 @@
 		6B65853023ED5726004016BA /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65852D23ED5726004016BA /* Assets.swift */; };
 		6B65853123ED5726004016BA /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65852E23ED5726004016BA /* Texts.swift */; };
 		6B65853223ED5726004016BA /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65852F23ED5726004016BA /* Fonts.swift */; };
+		6B6840DE245635AC000F3AF1 /* NextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6840DD245635AC000F3AF1 /* NextInputView.swift */; };
 		6B689F09241F9D620078FDC7 /* MainPageSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B689F08241F9D620078FDC7 /* MainPageSectionHeader.swift */; };
 		6B797016243D2C3600BE673E /* ItunesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B797015243D2C3600BE673E /* ItunesApi.swift */; };
 		6B797018243D339800BE673E /* ItunesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B797017243D339800BE673E /* ItunesModels.swift */; };
@@ -124,6 +125,7 @@
 		6B65852D23ED5726004016BA /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		6B65852E23ED5726004016BA /* Texts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		6B65852F23ED5726004016BA /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		6B6840DD245635AC000F3AF1 /* NextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextInputView.swift; sourceTree = "<group>"; };
 		6B689F08241F9D620078FDC7 /* MainPageSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageSectionHeader.swift; sourceTree = "<group>"; };
 		6B797015243D2C3600BE673E /* ItunesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesApi.swift; sourceTree = "<group>"; };
 		6B797017243D339800BE673E /* ItunesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesModels.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			children = (
 				6B8F07FD245317330070B7E1 /* NameView.swift */,
 				6B8F07FE245317330070B7E1 /* NameView.xib */,
+				6B6840DD245635AC000F3AF1 /* NextInputView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				6BAB96FA23EDA9B400354E39 /* ImagePopAnimatedTransition.swift in Sources */,
 				6B50D01E240D989900202DA6 /* NotificationNames.swift in Sources */,
 				6B15185F2419151500C4A272 /* SlidesDataSource.swift in Sources */,
+				6B6840DE245635AC000F3AF1 /* NextInputView.swift in Sources */,
 				6B65853123ED5726004016BA /* Texts.swift in Sources */,
 				6B65853223ED5726004016BA /* Fonts.swift in Sources */,
 				6B032CEE23ED750F00662BF5 /* MainPageViewModels.swift in Sources */,
