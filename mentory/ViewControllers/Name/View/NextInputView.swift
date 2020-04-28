@@ -16,6 +16,8 @@ public final class NextInputView: UIView {
         button.addShadow()
         button.backgroundColor = Assets.winterGreen.color
         button.cornerRadius = 10
+        button.titleLabel?.font = Fonts.SFUIDisplay.bold.font(size: 14)
+        button.setTitleColor(Assets.black.color, for: .normal)
         button.setTitle(Text.Name.next, for: .normal)
         return button
     }()
@@ -23,7 +25,12 @@ public final class NextInputView: UIView {
     // MARK: - Init
 
     public init() {
-        super.init(frame: .zero)
+        super.init(
+            frame: CGRect(
+                x: 0, y: 0,
+                width: UIScreen.main.bounds.width, height: 90
+            )
+        )
         setupStyle()
         addSubviews()
         makeConstraints()
@@ -34,7 +41,7 @@ public final class NextInputView: UIView {
     }
 
     private func setupStyle() {
-        backgroundColor = Assets.background1.color
+        backgroundColor = .clear
     }
 
     private func addSubviews() {
@@ -45,7 +52,7 @@ public final class NextInputView: UIView {
         actionButton.snp.makeConstraints { make in
             make.height.equalTo(48)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.top.bottom.equalToSuperview().inset(15)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(16)
         }
     }
 }

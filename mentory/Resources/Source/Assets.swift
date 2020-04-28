@@ -36,6 +36,7 @@ public enum Assets {
   public static let playBig = ImageAsset(name: "PlayBig")
   public static let playButtonIcon = ImageAsset(name: "PlayButtonIcon")
   public static let checkMark = ImageAsset(name: "checkMark")
+  public static let logoOutlined = ImageAsset(name: "logoOutlined")
   public static let david = ImageAsset(name: "David")
   public static let logo = ImageAsset(name: "Logo")
   public static let titleImage = ImageAsset(name: "TitleImage")

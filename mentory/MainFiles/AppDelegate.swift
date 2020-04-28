@@ -14,12 +14,15 @@ import YandexMobileMetrica
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    static var shared: AppDelegate?
+
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        AppDelegate.shared = self
         setupDebugConfiguration()
 
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)

@@ -36,7 +36,7 @@ public class NameController: UIViewController {
 
     private func setupAppearance() {}
 
-    // MARK: - ActionHandlers
+    // MARK: - Action handlers
 
     private func addActionHandlers() {
         customView?.nextView.actionButton.addTarget(
@@ -46,5 +46,8 @@ public class NameController: UIViewController {
         )
     }
 
-    @objc func nextAction() {}
+    @objc func nextAction() {
+        let nextController = PersonalCategoriesController()
+        AppDelegate.shared?.window?.rootViewController = nextController
+    }
 }

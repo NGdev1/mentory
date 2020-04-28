@@ -135,13 +135,13 @@ public enum Text {
   }
 
   public enum Name {
-    /// Продолжить
+    /// ПРОДОЛЖИТЬ
     public static let next = Text.tr("Localizable", "Name.Next")
     /// ВВЕДИ СВОЁ ИМЯ
     public static let placeholder = Text.tr("Localizable", "Name.Placeholder")
     /// Я создан, чтобы помочь тебе стать лучшей версией себя!
     public static let subtitle = Text.tr("Localizable", "Name.Subtitle")
-    /// ПРИВЕТ!\nЯ  –  ПРИЛОЖЕНИЕНАСТАВНИК
+    /// ПРИВЕТ!\nЯ  –  ПРИЛОЖЕНИЕ\nНАСТАВНИК
     public static let title = Text.tr("Localizable", "Name.Title")
     /// Как тебя зовут?
     public static let whatIsYourName = Text.tr("Localizable", "Name.WhatIsYourName")
@@ -194,6 +194,13 @@ public enum Text {
       /// Ежедневная практика!
       public static let title = Text.tr("Localizable", "Onboarding.Slide5.Title")
     }
+  }
+
+  public enum PersonalCategories {
+    /// Выбери 3 категории
+    public static let subtitle = Text.tr("Localizable", "PersonalCategories.Subtitle")
+    /// С ЧЕГО БЫ ТЫ\nХОТЕЛ НАЧАТЬ?
+    public static let title = Text.tr("Localizable", "PersonalCategories.Title")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

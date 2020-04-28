@@ -43,6 +43,15 @@ Onboarding.Skip = "SKIP";
 Onboarding.Next = "NEXT";
 Onboarding.Begin = "START";
 
+Name.Title = "HELLO!\nI AM THE APPLICATION\nTRAINER";
+Name.Subtitle = "I was created to help you become a better version of yourself!";
+Name.WhatIsYourName = "What is your name?";
+Name.Placeholder = "ENTER YOUR NAME";
+Name.Next = "CONTINUE";
+
+PersonalCategories.Title = "HOW ARE YOU\nWANT TO START?";
+PersonalCategories.Subtitle = "Choose 3 Categories";
+
 MainPage.Programs = "Programs";
 MainPage.ProgramsDescription = "Thirteen unique lessons. Listen one at a time. And you will be surprised how your life will change.";
 MainPage.GetPremium = "Try PREMIUM Free!";

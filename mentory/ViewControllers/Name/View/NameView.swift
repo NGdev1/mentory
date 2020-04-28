@@ -12,16 +12,10 @@ final class NameView: UIView {
     enum ViewState {
         /// normal on iphone X, 11, iPad
         case normal
-        /// keyboard appeared on iphone X, 11, iPad
-        case shortly
         /// normal on iPhone SE
         case normalSE
-        /// keyboard appeared on iPhone SE
-        case shortlySE
         /// normal on iPhone 7 or 8
         case normal7or8
-        /// keyboard appeared on iPhone 7 or 8
-        case shortly7or8
     }
 
     struct Appearance {
@@ -30,20 +24,11 @@ final class NameView: UIView {
             case .normal:
                 nameTopOffset = 60
 
-            case .shortly:
-                nameTopOffset = 0
-
             case .normal7or8:
                 nameTopOffset = 40
 
-            case .shortly7or8:
-                nameTopOffset = 0
-
             case .normalSE:
                 nameTopOffset = 20
-
-            case .shortlySE:
-                nameTopOffset = 0
             }
         }
 
@@ -80,6 +65,14 @@ final class NameView: UIView {
         greetingLabel.text = Text.Name.title
         infoLabel.text = Text.Name.subtitle
         nameTitle.text = Text.Name.whatIsYourName
+        if ScreenSize.current == .sizeIPhoneSE {
+            Appearance.changeState(.normalSE)
+        } else if ScreenSize.current == .sizeIPhone8 {
+            Appearance.changeState(.normal7or8)
+        } else {
+            Appearance.changeState(.normal)
+        }
+        updateConstraintsConstants()
     }
 
     deinit {
@@ -121,14 +114,12 @@ final class NameView: UIView {
             return
         }
 
-        changeAppearanceToKeyboardAppeared()
         let keyboardSize = keyboardFrame.cgRectValue.size
         adjustContentInset(keyboardSize.height)
     }
 
     @objc private func keyboardWillHide(notification _: NSNotification) {
-        changeAppearanceToKeyboardDisappeared()
-        adjustContentInset(.zero)
+        adjustContentInset(nextView.height)
     }
 
     // MARK: - Private methods
@@ -138,28 +129,6 @@ final class NameView: UIView {
         UIView.animate(withDuration: Appearance.animationDuration) { [weak self] in
             self?.layoutIfNeeded()
         }
-    }
-
-    private func changeAppearanceToKeyboardAppeared() {
-        if ScreenSize.current == .sizeIPhoneSE {
-            Appearance.changeState(.shortlySE)
-        } else if ScreenSize.current == .sizeIPhone8 {
-            Appearance.changeState(.shortly7or8)
-        } else {
-            Appearance.changeState(.shortly)
-        }
-        updateConstraintsConstants()
-    }
-
-    private func changeAppearanceToKeyboardDisappeared() {
-        if ScreenSize.current == .sizeIPhoneSE {
-            Appearance.changeState(.normalSE)
-        } else if ScreenSize.current == .sizeIPhone8 {
-            Appearance.changeState(.normal7or8)
-        } else {
-            Appearance.changeState(.normal)
-        }
-        updateConstraintsConstants()
     }
 
     private func updateConstraintsConstants() {
