@@ -6,6 +6,7 @@
 //
 
 import MDFoundation
+import Storable
 import UIKit
 
 public class NameController: UIViewController {
@@ -47,6 +48,11 @@ public class NameController: UIViewController {
     }
 
     @objc func nextAction() {
+        guard let name = customView?.nameTextField.text, name.count > 3 else {
+            customView?.nameTextField.shake()
+            return
+        }
+        AppService.shared.app.userName = name
         let nextController = PersonalCategoriesController()
         AppDelegate.shared?.window?.rootViewController = nextController
     }

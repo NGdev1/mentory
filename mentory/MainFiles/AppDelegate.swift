@@ -45,13 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if AppService.shared.app.appOpenedCount == 1 {
             let nextController = OnboardingController()
             window?.rootViewController = nextController
-
-            NotificationCenter.default.addObserver(
-                self,
-                selector: #selector(onboardingFinished),
-                name: .onboardingFinished,
-                object: nil
-            )
         } else if AppService.shared.app.userName == nil {
             let nextController = NameController()
             window?.rootViewController = nextController
@@ -73,10 +66,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         AppEvents.activateApp()
-    }
-
-    @objc func onboardingFinished() {
-        let nextController = MainPageController()
-        window?.rootViewController = nextController
     }
 }

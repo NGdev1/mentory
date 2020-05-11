@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="158" id="KGk-i7-Jjw" customClass="TodayCell" customModule="Mentory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="158"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR PLAN" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8E-nh-SZ0">
+                        <rect key="frame" x="16" y="32" width="370" height="38.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                        <color key="textColor" name="Title"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FROM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fq7-29-0JV">
+                        <rect key="frame" x="16" y="70.5" width="91.5" height="38.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                        <color key="textColor" name="Title"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoOutlined" translatesAutoresizingMaskIntoConstraints="NO" id="old-su-RfJ">
+                        <rect key="frame" x="117.5" y="71" width="153" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="hZT-mc-aQ2"/>
+                            <constraint firstAttribute="width" constant="153" id="teR-GT-X3h"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ9-9i-nmj">
+                        <rect key="frame" x="16" y="118" width="370" height="36"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" name="GreyishBrown"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" name="Background1"/>
+                <constraints>
+                    <constraint firstItem="P8E-nh-SZ0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2ZX-kS-ehh"/>
+                    <constraint firstItem="Fq7-29-0JV" firstAttribute="top" secondItem="P8E-nh-SZ0" secondAttribute="bottom" id="Rur-At-f65"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="old-su-RfJ" secondAttribute="trailing" constant="16" id="Uln-O0-3fb"/>
+                    <constraint firstItem="Fq7-29-0JV" firstAttribute="leading" secondItem="P8E-nh-SZ0" secondAttribute="leading" id="WxH-W7-XFE"/>
+                    <constraint firstAttribute="trailing" secondItem="xZ9-9i-nmj" secondAttribute="trailing" constant="16" id="cS0-Y9-F9x"/>
+                    <constraint firstItem="old-su-RfJ" firstAttribute="leading" secondItem="Fq7-29-0JV" secondAttribute="trailing" constant="10" id="gtS-PX-tpv"/>
+                    <constraint firstItem="xZ9-9i-nmj" firstAttribute="leading" secondItem="Fq7-29-0JV" secondAttribute="leading" id="h2T-i9-tId"/>
+                    <constraint firstItem="P8E-nh-SZ0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="k3K-dU-vIQ"/>
+                    <constraint firstItem="old-su-RfJ" firstAttribute="centerY" secondItem="Fq7-29-0JV" secondAttribute="centerY" id="lhe-PN-F8Q"/>
+                    <constraint firstItem="xZ9-9i-nmj" firstAttribute="top" secondItem="Fq7-29-0JV" secondAttribute="bottom" constant="9" id="neP-kS-ldW"/>
+                    <constraint firstAttribute="bottom" secondItem="xZ9-9i-nmj" secondAttribute="bottom" constant="4" id="pvz-EV-Bgp"/>
+                    <constraint firstAttribute="trailing" secondItem="P8E-nh-SZ0" secondAttribute="trailing" constant="16" id="rPZ-C5-qpG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="xZ9-9i-nmj" id="bpO-JD-dS3"/>
+                <outlet property="fromLabel" destination="Fq7-29-0JV" id="PMi-Ur-mOI"/>
+                <outlet property="yourPlanLabel" destination="P8E-nh-SZ0" id="5Og-s6-Fx1"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="149.33035714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="logoOutlined" width="468" height="75"/>
+        <namedColor name="Background1">
+            <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GreyishBrown">
+            <color red="0.28627450980392155" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Title">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

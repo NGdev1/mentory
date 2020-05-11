@@ -42,23 +42,8 @@ final class MainPageView: UIView {
         tableView.keyboardDismissMode = .interactive
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = Assets.background1.color
-        tableView.contentInset = UIEdgeInsets(top: 23, left: 0, bottom: Appearance.bottomInset, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: Appearance.bottomInset, right: 0)
         return tableView
-    }()
-
-    lazy var headerView: UIView = {
-        var view = UIView(frame: CGRect(
-            origin: .zero,
-            size: CGSize(width: UIScreen.main.bounds.width, height: 50)
-        ))
-        let imageView = UIImageView(image: Assets.titleImage.image)
-        imageView.frame = CGRect(
-            origin: .zero,
-            size: CGSize(width: UIScreen.main.bounds.width, height: 50)
-        )
-        imageView.contentMode = .scaleAspectFit
-        view.addSubview(imageView)
-        return view
     }()
 
     lazy var tryPremiumView: TryPremiumView = XibInitializer.loadFromXib(type: TryPremiumView.self)
@@ -87,7 +72,6 @@ final class MainPageView: UIView {
 
     private func addSubviews() {
         addSubview(tableView)
-        tableView.tableHeaderView = headerView
         addSubview(tryPremiumView)
     }
 

@@ -8,6 +8,7 @@
 
 import Foundation
 import MDFoundation
+import Storable
 import UIKit
 
 protocol MainPageDataSourceDelegate: AnyObject {
@@ -36,13 +37,22 @@ final class MainPageDataSource: NSObject {
         self.data = data
         super.init()
         tableView.register(
+            PersonalizedCell.nib, forCellReuseIdentifier: PersonalizedCell.identifier
+        )
+        tableView.register(
+            TodayCell.nib, forCellReuseIdentifier: TodayCell.identifier
+        )
+        tableView.register(
+            StoriesCell.self, forCellReuseIdentifier: StoriesCell.identifier
+        )
+        tableView.register(
+            QuotesCell.self, forCellReuseIdentifier: QuotesCell.identifier
+        )
+        tableView.register(
             LessonCell.nib, forCellReuseIdentifier: LessonCell.identifier
         )
         tableView.register(
-            TryPremiumCell.nib, forCellReuseIdentifier: TryPremiumCell.identifier
-        )
-        tableView.register(
-            TitleCell.nib, forCellReuseIdentifier: TitleCell.identifier
+            SectionHeaderCell.nib, forCellReuseIdentifier: SectionHeaderCell.identifier
         )
         tableView.dataSource = self
         tableView.delegate = self
@@ -95,17 +105,10 @@ extension MainPageDataSource: UITableViewDataSource {
         switch item.type {
         case .sectionHeader:
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: TitleCell.identifier,
+                withIdentifier: SectionHeaderCell.identifier,
                 for: indexPath
-            ) as? TitleCell
-            cell?.configure(with: item)
-            return cell ?? UITableViewCell()
-        case .buyFull:
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: TryPremiumCell.identifier,
-                for: indexPath
-            ) as? TryPremiumCell
-            cell?.configure(with: item)
+            ) as? SectionHeaderCell
+            cell?.configure(with: item, delegate: self)
             return cell ?? UITableViewCell()
         case .lesson:
             let cell = tableView.dequeueReusableCell(
@@ -114,6 +117,33 @@ extension MainPageDataSource: UITableViewDataSource {
             ) as? LessonCell
             cell?.configure(with: item)
             return cell ?? UITableViewCell()
+        case .personalized:
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: PersonalizedCell.identifier,
+                for: indexPath
+            ) as? PersonalizedCell
+            let name = AppService.shared.app.userName
+            cell?.configure(name: name ?? .empty, delegate: self)
+            return cell ?? UITableViewCell()
+        case .stories:
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: StoriesCell.identifier,
+                for: indexPath
+            ) as? StoriesCell
+            cell?.configure(with: item, delegate: self)
+            return cell ?? UITableViewCell()
+        case .quotes:
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: QuotesCell.identifier,
+                for: indexPath
+            ) as? QuotesCell
+            cell?.configure(with: item, delegate: self)
+            return cell ?? UITableViewCell()
+        case .today:
+            return tableView.dequeueReusableCell(
+                withIdentifier: TodayCell.identifier,
+                for: indexPath
+            )
         }
     }
 }
@@ -127,7 +157,7 @@ extension MainPageDataSource: UITableViewDelegate {
         }
 
         switch item.type {
-        case .sectionHeader, .buyFull:
+        case .sectionHeader, .personalized, .today, .stories, .quotes:
             return UITableView.automaticDimension
         case .lesson:
             return 165
@@ -160,8 +190,11 @@ extension MainPageDataSource: UITableViewDelegate {
                 nextLesson: nextLesson, nextLessonIsLocked: nextLessonLocked,
                 cellView: cell
             )
-        } else if item.type == .buyFull {
-            delegate?.showPurchasePage()
         }
     }
 }
+
+// MARK: - Cell actions
+
+extension MainPageDataSource: PersonalizedCellDelegate, SectionHeaderCellDelegate,
+    StoriesCellDelegate, QuotesCellDelegate {}

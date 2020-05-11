@@ -202,6 +202,26 @@ public enum Text {
     /// С ЧЕГО БЫ ТЫ\nХОТЕЛ НАЧАТЬ?
     public static let title = Text.tr("Localizable", "PersonalCategories.Title")
   }
+
+  public enum Personalized {
+    /// Доброый день!
+    public static let goodAfternoon = Text.tr("Localizable", "Personalized.GoodAfternoon")
+    /// Доброый вечер!
+    public static let goodEvening = Text.tr("Localizable", "Personalized.GoodEvening")
+    /// Доброе утро!
+    public static let goodMorning = Text.tr("Localizable", "Personalized.GoodMorning")
+    /// Доброй ночи
+    public static let goodNight = Text.tr("Localizable", "Personalized.GoodNight")
+  }
+
+  public enum Today {
+    /// d MMMM, EEEE
+    public static let dateFormat = Text.tr("Localizable", "Today.DateFormat")
+    /// ОТ
+    public static let from = Text.tr("Localizable", "Today.From")
+    /// ТВОЙ ПЛАН ДНЯ
+    public static let yourPlan = Text.tr("Localizable", "Today.YourPlan")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

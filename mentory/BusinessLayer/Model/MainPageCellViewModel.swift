@@ -21,9 +21,12 @@ struct MainPageCellViewModel: Decodable {
     }
 
     enum CellType: String, Decodable {
+        case personalized
+        case stories
+        case today
         case lesson
+        case quotes
         case sectionHeader
-        case buyFull
     }
 
     let type: CellType
@@ -32,6 +35,7 @@ struct MainPageCellViewModel: Decodable {
 
     enum CodingKeys: String, CodingKey {
         case type
+        case data
     }
 
     init(from decoder: Decoder) throws {
@@ -46,9 +50,15 @@ struct MainPageCellViewModel: Decodable {
             let isPremiumAccount = AppService.shared.app.appState == .premium
             self.isLocked = lesson.isLocked && isPremiumAccount == false
             self.data = lesson
-        case .buyFull:
+        case .stories:
             self.isLocked = false
-            self.data = try MainPageBuyPremiumCellViewModel(from: decoder)
+            self.data = try map.decode([Story].self, forKey: .data)
+        case .quotes:
+            self.isLocked = false
+            self.data = try map.decode([Quote].self, forKey: .data)
+        case .personalized, .today:
+            self.isLocked = false
+            self.data = Data()
         }
     }
 }

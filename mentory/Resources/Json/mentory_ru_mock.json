@@ -1,49 +1,97 @@
 [
     {
-        "type": "lesson",
-        "title": "Знакомство",
-        "subtitle": "ВВОДНЫЙ УРОК",
-        "description": "MENTORY - одна из форм переживания потребности, для которой характерны осознанность (чего я хочу), понимание мотива (почему я этого хочу) и существует представление о возможных способах удовлетворения (как мне этого достичь). Количество желаний у одной личности ничем не ограничено – они различаются по объектам, устойчивости, способам удовлетворения и тд. В соответствии с этими критериями выделяют выполнимые желание и нереальные, безрассудные, целевые и прочие.",
-        "backgroundImageUrl": "http://italia-ru.com/files/david1.jpg",
-        "tracks": [
+        "type": "personalized"
+    },
+    {
+        "type": "stories",
+        "data": [
             {
-                "id": "1",
-                "title": "Vitya Tsoi",
-                "subtitle": "KUKUSHKA",
-                "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
-                "isLocked": false
+                "id": 1,
+                "imageUrl": "http://italia-ru.com/files/david1.jpg",
+                "text": "7 книг для роста"
             },
             {
-                "id": "2",
-                "title": "Name audio",
-                "subtitle": "SUBTITLE",
-                "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false",
-                "isLocked": false
+                "id": 2,
+                "imageUrl": "http://italia-ru.com/files/david1.jpg",
+                "text": "8 книг для роста"
             },
             {
-                "id": "3",
-                "title": "Vitya Tsoi again",
-                "subtitle": "KUKUSHKA",
-                "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
-                "isLocked": false
+                "id": 3,
+                "imageUrl": "http://italia-ru.com/files/david1.jpg",
+                "text": "330 книг для роста"
             },
             {
-                "id": "4",
-                "title": "Музыка какая то",
-                "subtitle": "ПОДПИСЬ QWERTY QWERTYUI",
-                "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false",
-                "isLocked": false
+                "id": 4,
+                "imageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
+                "text": "100 книг для роста"
+            },
+            {
+                "id": 5,
+                "imageUrl": "http://italia-ru.com/files/david1.jpg",
+                "text": "900 книг для роста"
+            },
+            {
+                "id": 6,
+                "imageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
+                "text": "9999 книг для роста"
             }
-        ],
-        "isLocked": false
+        ]
+    },
+    {
+        "type": "today"
     },
     {
         "type": "sectionHeader",
-        "title": "Программы",
-        "subtitle": "Тринадцать уникальных уроков. Слушайте по одному в день. И вы удивитесь как изменится ваша жизнь. "
+        "title": "Мотивация"
+    },
+    {
+        "type": "quotes",
+        "data": [
+            {
+                "id": 1,
+                "imageUrl": "http://italia-ru.com/files/david1.jpg",
+                "text": "7 книг для роста",
+                "authorName": "Да Винчи"
+            },
+            {
+                "id": 2,
+                "imageUrl": "http://italia-ru.com/files/david1.jpg",
+                "text": "8 книг для роста",
+                "authorName": "Да Винчи"
+            },
+            {
+                "id": 3,
+                "imageUrl": "http://italia-ru.com/files/david1.jpg",
+                "text": "330 книг для роста",
+                "authorName": "Да Винчи"
+            },
+            {
+                "id": 4,
+                "imageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
+                "text": "100 книг для роста",
+                "authorName": "Да Винчи"
+            },
+            {
+                "id": 5,
+                "imageUrl": "http://italia-ru.com/files/david1.jpg",
+                "text": "900 книг для роста",
+                "authorName": "Да Винчи"
+            },
+            {
+                "id": 6,
+                "imageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
+                "text": "9999 книг для роста",
+                "authorName": "Да Винчи"
+            }
+        ]
+    },
+    {
+        "type": "sectionHeader",
+        "title": "Программы"
     },
     {
         "type": "lesson",
+        "id": 2,
         "tag": "НОВОЕ",
         "title": "Креативность",
         "subtitle": "УРОК 1",
@@ -51,7 +99,7 @@
         "backgroundImageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
         "tracks": [
             {
-                "id": "1",
+                "id": 1,
                 "title": "Индусы",
                 "subtitle": "ПОДПИСЬ",
                 "url": "https://cdn.fastlearner.media/bensound-rumble.mp3",
@@ -62,6 +110,7 @@
     },
     {
         "type": "lesson",
+        "id": 3,
         "tag": "ПОПУЛЯРНОЕ",
         "title": "Настойчивость",
         "subtitle": "УРОК 2",
@@ -69,14 +118,14 @@
         "backgroundImageUrl": "http://italia-ru.com/files/david1.jpg",
         "tracks": [
             {
-                "id": "1",
+                "id": 1,
                 "title": "Название аудио",
                 "subtitle": "ПОДПИСЬ",
                 "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
                 "isLocked": false
             },
             {
-                "id": "1",
+                "id": 1,
                 "title": "Название аудио",
                 "subtitle": "ПОДПИСЬ",
                 "url": "https://s3.amazonaws.com/kargopolov/kukushka.mp3",
@@ -87,18 +136,18 @@
     },
     {
         "type": "sectionHeader",
-        "title": "Еще супер программы",
-        "subtitle": "Очень крутые уроки супер уроки слушай и станешь человеком."
+        "title": "Еще супер программы"
     },
     {
         "type": "lesson",
+        "id": 4,
         "title": "Премиум урок",
         "subtitle": "УРОК 3",
         "description": "MENTORY - одна из форм переживания потребности, для которой характерны осознанность (чего я хочу), понимание мотива (почему я этого хочу) и существует представление о возможных способах удовлетворения (как мне этого достичь). Количество желаний у одной личности ничем не ограничено – они различаются по объектам, устойчивости, способам удовлетворения и тд. В соответствии с этими критериями выделяют выполнимые желание и нереальные, безрассудные, целевые и прочие.",
         "backgroundImageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
         "tracks": [
             {
-                "id": "1",
+                "id": 1,
                 "title": "Название аудио",
                 "subtitle": "ПОДПИСЬ",
                 "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false",
@@ -109,6 +158,7 @@
     },
     {
         "type": "lesson",
+        "id": 5,
         "tag": "ПОПУЛЯРНОЕ",
         "title": "Премиум крутой урок",
         "subtitle": "УРОК 4",
@@ -116,7 +166,7 @@
         "backgroundImageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
         "tracks": [
             {
-                "id": "1",
+                "id": 1,
                 "title": "Название аудио",
                 "subtitle": "ПОДПИСЬ",
                 "url": "http://keepfreemusic.com/60s.m3u",
@@ -127,6 +177,7 @@
     },
     {
         "type": "lesson",
+        "id": 6,
         "tag": "НОВОЕ",
         "title": "Еще уроки",
         "subtitle": "УРОК 5",
@@ -134,21 +185,21 @@
         "backgroundImageUrl": "http://italia-ru.com/files/david1.jpg",
         "tracks": [
             {
-                "id": "1",
+                "id": 1,
                 "title": "Название аудио",
                 "subtitle": "ПОДПИСЬ",
                 "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false",
                 "isLocked": false
             },
             {
-                "id": "2",
+                "id": 2,
                 "title": "Название аудио",
                 "subtitle": "ПОДПИСЬ",
                 "url": "https://www.myinstants.com/media/sounds/cade-o-respeito.mp3",
                 "isLocked": false
             },
             {
-                "id": "3",
+                "id": 3,
                 "title": "Название аудио",
                 "subtitle": "ПОДПИСЬ",
                 "url": "https://zaycev.net/musicset/dl/7b8dae3658a91de41abe502bc615f37f/2885461.json?spa=false",

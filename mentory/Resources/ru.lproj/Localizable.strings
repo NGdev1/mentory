@@ -89,3 +89,12 @@ Buy.RestorePurchases = "Восстановить покупки";
 Buy.Congragulations = "Поздравляем!";
 Buy.Success = "Вы получили премиум аккаунт.";
 Buy.Done = "Готово";
+
+Personalized.GoodMorning = "Доброе утро!";
+Personalized.GoodAfternoon = "Доброый день!";
+Personalized.GoodEvening = "Доброый вечер!";
+Personalized.GoodNight = "Доброй ночи";
+
+Today.YourPlan = "ТВОЙ ПЛАН ДНЯ";
+Today.From = "ОТ";
+Today.DateFormat = "d MMMM, EEEE";

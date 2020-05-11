@@ -7,6 +7,7 @@
 //
 
 import MDFoundation
+import Storable
 
 public class OnboardingController: UIViewController {
     // MARK: - Properties
@@ -74,7 +75,14 @@ public class OnboardingController: UIViewController {
 
     private func openMainPage() {
         selectionFeedbackGenerator.selectionChanged()
-        NotificationCenter.default.post(name: .onboardingFinished, object: nil)
+        let window = AppDelegate.shared?.window
+        if AppService.shared.app.userName == nil {
+            let nextController = NameController()
+            window?.rootViewController = nextController
+        } else {
+            let nextController = MainPageController()
+            window?.rootViewController = nextController
+        }
     }
 }
 

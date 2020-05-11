@@ -11,7 +11,7 @@ import Foundation
 class MainPageServiceMock: MainPageServiceProtocol {
     func get(completion: @escaping ([MainPageCellViewModel]?, Error?) -> Void) {
         // let fileName = Locale.current.identifier.contains("ru") ? "mentory_ru.json" : "mentory_en.json"
-        let fileName = "mentory_ru.json"
+        let fileName = "mentory_ru_mock.json"
         guard let data = DataManager.getDataFromResource(fileName: fileName) else {
             completion(nil, nil)
             return

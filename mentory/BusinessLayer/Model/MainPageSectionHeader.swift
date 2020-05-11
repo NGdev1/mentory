@@ -10,5 +10,4 @@ import Foundation
 
 struct MainPageSectionHeader: Decodable {
     let title: String
-    let subtitle: String
 }
