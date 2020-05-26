@@ -103,7 +103,7 @@ final class LessonView: UIView {
 
 // MARK: - ViewImageBasedAnimatable
 
-extension LessonView: ViewImageBasedAnimatable {
+extension LessonView: ViewLessonAnimatable {
     var mainView: UIView {
         return self
     }

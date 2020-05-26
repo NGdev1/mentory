@@ -52,6 +52,38 @@ final class StoriesDataSource: NSObject {
         })
     }
 
+    func getNextStory(after story: Story) -> StoryRetrievingResult? {
+        guard var row = getIndexOfStory(story) else { return nil }
+        let indexPath = IndexPath(row: row, section: 0)
+        let view = collectionView.cellForItem(at: indexPath) as? StoryCell
+        collectionView.scrollToItem(
+            at: indexPath, at: .centeredHorizontally, animated: false
+        )
+        row += 1
+        if row >= data.count {
+            return nil
+        } else {
+            let nextStory: Story = data[row]
+            return StoryRetrievingResult(story: nextStory, cellView: view)
+        }
+    }
+
+    func getPreviousStory(before story: Story) -> StoryRetrievingResult? {
+        guard var row = getIndexOfStory(story) else { return nil }
+        let indexPath = IndexPath(row: row, section: 0)
+        let view = collectionView.cellForItem(at: indexPath) as? StoryCell
+        collectionView.scrollToItem(
+            at: indexPath, at: .centeredHorizontally, animated: false
+        )
+        row -= 1
+        if row < 0 {
+            return nil
+        } else {
+            let previousStory: Story = data[row]
+            return StoryRetrievingResult(story: previousStory, cellView: view)
+        }
+    }
+
     func getStoryCell(of index: Int) -> StoryCell? {
         return collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as? StoryCell
     }

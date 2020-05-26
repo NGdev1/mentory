@@ -14,6 +14,8 @@ protocol MainPageControllerLogic: AnyObject {
     func presentData(_ viewModels: [MainPageCellViewModel])
     func presentError(message: String)
     func retrieveNextLesson(afrer lesson: Lesson) -> NextLessonRetrievingResult?
+    func retrievePreviousStory(before story: Story) -> StoryRetrievingResult?
+    func retrieveNextStory(after story: Story) -> StoryRetrievingResult?
 }
 
 class MainPageController: UIViewController, MainPageControllerLogic {
@@ -23,8 +25,10 @@ class MainPageController: UIViewController, MainPageControllerLogic {
     var interactor: MainPageInteractor?
     private let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
     private let notificationsFeedbackGenerator = UINotificationFeedbackGenerator()
-    private var growingAnimatableView: ViewImageBasedAnimatable?
-    private var transitionManager = ImageBasedTransitionManager()
+    private var growingLessonView: ViewLessonAnimatable?
+    private var growingImageBasedView: ViewImageBasedAnimatable?
+    private lazy var lessonTransitionManager = LessonTransitionManager()
+    private lazy var imageBasedTransitionManager = ImageBasedTransitionManager()
 
     // MARK: - Life cycle
 
@@ -102,9 +106,21 @@ class MainPageController: UIViewController, MainPageControllerLogic {
         customView.updateAppearance(with: viewModels)
     }
 
+    func retrieveNextStory(after story: Story) -> StoryRetrievingResult? {
+        let result = customView.dataSource?.getNextStory(after: story)
+        growingImageBasedView = result?.cellView
+        return result
+    }
+
+    func retrievePreviousStory(before story: Story) -> StoryRetrievingResult? {
+        let result = customView.dataSource?.getPreviousStory(before: story)
+        growingImageBasedView = result?.cellView
+        return result
+    }
+
     func retrieveNextLesson(afrer lesson: Lesson) -> NextLessonRetrievingResult? {
         let result = customView.dataSource?.getNextLesson(after: lesson)
-        actingView = result?.cellView
+        actingLessonView = result?.cellView
         return result
     }
 
@@ -124,6 +140,16 @@ class MainPageController: UIViewController, MainPageControllerLogic {
 // MARK: - MainPageDataSourceDelegate
 
 extension MainPageController: MainPageDataSourceDelegate {
+    func showStory(_ story: Story, view: StoryCell?) {
+        actingImageBasedView = view
+        let nextController = StoriesFullScreenController(story: story, delegate: self)
+        nextController.transitioningDelegate = imageBasedTransitionManager
+        nextController.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async { [weak self] in
+            self?.present(nextController, animated: true)
+        }
+    }
+
     func displayLesson(
         _ lesson: Lesson,
         lessonIsLocked: Bool,
@@ -137,7 +163,7 @@ extension MainPageController: MainPageDataSourceDelegate {
             return
         }
 
-        actingView = cellView
+        actingLessonView = cellView
         let viewModel = LessonViewModel(
             lesson: lesson,
             nextLesson: nextLesson,
@@ -148,7 +174,7 @@ extension MainPageController: MainPageDataSourceDelegate {
         navigationController.view.backgroundColor = Assets.background1.color
         navigationController.navigationBar.setTransparentAppearance()
         navigationController.modalPresentationStyle = .fullScreen
-        navigationController.transitioningDelegate = transitionManager
+        navigationController.transitioningDelegate = lessonTransitionManager
         selectionFeedbackGenerator.selectionChanged()
         DispatchQueue.main.async { [weak self] in
             self?.present(navigationController, animated: true)
@@ -164,11 +190,20 @@ extension MainPageController: MainPageDataSourceDelegate {
     }
 }
 
+// MARK: - ViewControllerLessonAnimatable
+
+extension MainPageController: ViewControllerLessonAnimatable {
+    public var actingLessonView: ViewLessonAnimatable? {
+        get { return growingLessonView }
+        set(newValue) { growingLessonView = newValue }
+    }
+}
+
 // MARK: - ViewControllerImageBasedAnimatable
 
 extension MainPageController: ViewControllerImageBasedAnimatable {
-    public var actingView: ViewImageBasedAnimatable? {
-        get { return growingAnimatableView }
-        set(newValue) { growingAnimatableView = newValue }
+    public var actingImageBasedView: ViewImageBasedAnimatable? {
+        get { return growingImageBasedView }
+        set(newValue) { growingImageBasedView = newValue }
     }
 }

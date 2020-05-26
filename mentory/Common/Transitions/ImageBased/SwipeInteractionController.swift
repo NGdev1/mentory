@@ -11,8 +11,11 @@ import UIKit
 public final class SwipeInteractionController: UIPercentDrivenInteractiveTransition {
     public var interactionInProgress = false
 
+    var popAnimationController: ImagePopAnimatedTransition?
+    var transitionContext: UIViewControllerContextTransitioning?
+
     private let transitionShouldCompleteIfProgressMoreThan: CGFloat = 0.5
-    private let transitionShouldCompleteIfVelocityMoreThan: CGFloat = 0.2
+    private let transitionShouldCompleteIfVelocityMoreThan: CGFloat = 200
     private var shouldCompleteTransition = false
     private var shouldPopViewController = false
     private var dismissFunc: (() -> Void)?
@@ -34,12 +37,13 @@ public final class SwipeInteractionController: UIPercentDrivenInteractiveTransit
     }
 
     private func prepareGestureRecognizer(in view: UIView) {
-        let gesture = UIScreenEdgePanGestureRecognizer(
-            target: self,
-            action: #selector(handleGesture(_:))
-        )
-        gesture.edges = .left
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
         view.addGestureRecognizer(gesture)
+    }
+
+    public override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        self.transitionContext = transitionContext
+        super.startInteractiveTransition(transitionContext)
     }
 
     private func startDismissTransition() {
@@ -58,9 +62,16 @@ public final class SwipeInteractionController: UIPercentDrivenInteractiveTransit
         dismiss()
     }
 
-    @objc func handleGesture(_ gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
+    private func customUpdate(translate: CGPoint, percent: CGFloat) {
+//        if popAnimationController == nil {
+//            update(percent); return
+//        }
+        popAnimationController?.animate(translate: translate, percent: percent)
+    }
+
+    @objc func handleGesture(_ gestureRecognizer: UIPanGestureRecognizer) {
         let translate = gestureRecognizer.translation(in: gestureRecognizer.view)
-        let percent = translate.x / gestureRecognizer.view!.bounds.size.width
+        let percent = abs(translate.y) / (gestureRecognizer.view!.bounds.size.height / 2)
 
         switch gestureRecognizer.state {
         case .began:
@@ -70,8 +81,8 @@ public final class SwipeInteractionController: UIPercentDrivenInteractiveTransit
             let velocity = gestureRecognizer.velocity(in: gestureRecognizer.view)
             shouldCompleteTransition =
                 percent > transitionShouldCompleteIfProgressMoreThan ||
-                velocity.x > transitionShouldCompleteIfVelocityMoreThan
-            update(percent)
+                abs(velocity.y) > transitionShouldCompleteIfVelocityMoreThan
+            customUpdate(translate: translate, percent: percent)
         case .cancelled:
             interactionInProgress = false
             cancel()

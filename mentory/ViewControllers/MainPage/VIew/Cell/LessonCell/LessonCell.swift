@@ -65,7 +65,7 @@ class LessonCell: UITableViewCell {
 
 // MARK: - ViewImageBasedAnimatable
 
-extension LessonCell: ViewImageBasedAnimatable {
+extension LessonCell: ViewLessonAnimatable {
     var mainView: UIView {
         return viewWithInsets
     }

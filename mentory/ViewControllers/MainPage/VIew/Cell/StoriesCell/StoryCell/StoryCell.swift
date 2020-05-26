@@ -50,6 +50,8 @@ final class StoryCell: UICollectionViewCell {
 
     var story: Story?
 
+    var storySelected: ((Story) -> Void)?
+
     // MARK: - Init
 
     override init(frame: CGRect) {
@@ -94,20 +96,17 @@ final class StoryCell: UICollectionViewCell {
         if let url = URL(string: story.imageUrl) {
             photoImageView.kf.setImage(with: url)
         }
+        if story.isRead {
+            containerView.borderColor = Assets.blackThree.color
+        } else {
+            containerView.borderColor = Assets.winterGreen.color
+        }
     }
 }
 
 // MARK: - ViewImageBasedAnimatable
 
 extension StoryCell: ViewImageBasedAnimatable {
-    var mainView: UIView {
-        return self
-    }
-
-    var isImageDisappeared: Bool {
-        return false
-    }
-
     var imageView: UIImageView {
         photoImageView
     }

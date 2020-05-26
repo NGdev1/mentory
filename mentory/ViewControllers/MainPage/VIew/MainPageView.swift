@@ -42,7 +42,10 @@ final class MainPageView: UIView {
         tableView.keyboardDismissMode = .interactive
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = Assets.background1.color
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: Appearance.bottomInset, right: 0)
+        tableView.contentInset = UIEdgeInsets(
+            top: 0, left: 0,
+            bottom: Appearance.bottomInset, right: 0
+        )
         return tableView
     }()
 

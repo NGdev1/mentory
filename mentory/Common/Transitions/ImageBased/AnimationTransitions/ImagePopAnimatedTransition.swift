@@ -7,12 +7,15 @@
 
 import UIKit
 
-public final class ImagePopAnimatedTransition: NSObject {
+final class ImagePopAnimatedTransition: NSObject {
     // MARK: - Properties
 
-    public let animationDuration = 0.3
-    public let smallerViewBorderRadius: CGFloat = 10
-    public let transformScaleFactor: CGFloat = 0.9
+    var animating: ImageBasedContextTransitioning?
+    var transitionContext: UIViewControllerContextTransitioning?
+
+    let animationDuration = 0.4
+    let smallerViewBorderRadius: CGFloat = 10
+    let returnSizeAnimationDamping: CGFloat = 0.7
 
     // MARK: - Init
 
@@ -39,8 +42,8 @@ public final class ImagePopAnimatedTransition: NSObject {
 
         let growingFromViewController = fromVC as? ViewControllerImageBasedAnimatable
         let growingToViewController = toVC as? ViewControllerImageBasedAnimatable
-        let originStartView = growingFromViewController?.actingView
-        let originEndView = growingToViewController?.actingView
+        let originStartView = growingFromViewController?.actingImageBasedView
+        let originEndView = growingToViewController?.actingImageBasedView
 
         return ImageBasedContextTransitioning(
             isPushing: false,
@@ -52,59 +55,84 @@ public final class ImagePopAnimatedTransition: NSObject {
         )
     }
 
-    private func applyStartAnimationStyle(using animating: ImageBasedContextTransitioning) {
+    func applyStartAnimationStyle() {
+        guard let animating = animating else {
+            return
+        }
         animating.containerView.backgroundColor = Assets.background1.color
-        animating.actingControllerSnapshot.contentMode = .scaleAspectFill
-        animating.actingControllerSnapshot.layer.masksToBounds = true
-        animating.actingImageViewGradient.contentMode = .scaleToFill
-        animating.actingImageViewGradient.alpha = 0
+        animating.actingView.clipsToBounds = true
+        animating.actingView.contentMode = .scaleAspectFill
         animating.actingImageView.contentMode = .scaleAspectFill
-        animating.actingImageView.layer.masksToBounds = true
+        animating.actingImageView.clipsToBounds = true
     }
 
-    func hideReplacableBySnapshotsViews(using animating: ImageBasedContextTransitioning) {
-        animating.fromView.isHidden = true
+    func hideReplacableBySnapshotsViews() {
+        guard let animating = animating else {
+            return
+        }
+        animating.fromController.view.isHidden = true
         animating.smallestView?.imageView.isHidden = true
     }
 
-    func showReplacableBySnapshotsViews(using animating: ImageBasedContextTransitioning) {
-        animating.fromView.isHidden = false
+    func showReplacableBySnapshotsViews() {
+        guard let animating = animating else {
+            return
+        }
+        animating.fromController.view.isHidden = false
         animating.smallestView?.imageView.isHidden = false
     }
 
     // MARK: - Animation
 
+    func animate(translate: CGPoint, percent: CGFloat) {
+        guard let animating = animating else { return }
+        let anchorPoint = CGPoint(x: animating.smallestView?.imageView.frame.midX ?? .zero, y: animating.smallestView?.imageView.frame.midY ?? .zero)
+        let newCenter = CGPoint(x: anchorPoint.x + translate.x, y: anchorPoint.y + translate.y)
+        animating.actingImageView.center = newCenter
+        animating.actingView.center = newCenter
+        transitionContext?.updateInteractiveTransition(min(percent, 0.3))
+    }
+
     private func animate(
-        using animating: ImageBasedContextTransitioning,
         transitionContext: UIViewControllerContextTransitioning
     ) {
+        guard let animating = animating else { transitionContext.completeTransition(false)
+            return
+        }
+        let damping: CGFloat
+        if transitionContext.isInteractive {
+            damping = 1.0
+        } else {
+            damping = returnSizeAnimationDamping
+        }
+
         // Нужно сохранить finalFrame, так как после преобразования scale он измениться.
         let finalFrame: CGRect = animating.smallestView?.imageView.globalFrame ?? CGRect.centerOfScreen
-        animating.toView.transform = CGAffineTransform(scaleX: transformScaleFactor, y: transformScaleFactor)
+        animating.actingImageView.alpha = 0
+        animating.toController.view.alpha = 1
+
         UIView.animate(
             withDuration: animationDuration,
+            delay: 0,
+            usingSpringWithDamping: damping,
+            initialSpringVelocity: 0.0,
             animations: { [weak self] in
                 guard let self = self else { return }
                 animating.actingImageView.frame = finalFrame
+                animating.actingView.frame = finalFrame
+                animating.actingImageView.alpha = 1
+                animating.actingView.alpha = 0
                 animating.actingImageView.layer.cornerRadius = self.smallerViewBorderRadius
-                animating.actingControllerSnapshot.frame = finalFrame
-                animating.actingImageViewGradient.frame = finalFrame
-                animating.actingImageViewGradient.alpha = 1
-                animating.actingControllerSnapshot.layer.cornerRadius = self.smallerViewBorderRadius
-                animating.toView.transform = .identity
-                animating.blurView?.effect = nil
+                animating.toController.view.alpha = 1
             },
             completion: { [weak self] _ in
                 guard let self = self else { return }
-                self.showReplacableBySnapshotsViews(using: animating)
-                animating.actingControllerSnapshot.removeFromSuperview()
+                self.showReplacableBySnapshotsViews()
+                animating.actingView.removeFromSuperview()
                 animating.actingImageView.removeFromSuperview()
-                animating.actingImageViewGradient.removeFromSuperview()
-                animating.blurView?.removeFromSuperview()
                 if transitionContext.transitionWasCancelled {
-                    animating.toView.removeFromSuperview()
+                    animating.toController.view.removeFromSuperview()
                 }
-                animating.toView.transform = .identity
                 transitionContext.completeTransition(transitionContext.transitionWasCancelled == false)
             }
         )
@@ -114,21 +142,20 @@ public final class ImagePopAnimatedTransition: NSObject {
 // MARK: - UIViewControllerAnimatedTransitioning
 
 extension ImagePopAnimatedTransition: UIViewControllerAnimatedTransitioning {
-    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return animationDuration
     }
 
-    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard var animating = initAnimating(using: transitionContext) else {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        self.transitionContext = transitionContext
+        guard let animating = initAnimating(using: transitionContext) else {
             transitionContext.completeTransition(false)
             return
         }
-        applyStartAnimationStyle(using: animating)
-        hideReplacableBySnapshotsViews(using: animating)
-        if transitionContext.isInteractive {
-            animating.initBlurEffect()
-        }
+        self.animating = animating
+        applyStartAnimationStyle()
+        hideReplacableBySnapshotsViews()
         animating.initContainerViewHierarchy()
-        animate(using: animating, transitionContext: transitionContext)
+        animate(transitionContext: transitionContext)
     }
 }

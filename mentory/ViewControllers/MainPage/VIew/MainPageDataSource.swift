@@ -13,6 +13,7 @@ import UIKit
 
 protocol MainPageDataSourceDelegate: AnyObject {
     func showPurchasePage()
+    func showStory(_ story: Story, view: StoryCell?)
     func displayLesson(
         _ lesson: Lesson,
         lessonIsLocked: Bool,
@@ -88,6 +89,24 @@ final class MainPageDataSource: NSObject {
             row += 1
         }
         return nil
+    }
+
+    func getNextStory(after story: Story) -> StoryRetrievingResult? {
+        guard let row = data?.firstIndex(where: { model in
+            model.type == .stories
+        }) else { return nil }
+        let indexPath = IndexPath(row: row, section: 0)
+        let storiesCell = tableView.cellForRow(at: indexPath) as? StoriesCell
+        return storiesCell?.getNextStory(after: story)
+    }
+
+    func getPreviousStory(before story: Story) -> StoryRetrievingResult? {
+        guard let row = data?.firstIndex(where: { model in
+            model.type == .stories
+        }) else { return nil }
+        let indexPath = IndexPath(row: row, section: 0)
+        let storiesCell = tableView.cellForRow(at: indexPath) as? StoriesCell
+        return storiesCell?.getPreviousStory(before: story)
     }
 }
 
@@ -197,4 +216,8 @@ extension MainPageDataSource: UITableViewDelegate {
 // MARK: - Cell actions
 
 extension MainPageDataSource: PersonalizedCellDelegate, SectionHeaderCellDelegate,
-    StoriesCellDelegate, QuotesCellDelegate {}
+    StoriesCellDelegate, QuotesCellDelegate {
+    func showStory(_ story: Story, view: StoryCell?) {
+        delegate?.showStory(story, view: view)
+    }
+}

@@ -89,10 +89,10 @@ final class LessonController: UIViewController {
     }
 }
 
-// MARK: - ViewControllerImageBasedAnimatable
+// MARK: - ViewControllerLessonAnimatable
 
-extension LessonController: ViewControllerImageBasedAnimatable {
-    public var actingView: ViewImageBasedAnimatable? {
+extension LessonController: ViewControllerLessonAnimatable {
+    public var actingLessonView: ViewLessonAnimatable? {
         // swiftlint:disable unused_setter_value
         get { return customView } set {}
     }

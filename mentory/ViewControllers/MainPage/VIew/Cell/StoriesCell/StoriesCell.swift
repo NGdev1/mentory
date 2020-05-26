@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol StoriesCellDelegate: AnyObject {}
+protocol StoriesCellDelegate: AnyObject {
+    func showStory(_ story: Story, view: StoryCell?)
+}
 
 final class StoriesCell: UITableViewCell {
     struct Appearance {
@@ -91,10 +93,20 @@ final class StoriesCell: UITableViewCell {
             dataSource.updateStories(data)
         }
     }
+
+    func getNextStory(after story: Story) -> StoryRetrievingResult? {
+        return dataSource.getNextStory(after: story)
+    }
+
+    func getPreviousStory(before story: Story) -> StoryRetrievingResult? {
+        return dataSource.getPreviousStory(before: story)
+    }
 }
 
 // MARK: - StoriesDataSourceDelegate
 
 extension StoriesCell: StoriesDataSourceDelegate {
-    func showStory(_ story: Story, view: StoryCell?) {}
+    func showStory(_ story: Story, view: StoryCell?) {
+        delegate?.showStory(story, view: view)
+    }
 }

@@ -12,7 +12,7 @@ protocol QuotesCellDelegate: AnyObject {}
 
 final class QuotesCell: UITableViewCell {
     struct Appearance {
-        static let cellSize = CGSize(UIScreen.main.bounds.width - 47)
+        static let cellSize = CGSize(UIScreen.main.bounds.width - 32)
     }
 
     // MARK: - Properties
@@ -21,8 +21,7 @@ final class QuotesCell: UITableViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = Appearance.cellSize
         layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 16
-        layout.minimumLineSpacing = 16
+        layout.minimumLineSpacing = 32
         layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         return layout
     }()
@@ -36,6 +35,7 @@ final class QuotesCell: UITableViewCell {
         collectionView.allowsSelection = true
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
         return collectionView
     }()
 

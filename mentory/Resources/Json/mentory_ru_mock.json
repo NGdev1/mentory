@@ -8,32 +8,38 @@
             {
                 "id": 1,
                 "imageUrl": "http://italia-ru.com/files/david1.jpg",
-                "text": "7 книг для роста"
+                "text": "7 книг для роста",
+                "isRead": true
             },
             {
                 "id": 2,
                 "imageUrl": "http://italia-ru.com/files/david1.jpg",
-                "text": "8 книг для роста"
+                "text": "8 книг для роста",
+                "isRead": false
             },
             {
                 "id": 3,
                 "imageUrl": "http://italia-ru.com/files/david1.jpg",
-                "text": "330 книг для роста"
+                "text": "330 книг для роста",
+                "isRead": false
             },
             {
                 "id": 4,
                 "imageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
-                "text": "100 книг для роста"
+                "text": "100 книг для роста",
+                "isRead": false
             },
             {
                 "id": 5,
                 "imageUrl": "http://italia-ru.com/files/david1.jpg",
-                "text": "900 книг для роста"
+                "text": "900 книг для роста",
+                "isRead": false
             },
             {
                 "id": 6,
                 "imageUrl": "https://previews.123rf.com/images/miluxian/miluxian1707/miluxian170700094/83151678-statue-of-zeus-in-rome-italy.jpg",
-                "text": "9999 книг для роста"
+                "text": "9999 книг для роста",
+                "isRead": false
             }
         ]
     },

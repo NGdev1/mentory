@@ -14,3 +14,8 @@ struct NextLessonRetrievingResult {
     let isLocked: Bool?
     let cellView: LessonCell?
 }
+
+struct StoryRetrievingResult {
+    let story: Story?
+    let cellView: StoryCell?
+}

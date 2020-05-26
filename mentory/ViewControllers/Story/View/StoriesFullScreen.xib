@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoriesFullScreenController" customModule="Mentory" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="RGJ-Xq-IRP" id="tv8-ff-ENl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RGJ-Xq-IRP" customClass="StoriesFullScreen" customModule="Mentory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="306" height="454"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0H-mt-fBb">
+                    <rect key="frame" x="0.0" y="0.0" width="306" height="454"/>
+                </imageView>
+                <visualEffectView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyN-gf-3vG">
+                    <rect key="frame" x="0.0" y="0.0" width="306" height="454"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xmK-kA-3DB">
+                        <rect key="frame" x="0.0" y="0.0" width="306" height="454"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="systemUltraThinMaterial"/>
+                </visualEffectView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8d9-Bl-lKH">
+                    <rect key="frame" x="0.0" y="0.0" width="306" height="454"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ab4-rD-raP">
+                    <rect key="frame" x="0.0" y="44" width="306" height="4"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="4" id="DsD-DS-t43"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bif-8g-B6e">
+                    <rect key="frame" x="16" y="80" width="274" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" name="Title"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" name="Background1"/>
+            <constraints>
+                <constraint firstItem="I0H-mt-fBb" firstAttribute="leading" secondItem="tMB-lW-dhd" secondAttribute="leading" id="1Ed-A4-PAP"/>
+                <constraint firstItem="tMB-lW-dhd" firstAttribute="trailing" secondItem="Bif-8g-B6e" secondAttribute="trailing" constant="16" id="6hR-kG-tpF"/>
+                <constraint firstItem="ab4-rD-raP" firstAttribute="leading" secondItem="tMB-lW-dhd" secondAttribute="leading" id="B0Z-LW-LCo"/>
+                <constraint firstAttribute="bottom" secondItem="8d9-Bl-lKH" secondAttribute="bottom" id="Cti-6J-CcT"/>
+                <constraint firstItem="Bif-8g-B6e" firstAttribute="top" secondItem="ab4-rD-raP" secondAttribute="bottom" constant="32" id="HAZ-8G-7KU"/>
+                <constraint firstItem="ab4-rD-raP" firstAttribute="top" secondItem="tMB-lW-dhd" secondAttribute="top" id="IZB-K6-4Ql"/>
+                <constraint firstItem="TyN-gf-3vG" firstAttribute="leading" secondItem="tMB-lW-dhd" secondAttribute="leading" id="Na5-Um-4cE"/>
+                <constraint firstItem="TyN-gf-3vG" firstAttribute="trailing" secondItem="tMB-lW-dhd" secondAttribute="trailing" id="Pzy-AT-ggW"/>
+                <constraint firstItem="I0H-mt-fBb" firstAttribute="trailing" secondItem="tMB-lW-dhd" secondAttribute="trailing" id="Qd1-wd-l7R"/>
+                <constraint firstItem="8d9-Bl-lKH" firstAttribute="top" secondItem="RGJ-Xq-IRP" secondAttribute="top" id="TFX-6i-Yne"/>
+                <constraint firstItem="ab4-rD-raP" firstAttribute="trailing" secondItem="tMB-lW-dhd" secondAttribute="trailing" id="U1Q-zB-l9x"/>
+                <constraint firstAttribute="bottom" secondItem="TyN-gf-3vG" secondAttribute="bottom" id="Zjm-Zu-LhB"/>
+                <constraint firstItem="8d9-Bl-lKH" firstAttribute="leading" secondItem="tMB-lW-dhd" secondAttribute="leading" id="dS5-NE-QWd"/>
+                <constraint firstItem="TyN-gf-3vG" firstAttribute="top" secondItem="RGJ-Xq-IRP" secondAttribute="top" id="fpW-JZ-Xdg"/>
+                <constraint firstItem="Bif-8g-B6e" firstAttribute="leading" secondItem="tMB-lW-dhd" secondAttribute="leading" constant="16" id="idh-GJ-VeD"/>
+                <constraint firstItem="I0H-mt-fBb" firstAttribute="top" secondItem="RGJ-Xq-IRP" secondAttribute="top" id="rEr-9m-vYb"/>
+                <constraint firstItem="tMB-lW-dhd" firstAttribute="trailing" secondItem="8d9-Bl-lKH" secondAttribute="trailing" id="rVg-De-Uza"/>
+                <constraint firstAttribute="bottom" secondItem="I0H-mt-fBb" secondAttribute="bottom" id="ygK-SX-jdc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="tMB-lW-dhd"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="I0H-mt-fBb" id="LQW-GS-TZC"/>
+                <outlet property="progressStackView" destination="ab4-rD-raP" id="u8l-jF-HW1"/>
+                <outlet property="storyImageView" destination="8d9-Bl-lKH" id="DHD-hM-WEB"/>
+                <outlet property="titleLabel" destination="Bif-8g-B6e" id="sGq-AE-VcA"/>
+            </connections>
+            <point key="canvasLocation" x="59.420289855072468" y="-19.419642857142858"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Background1">
+            <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Title">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

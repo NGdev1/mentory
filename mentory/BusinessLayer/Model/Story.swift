@@ -11,4 +11,5 @@ struct Story: Decodable {
     let imageUrl: String
     let text: String
     let actionUrl: String?
+    let isRead: Bool
 }

@@ -1,19 +1,19 @@
 //
-//  ImageBasedTransitionManager.swift
-//  General
+//  LessonTransitionManager.swift
+//  SharedComponents
 //
 //  Created by Михаил Андреичев on 07.02.2020.
 //
 
 import UIKit
 
-public final class ImageBasedTransitionManager: NSObject {
-    var customInteractor: SwipeInteractionController?
+public final class LessonTransitionManager: NSObject {
+    var customInteractor: ScreenEdgeInteractionController?
 }
 
 // MARK: - UINavigationControllerDelegate
 
-extension ImageBasedTransitionManager: UINavigationControllerDelegate {
+extension LessonTransitionManager: UINavigationControllerDelegate {
     public func navigationController(
         _ navigationController: UINavigationController,
         animationControllerFor operation: UINavigationController.Operation,
@@ -22,10 +22,10 @@ extension ImageBasedTransitionManager: UINavigationControllerDelegate {
     ) -> UIViewControllerAnimatedTransitioning? {
         switch operation {
         case .push:
-            customInteractor = SwipeInteractionController(viewController: toVC)
-            return ImagePushAnimatedTransition()
+            customInteractor = ScreenEdgeInteractionController(viewController: toVC)
+            return LessonPushAnimatedTransition()
         case .pop:
-            return ImagePopAnimatedTransition()
+            return LessonPopAnimatedTransition()
         case .none:
             return nil
         @unknown default:
@@ -43,11 +43,11 @@ extension ImageBasedTransitionManager: UINavigationControllerDelegate {
 
 // MARK: - UIViewControllerTransitioningDelegate
 
-extension ImageBasedTransitionManager: UIViewControllerTransitioningDelegate {
+extension LessonTransitionManager: UIViewControllerTransitioningDelegate {
     public func animationController(
         forDismissed dismissed: UIViewController
     ) -> UIViewControllerAnimatedTransitioning? {
-        return ImagePopAnimatedTransition()
+        return LessonPopAnimatedTransition()
     }
 
     public func animationController(
@@ -57,17 +57,16 @@ extension ImageBasedTransitionManager: UIViewControllerTransitioningDelegate {
     ) -> UIViewControllerAnimatedTransitioning? {
         if let navigationController = presented as? UINavigationController,
             let controller = navigationController.viewControllers.last {
-            customInteractor = SwipeInteractionController(viewController: controller)
-            return ImagePushAnimatedTransition()
+            customInteractor = ScreenEdgeInteractionController(viewController: controller)
+            return LessonPushAnimatedTransition()
         }
-        customInteractor = SwipeInteractionController(viewController: presented)
-        return ImagePushAnimatedTransition()
+        customInteractor = ScreenEdgeInteractionController(viewController: presented)
+        return LessonPushAnimatedTransition()
     }
 
     public func interactionControllerForDismissal(
         using animator: UIViewControllerAnimatedTransitioning
     ) -> UIViewControllerInteractiveTransitioning? {
-        customInteractor?.popAnimationController = animator as? ImagePopAnimatedTransition
         return (customInteractor?.interactionInProgress ?? false) ? customInteractor : nil
     }
 }

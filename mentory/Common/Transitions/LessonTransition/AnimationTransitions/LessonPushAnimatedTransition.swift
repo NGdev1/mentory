@@ -1,5 +1,5 @@
 //
-//  ImagePushAnimatedTransition.swift
+//  LessonPushAnimatedTransition.swift
 //
 //  Created by Михаил Андреичев on 06.02.2020.
 //  Copyright © 2020 MD. All rights reserved.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-public final class ImagePushAnimatedTransition: NSObject {
+public final class LessonPushAnimatedTransition: NSObject {
     // MARK: - Properties
 
     public let animationDuration = 0.3
-    public let smallerViewBorderRadius: CGFloat = 10
-    public let transformScaleFactor: CGFloat = 0.7
+    public let smallerViewBorderRadius: CGFloat = 8
+    public let transformScaleFactor: CGFloat = 0.9
 
     // MARK: - Init
 
     private func initAnimating(
         using transitionContext: UIViewControllerContextTransitioning
-    ) -> ImageBasedContextTransitioning? {
+    ) -> LessonContextTransitioning? {
         guard
             let fromViewController = transitionContext.viewController(forKey: .from),
             let toViewController = transitionContext.viewController(forKey: .to)
@@ -37,11 +37,11 @@ public final class ImagePushAnimatedTransition: NSObject {
             toVC = navigationController.viewControllers.first
         }
 
-        let growingFromViewController = fromVC as? ViewControllerImageBasedAnimatable
-        let growingToViewController = toVC as? ViewControllerImageBasedAnimatable
-        let originStartView = growingFromViewController?.actingImageBasedView
-        let originEndView = growingToViewController?.actingImageBasedView
-        return ImageBasedContextTransitioning(
+        let growingFromViewController = fromVC as? ViewControllerLessonAnimatable
+        let growingToViewController = toVC as? ViewControllerLessonAnimatable
+        let originStartView = growingFromViewController?.actingLessonView
+        let originEndView = growingToViewController?.actingLessonView
+        return LessonContextTransitioning(
             isPushing: true,
             containerView: transitionContext.containerView,
             toViewController: toViewController,
@@ -51,45 +51,52 @@ public final class ImagePushAnimatedTransition: NSObject {
         )
     }
 
-    private func applyStartAnimationStyle(using animating: ImageBasedContextTransitioning) {
+    private func applyStartAnimationStyle(using animating: LessonContextTransitioning) {
         animating.containerView.backgroundColor = Assets.background1.color
-        animating.actingView.contentMode = .scaleAspectFit
-        animating.actingView.layer.cornerRadius = smallerViewBorderRadius
+        animating.actingImageView.contentMode = .scaleAspectFill
+        animating.actingImageView.layer.masksToBounds = true
+        animating.actingImageView.layer.cornerRadius = smallerViewBorderRadius
+        animating.actingImageViewGradient.contentMode = .scaleToFill
+        animating.actingControllerSnapshot.contentMode = .scaleAspectFill
+        animating.actingControllerSnapshot.layer.masksToBounds = true
+        animating.actingControllerSnapshot.layer.cornerRadius = smallerViewBorderRadius
     }
 
-    private func moveFinalViewToInvisibleArea(using animating: ImageBasedContextTransitioning) {
-        animating.toController.view.frame = animating.toController.view.frame.offsetBy(dx: UIScreen.main.bounds.width, dy: 0)
+    private func moveFinalViewToInvisibleArea(using animating: LessonContextTransitioning) {
+        animating.toView.frame = animating.toView.frame.offsetBy(dx: UIScreen.main.bounds.width, dy: 0)
     }
 
     // MARK: - Animation
 
     private func animate(
-        using animating: ImageBasedContextTransitioning,
+        using animating: LessonContextTransitioning,
         transitionContext: UIViewControllerContextTransitioning
     ) {
         let finalFrame = transitionContext.finalFrame(for: animating.toController)
-        animating.actingView.frame = finalFrame
-        animating.actingView.alpha = 0
-        animating.fromController.view.alpha = 1
+
         UIView.animateKeyframes(
             withDuration: animationDuration,
             delay: 0,
             options: .calculationModeCubic,
             animations: { [weak self] in
                 guard let self = self else { return }
-                animating.actingView.alpha = 1
-                animating.actingView.layer.cornerRadius = 0
-                animating.fromController.view.transform = CGAffineTransform(
+                animating.actingImageView.frame = animating.biggerView?.imageView.frame ?? .zero
+                animating.actingImageViewGradient.frame = animating.biggerView?.imageView.frame ?? .zero
+                animating.actingImageViewGradient.alpha = 0
+                animating.actingImageView.layer.cornerRadius = 0
+                animating.actingControllerSnapshot.frame = finalFrame
+                animating.actingControllerSnapshot.layer.cornerRadius = 0
+                animating.fromView.transform = CGAffineTransform(
                     scaleX: self.transformScaleFactor,
                     y: self.transformScaleFactor
                 )
-                animating.fromController.view.alpha = 0
             },
             completion: { _ in
-                animating.fromController.view.transform = .identity
-                animating.toController.view.frame = finalFrame
-                animating.actingView.removeFromSuperview()
+                animating.fromView.transform = .identity
+                animating.toView.frame = finalFrame
                 animating.actingImageView.removeFromSuperview()
+                animating.actingImageViewGradient.removeFromSuperview()
+                animating.actingControllerSnapshot.removeFromSuperview()
                 transitionContext.completeTransition(transitionContext.transitionWasCancelled == false)
             }
         )
@@ -98,7 +105,7 @@ public final class ImagePushAnimatedTransition: NSObject {
 
 // MARK: - UIViewControllerAnimatedTransitioning
 
-extension ImagePushAnimatedTransition: UIViewControllerAnimatedTransitioning {
+extension LessonPushAnimatedTransition: UIViewControllerAnimatedTransitioning {
     public var interactionController: UIPercentDrivenInteractiveTransition? {
         return nil
     }
