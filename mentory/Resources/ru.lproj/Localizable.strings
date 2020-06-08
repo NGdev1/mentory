@@ -1,0 +1,102 @@
+/* 
+  Localizable.strings
+  mentory
+
+  Created by Михаил Андреичев on 07.02.2020.
+  Copyright © 2020 Михаил Андреичев. All rights reserved.
+*/
+
+Alert.Unreal = "Невозможно";
+Alert.Cancel = "Отмена";
+Alert.Error = "Ошибка";
+Alert.Yes = "Да";
+Alert.No = "Нет";
+
+Common.Loading = "Загрузка";
+Common.Back = "Назад";
+Common.Hide = "Скрыть";
+Common.Return = "Далее";
+Common.Done = "Готово";
+Common.Cancel = "Отмена";
+
+Onboarding.Slide1.Title = "Добро пожаловать!";
+Onboarding.Slide1.Subtitle = "Меня зовут Mentory.\n Я Ваш виртуальный наставник.\n Я создан, чтобы ";
+Onboarding.Slide1.Highlited = "помочь вам стать\n лучшей версией себя!";
+
+Onboarding.Slide2.Title = "Знание – сила!";
+Onboarding.Slide2.Subtitle = "Во мне сосредоточены знания\n тысячи книг по саморазвитию,\n бизнесу и психологии.\n\nВ формате ежедневных\nаудиосессий ";
+Onboarding.Slide2.Highlited = "я буду делиться\nс вами этими знаниями.";
+
+Onboarding.Slide3.Title = "Опыт — лучший учитель!";
+Onboarding.Slide3.Subtitle = "Во мне сконцентрирован опыт тысячи успешных, богатых и счастливых\nлюдей.\n\nВ формате ежедневных\nаудиопрактик, ";
+Onboarding.Slide3.Highlited = "я передам\nэтот опыт вам.";
+
+Onboarding.Slide4.Title = "Осознанность – путь к равновесию!";
+Onboarding.Slide4.Subtitle = "Духовность — основа гармоничной жизни.\n\nВ формате ежедневных аудио медитаций, ";
+Onboarding.Slide4.Highlited = "я научу вас управлять эмоциями, чувствами\nи энергией.";
+
+Onboarding.Slide5.Title = "Ежедневная практика!";
+Onboarding.Slide5.Subtitle = "Хватит пытаться изменить жизнь\nк лучшему за один день!\nПрактикуйтесь ежедневно, и уже совсем скоро\nувидите первые результаты.\n\n";
+Onboarding.Slide5.Highlited = "И никогда не останавливайтесь на достигнутом!";
+
+Onboarding.Skip = "ПРОПУСТИТЬ";
+Onboarding.Next = "ДАЛЬШЕ";
+Onboarding.Begin = "НАЧАТЬ";
+
+Name.Title = "ПРИВЕТ!\nЯ  –  ПРИЛОЖЕНИЕ\nНАСТАВНИК";
+Name.Subtitle = "Я создан, чтобы помочь тебе стать лучшей версией себя!";
+Name.WhatIsYourName = "Как тебя зовут?";
+Name.Placeholder = "ВВЕДИ СВОЁ ИМЯ";
+Name.Next = "ПРОДОЛЖИТЬ";
+
+PersonalCategories.Title = "С ЧЕГО БЫ ТЫ\nХОТЕЛ НАЧАТЬ?";
+PersonalCategories.Subtitle = "Выбери 3 категории";
+
+MainPage.Programs = "Программы";
+MainPage.ProgramsDescription = "Тринадцать уникальных уроков. Слушайте по одному в день. И вы удивитесь как изменится ваша жизнь. ";
+MainPage.GetPremium = "Попробуй PREMIUM бесплатно!";
+MainPage.PressForInfo = "Нажми для подробностей";
+
+Errors.TryAgain = "Повторить";
+Errors.UnknownError = "Неизвестная ошибка";
+Errors.NetworkError = "Ошибка сети";
+Errors.RemoteError = "Ошибка сервера";
+Errors.RequestError = "Ошибка запроса";
+
+Lesson.NextLesson = "Следующий урок";
+Lesson.Listen = "Начать слушать";
+Lesson.SubtitleOneTrack = "%@ ∙ АУДИОЗАПИСЬ";
+Lesson.Subtitle2to4Tracks = "%@ ∙ %d АУДИОЗАПИСИ";
+Lesson.SubtitleFrom5Tracks = "%@ ∙ %d АУДИОЗАПИСЕЙ";
+
+Buy.Subtitle = "Попробуй 3 дня бесплатно!";
+Buy.Advantage1 = "Полный доступ к категории «Наставничество»";
+Buy.Advantage2 = "Полная доступ категории «Самопознание»";
+Buy.Advantage3 = "Полная доступ категории «Осознанность»";
+Buy.Advantage4 = "Уведомления и напоминания";
+Buy.Advantage5 = "Обновление контента";
+Buy.YearView.TitleWithPrice = "Годовой план  – %@/год";
+Buy.MonthView.TitleWithPrice = "Месячный план – %@/месяц";
+Buy.YearView.Title = "Годовой план";
+Buy.YearView.Subtitle = "После бесплатного трехдневного периода";
+Buy.MonthView.Title = "Месячный план";
+Buy.MonthView.Subtitle = "Оплата ежемесячно";
+Buy.Get = "ПРОДОЛЖИТЬ";
+Buy.PurchaseFailed = "Произошла ошибка при совершении покупки. Транзакция отменена.";
+Buy.Info = "Периодическая оплата. Возможность отмены в любой момент. Оплата за подписку будет списана с Вашего iTunes аккаунта. Подписка автоматически обновляется в течении 24 часов до истечения периода подписки. Вы можете отменить подписку в любой момент в разделе Настройки в iTunes. В случае отмены Ваша подписка прекращается в конце действующего цикла оплаты. После начала подписки весь неиспользованный Вами бесплатный период будет аннулирован. Более детальную информацию Вы можете найти в ";
+Buy.PrivacyPolicy = "Условиях Пользования и Политике Конфиденциальности.";
+Buy.RestorePurchases = "Восстановить покупки";
+Buy.Congragulations = "Поздравляем!";
+Buy.Success = "Вы получили премиум аккаунт.";
+Buy.Done = "Готово";
+
+Personalized.GoodMorning = "Доброе утро!";
+Personalized.GoodAfternoon = "Доброый день!";
+Personalized.GoodEvening = "Доброый вечер!";
+Personalized.GoodNight = "Доброй ночи";
+
+Today.YourPlan = "ТВОЙ ПЛАН ДНЯ";
+Today.From = "ОТ";
+Today.DateFormat = "d MMMM, EEEE";
+
+Error.RequestFail = "Ошибка запроса";

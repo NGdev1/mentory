@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LessonController" customModule="Mentory" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="RGJ-Xq-IRP" id="tv8-ff-ENl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RGJ-Xq-IRP" customClass="LessonView" customModule="Mentory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="289" height="769"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AjF-2M-8l0">
+                    <rect key="frame" x="0.0" y="0.0" width="289" height="769"/>
+                    <color key="backgroundColor" name="Background1"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkq-Wm-z4e">
+                    <rect key="frame" x="16" y="701" width="257" height="48"/>
+                    <color key="backgroundColor" name="WinterGreen"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="gPp-I0-fG9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="tintColor" name="Black"/>
+                    <state key="normal" title=" Listen" image="PlayButtonIcon">
+                        <color key="titleColor" name="Black"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7RG-A4-Hwf" customClass="MDHeaderView" customModule="Mentory" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="289" height="375"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="375" id="asE-Iz-3Zg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="Background1"/>
+            <constraints>
+                <constraint firstItem="7RG-A4-Hwf" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" id="4Sd-25-DjE"/>
+                <constraint firstItem="AjF-2M-8l0" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" id="6eJ-zc-dX2"/>
+                <constraint firstAttribute="bottom" secondItem="AjF-2M-8l0" secondAttribute="bottom" id="BH5-8n-e5T"/>
+                <constraint firstItem="Bkq-Wm-z4e" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" constant="16" id="Kuh-jW-tU0"/>
+                <constraint firstItem="AjF-2M-8l0" firstAttribute="top" secondItem="RGJ-Xq-IRP" secondAttribute="top" id="MdE-uD-CTw"/>
+                <constraint firstItem="7RG-A4-Hwf" firstAttribute="top" secondItem="RGJ-Xq-IRP" secondAttribute="top" id="Zhp-Bx-HSB"/>
+                <constraint firstAttribute="trailing" secondItem="Bkq-Wm-z4e" secondAttribute="trailing" constant="16" id="ZyC-Bx-xzR"/>
+                <constraint firstItem="7RG-A4-Hwf" firstAttribute="trailing" secondItem="RGJ-Xq-IRP" secondAttribute="trailing" id="buw-EJ-sdL"/>
+                <constraint firstAttribute="trailing" secondItem="AjF-2M-8l0" secondAttribute="trailing" id="oWL-gh-0q7"/>
+                <constraint firstItem="KSL-Fq-98g" firstAttribute="bottom" secondItem="Bkq-Wm-z4e" secondAttribute="bottom" constant="20" id="t37-aq-yc2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="KSL-Fq-98g"/>
+            <connections>
+                <outlet property="headerHeight" destination="asE-Iz-3Zg" id="YFY-qs-beY"/>
+                <outlet property="headerView" destination="7RG-A4-Hwf" id="zyY-ic-cPI"/>
+                <outlet property="playButton" destination="Bkq-Wm-z4e" id="qS5-G7-UhO"/>
+                <outlet property="tableView" destination="AjF-2M-8l0" id="XIV-sa-7R5"/>
+            </connections>
+            <point key="canvasLocation" x="-3.6231884057971016" y="171.76339285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="PlayButtonIcon" width="25" height="22"/>
+        <namedColor name="Background1">
+            <color red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WinterGreen">
+            <color red="0.090196078431372548" green="1" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

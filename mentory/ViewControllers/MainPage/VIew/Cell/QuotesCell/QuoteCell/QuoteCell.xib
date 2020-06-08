@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="QuoteCell" customModule="Mentory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="502" height="424"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="502" height="424"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-Wh-KUY">
+                        <rect key="frame" x="0.0" y="0.0" width="502" height="424"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBU-ug-kbL">
+                        <rect key="frame" x="0.0" y="0.0" width="502" height="424"/>
+                        <color key="backgroundColor" name="Black"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bm4-Vw-aqN">
+                        <rect key="frame" x="16" y="117.5" width="470" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" name="WinterGreen"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29x-zi-Tze">
+                        <rect key="frame" x="16" y="70" width="470" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <color key="textColor" name="Title"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="QBU-ug-kbL" firstAttribute="bottom" secondItem="Cs7-Wh-KUY" secondAttribute="bottom" id="1H8-5o-Pbg"/>
+                <constraint firstItem="Bm4-Vw-aqN" firstAttribute="top" secondItem="29x-zi-Tze" secondAttribute="bottom" constant="28" id="9gW-iO-DJS"/>
+                <constraint firstItem="29x-zi-Tze" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="AXG-JD-6QI"/>
+                <constraint firstItem="Cs7-Wh-KUY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BpM-GL-9kR"/>
+                <constraint firstAttribute="bottom" secondItem="Cs7-Wh-KUY" secondAttribute="bottom" id="Fub-gK-GBh"/>
+                <constraint firstItem="Bm4-Vw-aqN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="K7t-83-KSO"/>
+                <constraint firstItem="29x-zi-Tze" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="NCd-el-GA7"/>
+                <constraint firstItem="29x-zi-Tze" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="70" id="NL8-u4-gH0"/>
+                <constraint firstAttribute="trailing" secondItem="Cs7-Wh-KUY" secondAttribute="trailing" id="O4p-mp-Bch"/>
+                <constraint firstItem="Bm4-Vw-aqN" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="Pu1-xj-ZMM"/>
+                <constraint firstItem="QBU-ug-kbL" firstAttribute="top" secondItem="Cs7-Wh-KUY" secondAttribute="top" id="Vwa-pM-e6f"/>
+                <constraint firstAttribute="trailing" secondItem="29x-zi-Tze" secondAttribute="trailing" constant="16" id="duG-Zq-Xw5"/>
+                <constraint firstItem="Cs7-Wh-KUY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="elO-Xf-xI3"/>
+                <constraint firstAttribute="trailing" secondItem="Bm4-Vw-aqN" secondAttribute="trailing" constant="16" id="erL-KZ-Um0"/>
+                <constraint firstItem="QBU-ug-kbL" firstAttribute="leading" secondItem="Cs7-Wh-KUY" secondAttribute="leading" id="nhf-Qq-jYG"/>
+                <constraint firstItem="QBU-ug-kbL" firstAttribute="trailing" secondItem="Cs7-Wh-KUY" secondAttribute="trailing" id="qER-c2-Ppm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="502" height="424"/>
+            <connections>
+                <outlet property="authorNameLabel" destination="Bm4-Vw-aqN" id="X4o-Xh-vdx"/>
+                <outlet property="photoImageView" destination="Cs7-Wh-KUY" id="7m0-KM-zef"/>
+                <outlet property="quoteLabel" destination="29x-zi-Tze" id="t30-xe-u5C"/>
+            </connections>
+            <point key="canvasLocation" x="465.21739130434787" y="253.79464285714283"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Title">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WinterGreen">
+            <color red="0.090196078431372548" green="1" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

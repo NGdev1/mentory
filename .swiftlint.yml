@@ -1,0 +1,85 @@
+disabled_rules:
+  - identifier_name
+  - trailing_comma
+  - nesting
+ptional_rules:
+# Codestyle
+  - attributes
+  - control_statement
+  - closure_spacing
+  - closure_parameter_position
+  - closure_end_indentation
+  - conditional_returns_on_newline
+  - type_name
+  - leading_whitespace
+  - empty_parentheses_with_trailing_closure
+  - operator_usage_whitespace
+  - operator_whitespace
+  - return_arrow_whitespace
+  - statement_position
+  - switch_case_on_newline
+# Code logic
+  - cyclomatic_complexity
+  - nesting
+  - force_cast
+  - force_try
+  - force_unwrapping
+  - explicit_init
+  - function_parameter_count
+  - implicit_getter
+  - overridden_super_call
+  - private_outlet
+  - private_unit_test
+  - weak_delegate
+
+  # Length
+  - line_length
+  - file_length
+  - function_body_length
+  - type_body_length
+
+  - custom_rules
+excluded:
+  - Pods
+  - Carthage
+  - "*/Classes/BusinessLogic/NetworkLayer/*"
+  - "*/Resources/Generated/*"
+
+function_body_length:
+  warning: 60
+  error: 120
+file_length:
+  warning: 500
+  error: 700
+large_tuple:
+  warning: 4
+  error: 4
+line_length:
+  warning: 200
+  error: 250
+type_name:
+  excluded: T
+  max_length:
+    warning: 56
+function_parameter_count:
+  warning: 7 # нужно уменьшать
+
+  empty_lines_after_type_declarations:
+    included: ".*.swift"
+    name: "Empty lines after type declarations"
+    regex: '(struct|class|enum|protocol|extension) ([\w]+(:\s*[\w\s,]+)* )\{\n\n'
+    message: "There should be no empty lines after type declarations"
+    severity: error
+  empty_braces:
+    included: ".*.swift"
+    name: "Empty braces"
+    regex: '\{(\n\s+)?\}'
+    message: "Empty braces should be placed on the same line and have one space between"
+    severity: error
+custom_rules:
+  empty_lines_after_type_declarations:
+    included: ".*.swift"
+    name: "Empty lines after type declarations"
+    regex: '(struct|class|enum|protocol|extension) ([\w]+(:\s*[\w\s,]+)* )\{\n\n'
+    message: "There should be no empty lines after type declarations"
+    severity: error
