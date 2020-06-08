@@ -13,6 +13,7 @@
 		6B032CF423ED767700662BF5 /* MainPageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B032CF323ED767700662BF5 /* MainPageDataSource.swift */; };
 		6B032CF823ED770400662BF5 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B032CF623ED770400662BF5 /* LessonCell.swift */; };
 		6B032CF923ED770400662BF5 /* LessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B032CF723ED770400662BF5 /* LessonCell.xib */; };
+		6B0BAB3B247D7E96001C2E66 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0BAB3A247D7E96001C2E66 /* StoreKit.framework */; };
 		6B15185A2419145D00C4A272 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1518562419145D00C4A272 /* OnboardingController.swift */; };
 		6B15185C2419145D00C4A272 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1518582419145D00C4A272 /* OnboardingView.swift */; };
 		6B15185F2419151500C4A272 /* SlidesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15185E2419151500C4A272 /* SlidesDataSource.swift */; };
@@ -20,7 +21,6 @@
 		6B1518662419157000C4A272 /* SlideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1518642419157000C4A272 /* SlideCell.xib */; };
 		6B1518682419159200C4A272 /* OnboardingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1518672419159200C4A272 /* OnboardingModels.swift */; };
 		6B205A80241FA2990083D934 /* MainPageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B205A7F241FA2990083D934 /* MainPageCellViewModel.swift */; };
-		6B205A84241FBE190083D934 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B205A83241FBE190083D934 /* StoreKit.framework */; };
 		6B27507B2419B01300FBC8D2 /* TryPremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27507A2419B01300FBC8D2 /* TryPremiumView.swift */; };
 		6B27507E2419B03900FBC8D2 /* TryPremiumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B27507D2419B03900FBC8D2 /* TryPremiumView.xib */; };
 		6B50D01E240D989900202DA6 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50D01D240D989900202DA6 /* NotificationNames.swift */; };
@@ -132,6 +132,7 @@
 		6B032CF323ED767700662BF5 /* MainPageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageDataSource.swift; sourceTree = "<group>"; };
 		6B032CF623ED770400662BF5 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		6B032CF723ED770400662BF5 /* LessonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonCell.xib; sourceTree = "<group>"; };
+		6B0BAB3A247D7E96001C2E66 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6B1518562419145D00C4A272 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		6B1518582419145D00C4A272 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		6B15185E2419151500C4A272 /* SlidesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidesDataSource.swift; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 		6B1518642419157000C4A272 /* SlideCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideCell.xib; sourceTree = "<group>"; };
 		6B1518672419159200C4A272 /* OnboardingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModels.swift; sourceTree = "<group>"; };
 		6B205A7F241FA2990083D934 /* MainPageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCellViewModel.swift; sourceTree = "<group>"; };
-		6B205A83241FBE190083D934 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6B27507A2419B01300FBC8D2 /* TryPremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryPremiumView.swift; sourceTree = "<group>"; };
 		6B27507D2419B03900FBC8D2 /* TryPremiumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryPremiumView.xib; sourceTree = "<group>"; };
 		6B50D01D240D989900202DA6 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9A48C22ECD92DAAB394A383 /* Pods_mentory.framework in Frameworks */,
-				6B205A84241FBE190083D934 /* StoreKit.framework in Frameworks */,
+				6B0BAB3B247D7E96001C2E66 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,7 +882,7 @@
 		D7867D7AC5DF419C6B367A09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6B205A83241FBE190083D934 /* StoreKit.framework */,
+				6B0BAB3A247D7E96001C2E66 /* StoreKit.framework */,
 				0405CF0E54595F17EEE3CFA6 /* Pods_mentory.framework */,
 			);
 			name = Frameworks;

@@ -84,13 +84,23 @@ final class ImagePopAnimatedTransition: NSObject {
 
     // MARK: - Animation
 
-    func animate(translate: CGPoint, percent: CGFloat) {
+    func update(translate: CGPoint, percent: CGFloat) {
         guard let animating = animating else { return }
-        let anchorPoint = CGPoint(x: animating.smallestView?.imageView.frame.midX ?? .zero, y: animating.smallestView?.imageView.frame.midY ?? .zero)
-        let newCenter = CGPoint(x: anchorPoint.x + translate.x, y: anchorPoint.y + translate.y)
-        animating.actingImageView.center = newCenter
-        animating.actingView.center = newCenter
+        animating.actingView.cornerRadius = 50 * percent
+
+        let newCenter = CGPoint(x: translate.x, y: translate.y)
+        animating.actingImageView.frame.origin = newCenter
+        animating.actingView.frame.origin = newCenter
+
         transitionContext?.updateInteractiveTransition(min(percent, 0.3))
+    }
+    
+    func finishInteractiveTransition() {
+        guard let animating = animating else { return }
+    }
+    
+    func cancelIntaractiveTransition() {
+        guard let animating = animating else { return }
     }
 
     private func animate(
@@ -119,7 +129,7 @@ final class ImagePopAnimatedTransition: NSObject {
             animations: { [weak self] in
                 guard let self = self else { return }
                 animating.actingImageView.frame = finalFrame
-                animating.actingView.frame = finalFrame
+                // animating.actingView.frame = finalFrame
                 animating.actingImageView.alpha = 1
                 animating.actingView.alpha = 0
                 animating.actingImageView.layer.cornerRadius = self.smallerViewBorderRadius
@@ -156,6 +166,8 @@ extension ImagePopAnimatedTransition: UIViewControllerAnimatedTransitioning {
         applyStartAnimationStyle()
         hideReplacableBySnapshotsViews()
         animating.initContainerViewHierarchy()
-        animate(transitionContext: transitionContext)
+        if transitionContext.isInteractive == false {
+            animate(transitionContext: transitionContext)
+        }
     }
 }

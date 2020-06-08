@@ -13,6 +13,7 @@ import StoreKit
 
 protocol IAPServiceDelegate: AnyObject {
     func didFailPurchase()
+    func didFailRequest(error: Error)
     func didCompletePurchase()
     func didLoadProducts(_ skProducts: [SKProduct])
 }
@@ -111,7 +112,7 @@ extension IAPService: SKProductsRequestDelegate {
     }
 
     func request(_ request: SKRequest, didFailWithError error: Error) {
-        delegate?.didFailPurchase()
+        delegate?.didFailRequest(error: error)
         print(error.localizedDescription)
     }
 }

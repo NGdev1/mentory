@@ -91,6 +91,11 @@ public enum Text {
     public static let `return` = Text.tr("Localizable", "Common.Return")
   }
 
+  public enum Error {
+    /// Ошибка запроса
+    public static let requestFail = Text.tr("Localizable", "Error.RequestFail")
+  }
+
   public enum Errors {
     /// Ошибка сети
     public static let networkError = Text.tr("Localizable", "Errors.NetworkError")

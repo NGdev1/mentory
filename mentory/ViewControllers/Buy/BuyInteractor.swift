@@ -43,7 +43,15 @@ class BuyInteractor: BuyBusinessLogic, IAPServiceDelegate {
     // MARK: - Results
 
     func didFailPurchase() {
-        controller?.presentError(message: Text.Buy.purchaseFailed)
+        DispatchQueue.main.async { [weak self] in
+            self?.controller?.presentError(message: Text.Buy.purchaseFailed)
+        }
+    }
+
+    func didFailRequest(error: Error) {
+        DispatchQueue.main.async { [weak self] in
+            self?.controller?.presentError(message: error.localizedDescription)
+        }
     }
 
     func didCompletePurchase() {

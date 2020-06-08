@@ -89,3 +89,14 @@ Buy.RestorePurchases = "Restore purchases";
 Buy.Congragulations = "Congratulations!";
 Buy.Success = "You have received a premium account.";
 Buy.Done = "Done";
+
+Personalized.GoodMorning = "Good morning!";
+Personalized.GoodAfternoon = "Good afternoon!";
+Personalized.GoodEvening = "Good evening!";
+Personalized.GoodNight = "Good night";
+
+Today.YourPlan = "YOUR PLAN";
+Today.From = "FROM";
+Today.DateFormat = "d MMMM, EEEE";
+
+Error.RequestFail = "Request fail";

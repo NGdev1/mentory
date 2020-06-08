@@ -98,3 +98,5 @@ Personalized.GoodNight = "Доброй ночи";
 Today.YourPlan = "ТВОЙ ПЛАН ДНЯ";
 Today.From = "ОТ";
 Today.DateFormat = "d MMMM, EEEE";
+
+Error.RequestFail = "Ошибка запроса";

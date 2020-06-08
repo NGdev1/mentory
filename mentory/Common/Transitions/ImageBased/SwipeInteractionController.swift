@@ -66,7 +66,7 @@ public final class SwipeInteractionController: UIPercentDrivenInteractiveTransit
 //        if popAnimationController == nil {
 //            update(percent); return
 //        }
-        popAnimationController?.animate(translate: translate, percent: percent)
+        popAnimationController?.update(translate: translate, percent: percent)
     }
 
     @objc func handleGesture(_ gestureRecognizer: UIPanGestureRecognizer) {
