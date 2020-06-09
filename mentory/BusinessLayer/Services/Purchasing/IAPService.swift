@@ -90,7 +90,10 @@ final class IAPService: NSObject {
     func purchase(product: IAPProduct) {
         guard let skProduct = products.first(where: { skProduct in
             skProduct.productIdentifier == product.rawValue
-        }) else { return }
+        }) else {
+            delegate?.didFailPurchase()
+            return
+        }
         let payment = SKPayment(product: skProduct)
         paymentQueue.add(payment)
     }
@@ -120,6 +123,20 @@ extension IAPService: SKProductsRequestDelegate {
 // MARK: - SKPaymentTransactionObserver
 
 extension IAPService: SKPaymentTransactionObserver {
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        delegate?.didCompletePurchase()
+        AppService.shared.app.appState = .premium
+        NotificationCenter.default.post(Notification(name: .appStateChanged))
+    }
+
+    func paymentQueue(
+        _ queue: SKPaymentQueue,
+        restoreCompletedTransactionsFailedWithError error: Error
+    ) {
+        delegate?.didFailPurchase()
+        print(error.localizedDescription)
+    }
+
     func paymentQueue(
         _ queue: SKPaymentQueue,
         updatedTransactions transactions: [SKPaymentTransaction]

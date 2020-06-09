@@ -10,7 +10,7 @@ import UIKit
 public final class ImagePushAnimatedTransition: NSObject {
     // MARK: - Properties
 
-    public let animationDuration = 0.3
+    public let animationDuration = 2.3
     public let smallerViewBorderRadius: CGFloat = 10
     public let transformScaleFactor: CGFloat = 0.7
 
@@ -53,7 +53,8 @@ public final class ImagePushAnimatedTransition: NSObject {
 
     private func applyStartAnimationStyle(using animating: ImageBasedContextTransitioning) {
         animating.containerView.backgroundColor = Assets.background1.color
-        animating.actingView.contentMode = .scaleAspectFit
+        animating.actingView.contentMode = .scaleAspectFill
+        animating.actingImageView.contentMode = .scaleAspectFit
         animating.actingView.layer.cornerRadius = smallerViewBorderRadius
     }
 
@@ -68,8 +69,8 @@ public final class ImagePushAnimatedTransition: NSObject {
         transitionContext: UIViewControllerContextTransitioning
     ) {
         let finalFrame = transitionContext.finalFrame(for: animating.toController)
-        animating.actingView.frame = finalFrame
         animating.actingView.alpha = 0
+        animating.actingImageView.alpha = 1
         animating.fromController.view.alpha = 1
         UIView.animateKeyframes(
             withDuration: animationDuration,
@@ -77,6 +78,9 @@ public final class ImagePushAnimatedTransition: NSObject {
             options: .calculationModeCubic,
             animations: { [weak self] in
                 guard let self = self else { return }
+                animating.actingView.frame = finalFrame
+                animating.actingImageView.frame = finalFrame
+                animating.actingImageView.alpha = 0
                 animating.actingView.alpha = 1
                 animating.actingView.layer.cornerRadius = 0
                 animating.fromController.view.transform = CGAffineTransform(

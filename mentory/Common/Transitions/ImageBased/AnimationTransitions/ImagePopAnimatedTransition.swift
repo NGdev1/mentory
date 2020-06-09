@@ -62,7 +62,7 @@ final class ImagePopAnimatedTransition: NSObject {
         animating.containerView.backgroundColor = Assets.background1.color
         animating.actingView.clipsToBounds = true
         animating.actingView.contentMode = .scaleAspectFill
-        animating.actingImageView.contentMode = .scaleAspectFill
+        animating.actingImageView.contentMode = .scaleAspectFit
         animating.actingImageView.clipsToBounds = true
     }
 
@@ -94,19 +94,29 @@ final class ImagePopAnimatedTransition: NSObject {
 
         transitionContext?.updateInteractiveTransition(min(percent, 0.3))
     }
-    
+
     func finishInteractiveTransition() {
-        guard let animating = animating else { return }
-    }
-    
-    func cancelIntaractiveTransition() {
-        guard let animating = animating else { return }
+        animate()
     }
 
-    private func animate(
-        transitionContext: UIViewControllerContextTransitioning
-    ) {
-        guard let animating = animating else { transitionContext.completeTransition(false)
+    func cancelIntaractiveTransition() {
+        guard let animating = animating else { return }
+        UIView.animate(
+            withDuration: animationDuration,
+            animations: {
+                animating.initPopFrames()
+            }, completion: { [weak self] _ in
+                self?.showReplacableBySnapshotsViews()
+                animating.actingView.removeFromSuperview()
+                animating.actingImageView.removeFromSuperview()
+                animating.toController.view.removeFromSuperview()
+                self?.transitionContext?.completeTransition(false)
+            }
+        )
+    }
+
+    private func animate() {
+        guard let animating = animating, let transitionContext = transitionContext else {
             return
         }
         let damping: CGFloat
@@ -167,7 +177,7 @@ extension ImagePopAnimatedTransition: UIViewControllerAnimatedTransitioning {
         hideReplacableBySnapshotsViews()
         animating.initContainerViewHierarchy()
         if transitionContext.isInteractive == false {
-            animate(transitionContext: transitionContext)
+            animate()
         }
     }
 }

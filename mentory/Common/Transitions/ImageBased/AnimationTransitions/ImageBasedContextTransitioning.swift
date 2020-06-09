@@ -101,7 +101,7 @@ public class ImageBasedContextTransitioning {
 
     public func initPushFrames() {
         actingImageView.frame = smallestView?.imageView.globalFrame ?? .zero
-        actingView.frame = toController.view.frame
+        actingView.frame = smallestView?.imageView.globalFrame ?? .zero
     }
 
     public func initContainerViewHierarchy() {

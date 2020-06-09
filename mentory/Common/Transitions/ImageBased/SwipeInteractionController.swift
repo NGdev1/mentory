@@ -63,9 +63,9 @@ public final class SwipeInteractionController: UIPercentDrivenInteractiveTransit
     }
 
     private func customUpdate(translate: CGPoint, percent: CGFloat) {
-//        if popAnimationController == nil {
-//            update(percent); return
-//        }
+        if popAnimationController == nil {
+            update(percent); return
+        }
         popAnimationController?.update(translate: translate, percent: percent)
     }
 
@@ -89,9 +89,15 @@ public final class SwipeInteractionController: UIPercentDrivenInteractiveTransit
         case .ended:
             interactionInProgress = false
             if shouldCompleteTransition {
-                finish()
+                if popAnimationController == nil {
+                    finish(); return
+                }
+                popAnimationController?.finishInteractiveTransition()
             } else {
-                cancel()
+                if popAnimationController == nil {
+                    cancel(); return
+                }
+                popAnimationController?.cancelIntaractiveTransition()
             }
         default:
             break
