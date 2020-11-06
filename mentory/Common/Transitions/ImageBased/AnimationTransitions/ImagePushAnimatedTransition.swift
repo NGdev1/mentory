@@ -10,7 +10,7 @@ import UIKit
 public final class ImagePushAnimatedTransition: NSObject {
     // MARK: - Properties
 
-    public let animationDuration = 2.3
+    public let animationDuration = 0.3
     public let smallerViewBorderRadius: CGFloat = 10
     public let transformScaleFactor: CGFloat = 0.7
 
