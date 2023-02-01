@@ -12,7 +12,7 @@ import Storable
 import UIKit
 
 final class MainPageView: UIView {
-    struct Appearance {
+    enum Appearance {
         static var buttonPurchaseHeight: CGFloat {
             if AppService.shared.app.appState == .premium {
                 return 0

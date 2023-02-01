@@ -17,7 +17,7 @@ final class SectionHeaderCell: UITableViewCell {
 
     // MARK: - Xib init
 
-    public override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         setupStyle()
         addActionHandlers()

@@ -11,7 +11,7 @@ import UIKit
 protocol QuotesCellDelegate: AnyObject {}
 
 final class QuotesCell: UITableViewCell {
-    struct Appearance {
+    enum Appearance {
         static let cellSize = CGSize(UIScreen.main.bounds.width - 32)
     }
 
@@ -39,7 +39,7 @@ final class QuotesCell: UITableViewCell {
         return collectionView
     }()
 
-    lazy var dataSource: QuotesDataSource = QuotesDataSource(
+    lazy var dataSource: QuotesDataSource = .init(
         delegate: self, collectionView: collectionView
     )
 

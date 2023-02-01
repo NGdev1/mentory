@@ -29,6 +29,7 @@ class StoriesFullScreenController: UIViewController {
         setupAppearance()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -50,7 +51,8 @@ class StoriesFullScreenController: UIViewController {
         let location = recognizer.location(ofTouch: 0, in: view)
         if location.x > view.width / 2 {
             if let result = delegate?.retrieveNextStory(after: story),
-                let story = result.story {
+               let story = result.story
+            {
                 self.story = story
                 let transition = CATransition()
                 transition.duration = 0.3
@@ -63,7 +65,8 @@ class StoriesFullScreenController: UIViewController {
             }
         } else {
             if let result = delegate?.retrievePreviousStory(before: story),
-                let story = result.story {
+               let story = result.story
+            {
                 self.story = story
                 let transition = CATransition()
                 transition.duration = 0.3

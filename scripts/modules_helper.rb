@@ -9,7 +9,7 @@ def defmodule(name:, summary:, description: summary, static: false, version: "1.
     s.version = version
     s.summary = summary
 
-    s.platform = :ios, "11.0"
+    s.platform = :ios, "14.0"
     s.swift_version = "5.0"
     s.static_framework = static
     if static

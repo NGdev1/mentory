@@ -6,6 +6,8 @@
 //  Copyright © 2020 Михаил Андреичев. All rights reserved.
 //
 
+import MDFoundation
+import SnapKit
 import UIKit
 
 public final class MDHeaderView: UIView {
@@ -41,7 +43,7 @@ public final class MDHeaderView: UIView {
 
     // MARK: - Init
 
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }

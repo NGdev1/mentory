@@ -18,7 +18,7 @@ final class NameView: UIView {
         case normal7or8
     }
 
-    struct Appearance {
+    enum Appearance {
         static func changeState(_ state: ViewState) {
             switch state {
             case .normal:
@@ -46,7 +46,7 @@ final class NameView: UIView {
     @IBOutlet var bottomInsetConstraint: NSLayoutConstraint!
     @IBOutlet var nameTopConstraint: NSLayoutConstraint!
 
-    lazy var nextView: NextInputView = NextInputView()
+    lazy var nextView: NextInputView = .init()
 
     // MARK: - Xib Init
 
@@ -110,7 +110,8 @@ final class NameView: UIView {
 
     @objc private func keyboardWillShow(notification: NSNotification) {
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
-            as? NSValue else {
+            as? NSValue
+        else {
             return
         }
 

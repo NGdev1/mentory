@@ -216,7 +216,8 @@ extension MainPageDataSource: UITableViewDelegate {
 // MARK: - Cell actions
 
 extension MainPageDataSource: PersonalizedCellDelegate, SectionHeaderCellDelegate,
-    StoriesCellDelegate, QuotesCellDelegate {
+    StoriesCellDelegate, QuotesCellDelegate
+{
     func showStory(_ story: Story, view: StoryCell?) {
         delegate?.showStory(story, view: view)
     }

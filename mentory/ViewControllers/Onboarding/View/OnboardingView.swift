@@ -9,7 +9,7 @@
 import UIKit
 
 final class OnboardingView: UIView {
-    struct Appearance {
+    enum Appearance {
         static let buttonWidth: CGFloat = UIScreen.main.bounds.width * 0.5 - 20
         static let bigButtonWidth: CGFloat = UIScreen.main.bounds.width - 32
         static let buttonsDistance: CGFloat = 8
@@ -36,7 +36,7 @@ final class OnboardingView: UIView {
     @IBOutlet var skipButtonWidth: NSLayoutConstraint!
     @IBOutlet var buttonsDistance: NSLayoutConstraint!
 
-    lazy var dataSource: SlidesDataSource = SlidesDataSource(collectionView: collectionView)
+    lazy var dataSource: SlidesDataSource = .init(collectionView: collectionView)
 
     // MARK: - Xib Init
 

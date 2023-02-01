@@ -10,8 +10,8 @@ import MDFoundation
 import UIKit
 
 final class PersonalCategoriesView: UIView {
-    struct Appearance {
-        static let cellSize: CGSize = CGSize(
+    enum Appearance {
+        static let cellSize: CGSize = .init(
             width: (UIScreen.main.bounds.width / 2) - 20,
             height: ScreenSize.current == .sizeIPhoneSE ? 150 : 100
         )
@@ -55,6 +55,7 @@ final class PersonalCategoriesView: UIView {
         commonInit()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

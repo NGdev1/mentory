@@ -56,7 +56,8 @@ extension LessonTransitionManager: UIViewControllerTransitioningDelegate {
         source: UIViewController
     ) -> UIViewControllerAnimatedTransitioning? {
         if let navigationController = presented as? UINavigationController,
-            let controller = navigationController.viewControllers.last {
+           let controller = navigationController.viewControllers.last
+        {
             customInteractor = ScreenEdgeInteractionController(viewController: controller)
             return LessonPushAnimatedTransition()
         }

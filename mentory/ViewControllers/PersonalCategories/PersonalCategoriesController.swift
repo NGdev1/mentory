@@ -19,7 +19,7 @@ public class PersonalCategoriesController: UIViewController, PersonalCategoriesC
 
     var interactor: PersonalCategoriesInteractor?
 
-    lazy var customView: PersonalCategoriesView = PersonalCategoriesView()
+    lazy var customView: PersonalCategoriesView = .init()
 
     // MARK: - Init
 
@@ -31,6 +31,7 @@ public class PersonalCategoriesController: UIViewController, PersonalCategoriesC
         loadCategories()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -46,7 +47,7 @@ public class PersonalCategoriesController: UIViewController, PersonalCategoriesC
 
     // MARK: - Life cycle
 
-    public override func loadView() {
+    override public func loadView() {
         view = customView
     }
 
@@ -84,6 +85,7 @@ public class PersonalCategoriesController: UIViewController, PersonalCategoriesC
         let alert = AlertsFactory.plain(
             title: Text.Alert.error,
             message: message,
+            tintColor: Assets.winterGreen.color,
             cancelText: Text.Alert.cancel
         )
         present(alert, animated: true, completion: nil)

@@ -14,7 +14,7 @@ public enum LoadingIndicatorPostion {
     case bottom
 }
 
-extension UIView {
+public extension UIView {
     private var hudView: HudView? {
         for case let subview as HudView in subviews {
             return subview
@@ -22,7 +22,7 @@ extension UIView {
         return nil
     }
 
-    public func startShowingActivityIndicator(
+    func startShowingActivityIndicator(
         position: LoadingIndicatorPostion = .center,
         needToDimBackground: Bool = false
     ) {
@@ -36,7 +36,7 @@ extension UIView {
         hud.makeEdgesEqualToSuperview()
     }
 
-    public func stopShowingActivityIndicator() {
+    func stopShowingActivityIndicator() {
         hudView?.removeFromSuperview()
     }
 }
@@ -74,6 +74,7 @@ private class HudView: UIView {
         addLoadingView(position: position)
     }
 
+    @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -11,7 +11,7 @@ import MDFoundation
 import UIKit
 
 final class LessonView: UIView {
-    struct Appearance {
+    enum Appearance {
         static var headerHeight: CGFloat = 200
         static let navBarStartTurningPoint: CGFloat = 70
         static let navBarTurnСompletelyTurnPoint: CGFloat = 120

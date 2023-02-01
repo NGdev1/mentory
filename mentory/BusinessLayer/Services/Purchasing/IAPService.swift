@@ -34,12 +34,12 @@ final class IAPService: NSObject {
 
     // MARK: - Init
 
-    private override init() {
+    override private init() {
         super.init()
         paymentQueue.add(self)
     }
 
-    static let shared: IAPService = IAPService()
+    static let shared: IAPService = .init()
 
     // MARK: - Internal methods
 

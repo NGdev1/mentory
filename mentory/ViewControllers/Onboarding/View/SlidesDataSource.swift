@@ -40,7 +40,7 @@ final class SlidesDataSource: NSObject {
     func nextPage() {
         guard currentPage < data.count - 1 else { return }
         currentPage += 1
-        let indexPath: IndexPath = IndexPath(item: currentPage, section: 0)
+        let indexPath = IndexPath(item: currentPage, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 

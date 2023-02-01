@@ -41,7 +41,7 @@ public final class SwipeInteractionController: UIPercentDrivenInteractiveTransit
         view.addGestureRecognizer(gesture)
     }
 
-    public override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+    override public func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
         self.transitionContext = transitionContext
         super.startInteractiveTransition(transitionContext)
     }

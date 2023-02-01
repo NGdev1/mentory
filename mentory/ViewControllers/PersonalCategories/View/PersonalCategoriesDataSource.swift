@@ -49,7 +49,8 @@ final class PersonalCategoriesDataSource: NSObject {
         var selecteddata: [PersonalCategory] = []
         for index in data.indices {
             for item in collectionView.indexPathsForSelectedItems ?? []
-                where item.row == index {
+                where item.row == index
+            {
                 selecteddata.append(data[index])
             }
         }

@@ -1,7 +1,7 @@
 # Отключает отправку статистики по используемым подам
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
-platform :ios, '11.0'
+platform :ios, '14.0'
 
 require "./scripts/modules_helper.rb"
 
@@ -18,8 +18,10 @@ def other_pods
   # pod 'SPAlert', '2.1.1', :inhibit_warnings => true
 end
 
-def mdPods
-  pod 'MDFoundation', :tag => '1.0.6', :git => 'https://github.com/NGdev1/MDFoundation.git'
+def md_pods
+  pod 'MDFoundation',
+    :tag => 'v1.0.0',
+    :git => 'https://github.com/NGdev1/MDFoundation.git'
   pod 'Storable', path: './Storable'
 end
 
@@ -27,5 +29,5 @@ target 'mentory' do
   use_frameworks!
 
   other_pods
-  mdPods
+  md_pods
 end

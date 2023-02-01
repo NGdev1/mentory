@@ -59,13 +59,14 @@ final class PersonalCategoryCell: UICollectionViewCell {
 
     // MARK: - Init
 
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setupStyle()
         addSubviews()
         makeConstraints()
     }
 
+    @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

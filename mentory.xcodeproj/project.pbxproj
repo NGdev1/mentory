@@ -13,7 +13,6 @@
 		6B032CF423ED767700662BF5 /* MainPageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B032CF323ED767700662BF5 /* MainPageDataSource.swift */; };
 		6B032CF823ED770400662BF5 /* LessonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B032CF623ED770400662BF5 /* LessonCell.swift */; };
 		6B032CF923ED770400662BF5 /* LessonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B032CF723ED770400662BF5 /* LessonCell.xib */; };
-		6B0BAB3B247D7E96001C2E66 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0BAB3A247D7E96001C2E66 /* StoreKit.framework */; };
 		6B15185A2419145D00C4A272 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1518562419145D00C4A272 /* OnboardingController.swift */; };
 		6B15185C2419145D00C4A272 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1518582419145D00C4A272 /* OnboardingView.swift */; };
 		6B15185F2419151500C4A272 /* SlidesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B15185E2419151500C4A272 /* SlidesDataSource.swift */; };
@@ -132,7 +131,6 @@
 		6B032CF323ED767700662BF5 /* MainPageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageDataSource.swift; sourceTree = "<group>"; };
 		6B032CF623ED770400662BF5 /* LessonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCell.swift; sourceTree = "<group>"; };
 		6B032CF723ED770400662BF5 /* LessonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonCell.xib; sourceTree = "<group>"; };
-		6B0BAB3A247D7E96001C2E66 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6B1518562419145D00C4A272 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		6B1518582419145D00C4A272 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		6B15185E2419151500C4A272 /* SlidesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidesDataSource.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9A48C22ECD92DAAB394A383 /* Pods_mentory.framework in Frameworks */,
-				6B0BAB3B247D7E96001C2E66 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,7 +879,6 @@
 		D7867D7AC5DF419C6B367A09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6B0BAB3A247D7E96001C2E66 /* StoreKit.framework */,
 				0405CF0E54595F17EEE3CFA6 /* Pods_mentory.framework */,
 			);
 			name = Frameworks;
@@ -1291,20 +1287,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = HY59K9S4C6;
+				DEVELOPMENT_TEAM = NXAGVF2MTG;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.md.mentory;
 				PRODUCT_NAME = Mentory;
-				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Debug)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1316,20 +1312,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = mentory/Mentory.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = HY59K9S4C6;
+				DEVELOPMENT_TEAM = NXAGVF2MTG;
 				INFOPLIST_FILE = mentory/MainFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.deltapps.mentory;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.md.mentory;
 				PRODUCT_NAME = Mentory;
-				PROVISIONING_PROFILE_SPECIFIER = "MentoryApp (Debug)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

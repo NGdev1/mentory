@@ -12,7 +12,7 @@ protocol StoriesCellDelegate: AnyObject {
 }
 
 final class StoriesCell: UITableViewCell {
-    struct Appearance {
+    enum Appearance {
         static let cellSize = CGSize(96)
         static let height: CGFloat = 96
     }
@@ -41,7 +41,7 @@ final class StoriesCell: UITableViewCell {
         return collectionView
     }()
 
-    lazy var dataSource: StoriesDataSource = StoriesDataSource(
+    lazy var dataSource: StoriesDataSource = .init(
         delegate: self, collectionView: collectionView
     )
 

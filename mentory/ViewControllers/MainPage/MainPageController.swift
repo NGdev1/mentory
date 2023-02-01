@@ -54,7 +54,8 @@ class MainPageController: UIViewController, MainPageControllerLogic {
         customView.dataSource?.delegate = self
 
         if AppService.shared.app.appOpenedCount > 3,
-            AppService.shared.app.appState == .free {
+           AppService.shared.app.appState == .free
+        {
             showPurchasePage()
         }
     }
@@ -85,6 +86,7 @@ class MainPageController: UIViewController, MainPageControllerLogic {
             let alert = AlertsFactory.plain(
                 title: Text.Buy.congragulations,
                 message: Text.Buy.success,
+                tintColor: Assets.winterGreen.color,
                 cancelText: Text.Buy.done
             )
             present(alert, animated: true, completion: nil)
@@ -131,6 +133,7 @@ class MainPageController: UIViewController, MainPageControllerLogic {
         let alert = AlertsFactory.plain(
             title: Text.Alert.error,
             message: message,
+            tintColor: Assets.winterGreen.color,
             cancelText: Text.Alert.cancel
         )
         present(alert, animated: true, completion: nil)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,7 +37,7 @@
                                     <state key="normal" image="CloseButtonIcon"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREMIUM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2C-9k-13I">
-                                    <rect key="frame" x="286" y="53" width="112" height="29"/>
+                                    <rect key="frame" x="287" y="53" width="111" height="29"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                     <color key="textColor" name="WinterGreen"/>
                                     <nil key="highlightedColor"/>
@@ -183,7 +183,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-7K-SQ4">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-7K-SQ4">
                                     <rect key="frame" x="16" y="561" width="382" height="50"/>
                                     <color key="backgroundColor" name="WinterGreen"/>
                                     <constraints>
@@ -199,8 +199,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-oi-FLu">
-                                    <rect key="frame" x="142" y="770" width="130" height="29"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-oi-FLu">
+                                    <rect key="frame" x="142.5" y="770" width="129" height="29"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                     <state key="normal" title="Restore purchases">
                                         <color key="titleColor" name="Title"/>
@@ -214,6 +214,7 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                             </subviews>
+                            <viewLayoutGuide key="safeArea" id="Tnr-Mh-POZ"/>
                             <constraints>
                                 <constraint firstItem="8T3-Yw-TzA" firstAttribute="leading" secondItem="s77-MO-zLy" secondAttribute="leading" constant="16" id="0DZ-zw-Dct"/>
                                 <constraint firstItem="hYA-X5-Yhl" firstAttribute="top" secondItem="Tnr-Mh-POZ" secondAttribute="top" constant="8" id="3JY-iX-ADe"/>
@@ -265,7 +266,6 @@
                                 <constraint firstItem="knt-zI-vmg" firstAttribute="leading" secondItem="CfY-wk-H2r" secondAttribute="leading" id="zIZ-tV-1Gg"/>
                                 <constraint firstItem="aWl-JK-GMs" firstAttribute="leading" secondItem="SiR-gc-3Ur" secondAttribute="leading" id="zlN-pH-xpD"/>
                             </constraints>
-                            <viewLayoutGuide key="safeArea" id="Tnr-Mh-POZ"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" name="BuyPageBackground"/>
@@ -279,6 +279,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="dFC-7g-lGJ"/>
                 </scrollView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="tMB-lW-dhd"/>
             <color key="backgroundColor" name="Background1"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Pcb-xj-gxV" secondAttribute="bottom" id="4Zf-hD-PCs"/>
@@ -291,7 +292,6 @@
                 <constraint firstItem="cMF-Dz-8FK" firstAttribute="top" secondItem="RGJ-Xq-IRP" secondAttribute="top" id="mRM-3L-KS5"/>
                 <constraint firstItem="Pcb-xj-gxV" firstAttribute="leading" secondItem="RGJ-Xq-IRP" secondAttribute="leading" id="rnb-LR-HCv"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="tMB-lW-dhd"/>
             <connections>
                 <outlet property="adv1Label" destination="e1e-nZ-KSj" id="EDI-2g-fbl"/>
                 <outlet property="adv2Label" destination="WWa-tA-6L9" id="oSS-5z-1RG"/>

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     func animateBorderWidth(toValue: CGFloat, duration: TimeInterval = 0.2) {
-        let borderAnimation: CABasicAnimation = CABasicAnimation(keyPath: "borderWidth")
+        let borderAnimation = CABasicAnimation(keyPath: "borderWidth")
         borderAnimation.fromValue = layer.borderWidth
         borderAnimation.toValue = toValue
         borderAnimation.duration = duration

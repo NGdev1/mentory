@@ -27,7 +27,7 @@ public final class MDCheckbox: UIView {
 
     // MARK: Customization
 
-    public var bgColor: UIColor = UIColor.clear {
+    public var bgColor: UIColor = .clear {
         didSet {
             if !isOn {
                 setBackground(bgColor)
@@ -43,14 +43,14 @@ public final class MDCheckbox: UIView {
         }
     }
 
-    public var color: UIColor = UIColor.blue {
+    public var color: UIColor = .blue {
         didSet {
             checkmark.color = color
         }
     }
 
-    public var borderColorSelected: UIColor = UIColor.gray
-    public var borderColorUnselected: UIColor = UIColor.gray
+    public var borderColorSelected: UIColor = .gray
+    public var borderColorUnselected: UIColor = .gray
 
     public var checkboxCornerRadius: CGFloat = 0 {
         didSet {
@@ -108,7 +108,7 @@ public final class MDCheckbox: UIView {
         addSubview(button)
     }
 
-    public override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
 
         button.bounds = bounds
@@ -155,14 +155,14 @@ public extension MDCheckbox {
 
 // MARK: - Private
 
-extension MDCheckbox {
-    @objc fileprivate func buttonDidSelected() {
+private extension MDCheckbox {
+    @objc func buttonDidSelected() {
         setOn(on == false, animated: true)
         selectionFeedbackGenerator.selectionChanged()
         checkboxValueChangedBlock?(on)
     }
 
-    fileprivate func showCheckmark(_ show: Bool, animated: Bool) {
+    func showCheckmark(_ show: Bool, animated: Bool) {
         if show == true {
             checkmark.strokeWidth = bounds.width / (line == .normal ? 10 : 20)
             checkmark.show(animated)

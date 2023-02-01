@@ -28,16 +28,12 @@ enum Storages {
 
     /// Кейчейн, закрываемый при блокировке устройства (рекомендуется)
     enum WhenUnlockedKeychain: StorageConfiguration {
-        static var storage: StoresData = {
-            Keychain(service: "com.md.nails-ios.when_unlocked").accessibility(.whenUnlocked)
-        }()
+        static var storage: StoresData = Keychain(service: "com.md.nails-ios.when_unlocked").accessibility(.whenUnlocked)
     }
 
     /// Кейчейн, открытый после первой разблокировки устройства
     enum AfterFirstUnlockKeychain: StorageConfiguration {
-        static var storage: StoresData = {
-            Keychain(service: "com.md.nails-ios.after_first").accessibility(.afterFirstUnlock)
-        }()
+        static var storage: StoresData = Keychain(service: "com.md.nails-ios.after_first").accessibility(.afterFirstUnlock)
     }
 
     /// Хранилище, содержащее записи в памяти

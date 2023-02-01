@@ -70,11 +70,9 @@ PODS:
     - GoogleUtilities/Logger
   - KeychainAccess (3.2.0)
   - Kingfisher (5.7.0)
-  - MDFoundation (1.0.5):
-    - MDFoundation/Source (= 1.0.5)
-    - SnapKit (~> 5.0.0)
-  - MDFoundation/Source (1.0.5):
-    - SnapKit (~> 5.0.0)
+  - MDFoundation (1.0.0):
+    - MDFoundation/Source (= 1.0.0)
+  - MDFoundation/Source (1.0.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -110,7 +108,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - KeychainAccess (= 3.2.0)
   - Kingfisher (= 5.7.0)
-  - MDFoundation (from `https://github.com/NGdev1/MDFoundation.git`, tag `1.0.6`)
+  - MDFoundation (from `https://github.com/NGdev1/MDFoundation.git`, tag `v1.0.0`)
   - Moya (~> 13.0)
   - SnapKit (~> 5.0.0)
   - Storable (from `./Storable`)
@@ -146,14 +144,14 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   MDFoundation:
     :git: https://github.com/NGdev1/MDFoundation.git
-    :tag: 1.0.6
+    :tag: v1.0.0
   Storable:
     :path: "./Storable"
 
 CHECKOUT OPTIONS:
   MDFoundation:
     :git: https://github.com/NGdev1/MDFoundation.git
-    :tag: 1.0.6
+    :tag: v1.0.0
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -171,16 +169,16 @@ SPEC CHECKSUMS:
   GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
   KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
   Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
-  MDFoundation: 2745e8ff54bc103b949be44bd64e559ba17f36eb
+  MDFoundation: b86ead9f37bc74ee278063ed2127b6cdb10a823e
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  Storable: bcb4dad8b5c62ea7c5fdb3e19161855467802bd5
+  Storable: 433e08b469a6a6cf57d267dcbeb0b0b9a19b3ce0
   SwiftAudio: 217f5f184b27a0e25ff0fe7647021f05a21c06c9
   SwiftyUserDefaults: 6a1951df1daa19337862b677dd9a4b9bd4c288cd
   YandexMobileMetrica: 1030df2959c886a7be3bc3d274eb54c8e86afd6f
 
-PODFILE CHECKSUM: 4c8c8ef4950040e658dbf2e9388ecacfa0b75b4c
+PODFILE CHECKSUM: 44a6527ceebd00673417dcaaceb94c1a1cb10311
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.11.3

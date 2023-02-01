@@ -24,12 +24,12 @@ class PersonalizationTitleView: UICollectionReusableView {
     }
 }
 
-extension UICollectionReusableView {
-    public static var identifier: String {
+public extension UICollectionReusableView {
+    static var identifier: String {
         return Utils.getClassName(self)
     }
 
-    public static var nib: UINib {
+    static var nib: UINib {
         UINib(nibName: identifier, bundle: Bundle(for: self))
     }
 }

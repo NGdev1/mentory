@@ -35,6 +35,7 @@ public class BuyController: UIViewController, BuyControllerLogic {
         loadProducts()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -111,6 +112,7 @@ public class BuyController: UIViewController, BuyControllerLogic {
         let alert = AlertsFactory.plain(
             title: Text.Alert.error,
             message: message,
+            tintColor: Assets.winterGreen.color,
             cancelText: Text.Alert.cancel
         )
         present(alert, animated: true, completion: nil)

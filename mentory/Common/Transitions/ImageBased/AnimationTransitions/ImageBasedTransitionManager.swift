@@ -56,7 +56,8 @@ extension ImageBasedTransitionManager: UIViewControllerTransitioningDelegate {
         source: UIViewController
     ) -> UIViewControllerAnimatedTransitioning? {
         if let navigationController = presented as? UINavigationController,
-            let controller = navigationController.viewControllers.last {
+           let controller = navigationController.viewControllers.last
+        {
             customInteractor = SwipeInteractionController(viewController: controller)
             return ImagePushAnimatedTransition()
         }

@@ -11,7 +11,7 @@ import UIKit
 class MDCheckmarkView: UIView {
     // MARK: - Properties
 
-    var color: UIColor = UIColor.blue
+    var color: UIColor = .blue
 
     fileprivate var animationDuration: TimeInterval = 0.275
     var strokeWidth: CGFloat = 0
@@ -25,7 +25,7 @@ class MDCheckmarkView: UIView {
         setupCheckmark()
     }
 
-    required override init(frame: CGRect) {
+    override required init(frame: CGRect) {
         super.init(frame: frame)
         setupCheckmark()
     }
@@ -58,7 +58,7 @@ class MDCheckmarkView: UIView {
         if animated == false {
             checkmarkLayer.strokeEnd = 1
         } else {
-            let checkmarkAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+            let checkmarkAnimation: CABasicAnimation = .init(keyPath: "strokeEnd")
             checkmarkAnimation.duration = animationDuration
             checkmarkAnimation.isRemovedOnCompletion = false
             checkmarkAnimation.fillMode = CAMediaTimingFillMode.forwards
@@ -76,7 +76,7 @@ class MDCheckmarkView: UIView {
         }
 
         // checkmarkLayer.removeAllAnimations()
-        let checkmarkAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        let checkmarkAnimation = CABasicAnimation(keyPath: "strokeEnd")
         checkmarkAnimation.duration = animationDuration
         checkmarkAnimation.isRemovedOnCompletion = false
         checkmarkAnimation.fillMode = CAMediaTimingFillMode.forwards

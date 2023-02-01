@@ -6,6 +6,6 @@
 //  Copyright © 2020 Михаил Андреичев. All rights reserved.
 //
 
-internal class MentoryServiceFactory {
+internal enum MentoryServiceFactory {
     static let mainPageService: MainPageServiceProtocol = MainPageServiceMock()
 }

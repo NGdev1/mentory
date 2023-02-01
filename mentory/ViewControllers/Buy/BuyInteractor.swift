@@ -18,7 +18,7 @@ class BuyInteractor: BuyBusinessLogic, IAPServiceDelegate {
     // MARK: - Properties
 
     weak var controller: BuyControllerLogic?
-    var service: IAPService = IAPService.shared
+    var service: IAPService = .shared
 
     // MARK: - Init
 

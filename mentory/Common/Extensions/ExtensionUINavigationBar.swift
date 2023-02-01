@@ -9,22 +9,22 @@
 import Foundation
 import UIKit
 
-extension UINavigationBar {
-    public func setBaseAppearance() {
+public extension UINavigationBar {
+    func setBaseAppearance() {
         setBackgroundImage(nil, for: .default)
         hideShadow(false)
         barTintColor = Assets.background1.color
         tintColor = Assets.warmGrey.color
     }
 
-    public func setTransparentAppearance() {
+    func setTransparentAppearance() {
         setBackgroundImage(UIImage(), for: .default)
         hideShadow(true)
         barTintColor = .clear
         tintColor = Assets.warmGrey.color
     }
 
-    public func setBackButtonImage() {
+    func setBackButtonImage() {
         // backIndicatorTransitionMaskImage = Images.iconBack.image
         // backIndicatorImage = Images.iconBack.image
     }

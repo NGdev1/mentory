@@ -70,7 +70,7 @@ extension LessonCell: ViewLessonAnimatable {
         return viewWithInsets
     }
 
-    public override var imageView: UIImageView {
+    override public var imageView: UIImageView {
         return backgroundImageView
     }
 

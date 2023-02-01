@@ -14,7 +14,7 @@ import UIKit
 public class PlayerController: UIViewController {
     // MARK: - Properties
 
-    lazy var player: MP3Player = MP3Player(tracks: lesson.tracks, current: currentIndex)
+    lazy var player: MP3Player = .init(tracks: lesson.tracks, current: currentIndex)
 
     lazy var customView: PlayerView? = view as? PlayerView
     var lesson: Lesson
@@ -34,6 +34,7 @@ public class PlayerController: UIViewController {
         addActionHandlers()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

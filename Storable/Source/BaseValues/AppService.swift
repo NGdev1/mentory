@@ -13,5 +13,5 @@ public final class AppService {
     static let store = KeysRegistry()
 
     /// Текущая модель приложения
-    public var app: App = App(keysRegistry: store)
+    public var app: App = .init(keysRegistry: store)
 }

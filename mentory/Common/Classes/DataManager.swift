@@ -85,7 +85,8 @@ class DataManager {
             var isDir: ObjCBool = false
 
             if FileManager.default.fileExists(atPath: directory.path, isDirectory: &isDir)
-                == false {
+                == false
+            {
                 do {
                     print("creating directory " + directory.path)
                     try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
